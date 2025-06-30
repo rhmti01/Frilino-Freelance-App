@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/* @plugin "@tailwindcss/forms"; */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Break points */
+  --breakpoint-xg: 1080px;
+  --breakpoint-xx: 970px;
+  --breakpoint-ww: 630px;
+  --breakpoint-mm: 548px;
+  --breakpoint-rr: 375px;
+  --breakpoint-ss: 290px;
+  /* costum font */
+  --font-outfit: "Outfit", "Vazirmatn";
+  --font-vazir: "Vazirmatn";
+}
+
+@layer base {
+  body::-webkit-scrollbar {
+    width: 8px;
+    cursor: pointer;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #ffffff;
+    cursor: pointer;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #888685;
+    cursor: pointer;
+  }
+
+  div::-webkit-scrollbar {
+    width: 7px;
+    height: 3px;
+    cursor: pointer;
+
+  }
+
+  div.scrollbar-hovered ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  div::-webkit-scrollbar-thumb:hover {
+    width: 16px;
+    /* Increase the size of the scrollbar */
+    background-color: #555;
+    /* Change color on hover */
+  }
+
+  div::-webkit-scrollbar-track {
+    background: #e0d7d7;
+    cursor: pointer;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  div::-webkit-scrollbar-thumb {
+    background-color: #5a5f669c;
+    border: 2px solid #efefef00;
+    cursor: pointer;
+
+  }
+}

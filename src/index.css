@@ -4,6 +4,37 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  /* root colors */
+  --background-app-rgb: #ffffff;
+  --color-primary-900: #4a6dff;
+  --color-primary-800: #5c7cff;
+  --color-primary-700: #6e8aff;
+  --color-primary-600: #8099ff;
+  --color-primary-500: #92a7ff;
+  --color-primary-400: #a4b6ff;
+  --color-primary-300: #b7c5ff;
+  --color-primary-200: #c9d3ff;
+  --color-primary-100: #dbe2ff;
+  --color-primary-50: #e4e9ff;
+
+  --color-secondary-900: #111827;
+  --color-secondary-800: #1f2937;
+  --color-secondary-700: #374151;
+  --color-secondary-600: #4b5563;
+  --color-secondary-500: #6b7280;
+  --color-secondary-400: #9ca3af;
+  --color-secondary-300: #d1d5db;
+  --color-secondary-200: #e5e7eb;
+  --color-secondary-100: #f3f4f6;
+  --color-secondary-50: #f9fafb;
+  --color-secondary-0: #ffffff;
+
+  --color-success: #00c073;
+  --color-warning: #ff9900;
+  --color-error: #ff4757;
+  --color-red-500: #ef4444;
+  --color-red-300: #fca5a5;
+
   /* Break points */
   --breakpoint-xg: 1080px;
   --breakpoint-xx: 970px;
@@ -11,11 +42,13 @@
   --breakpoint-mm: 548px;
   --breakpoint-rr: 375px;
   --breakpoint-ss: 290px;
+
   /* costum font */
-  --font-outfit: "Outfit", "Vazirmatn";
   --font-vazir: "Vazirmatn";
 }
 
+
+/* costum window scrol */
 @layer base {
   body::-webkit-scrollbar {
     width: 8px;
@@ -36,7 +69,6 @@
     width: 7px;
     height: 3px;
     cursor: pointer;
-
   }
 
   div.scrollbar-hovered ::-webkit-scrollbar {
@@ -64,6 +96,5 @@
     background-color: #5a5f669c;
     border: 2px solid #efefef00;
     cursor: pointer;
-
   }
 }

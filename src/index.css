@@ -45,6 +45,34 @@
 
   /* costum font */
   --font-vazir: "Vazirmatn";
+  --font-inter : "Inter"
+}
+
+
+@layer{
+  .brandLogo__text{
+    @apply flex items-center justify-center gap-x-4 text-center font-black font-inter tracking-widest text-5xl text-blue-600;
+  }
+
+  .numberInput__section{
+    @apply mt-14 flex justify-around items-center border-slate-300 border-[1px] py-1.5 gap-x-5 px-3 rounded-xl hover:bg-stone-100
+  }
+
+  .numberInput__input{
+    @apply pl-1 font-vazir font-medium text-secondary-600 py-2 w-full outline-none
+  }
+
+  .sendOTPForm__btn{
+    @apply  mt-5 font-medium text-[17px] text-secondary-0 py-3.5 cursor-pointer w-full bg-blue-600 hover:bg-blue-700 duration-300 rounded-xl
+  }
+
+  .highlightText{
+    @apply text-blue-600 cursor-pointer hover:underline font-medium
+  }
+
+  .containerImage{
+    @apply w-[470px]
+  }
 }
 
 

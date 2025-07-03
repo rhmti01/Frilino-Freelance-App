@@ -51,15 +51,11 @@
 
 @layer{
   .brandLogo__text{
-    @apply flex items-center justify-center gap-x-4 text-center font-black font-inter tracking-widest text-5xl text-blue-600;
+    @apply flex items-center justify-center gap-x-3 text-center font-bold font-inter tracking-widest text-5xl text-blue-600;
   }
 
-  .numberInput__section{
-    @apply mt-14 flex justify-around items-center border-slate-300 border-[1px] py-1.5 gap-x-5 px-3 rounded-xl hover:bg-stone-100
-  }
-
-  .numberInput__input{
-    @apply pl-1 font-vazir font-medium text-secondary-600 py-2 w-full outline-none
+  .numberInput{
+    @apply  py-3 px-4 rounded-xl font-vazir font-medium text-secondary-600 w-full outline-none border-[1px] focus:shadow-lg focus:shadow-primary-300 border-transparent hover:border-slate-300 focus:border-indigo-500 duration-300 bg-secondary-200/75   focus:bg-white
   }
 
   .sendOTPForm__btn{
@@ -67,7 +63,7 @@
   }
 
   .highlightText{
-    @apply text-blue-600 cursor-pointer hover:underline font-medium
+    @apply text-blue-500 hover:text-blue-600 cursor-pointer hover:underline font-medium
   }
 
   .containerImage{

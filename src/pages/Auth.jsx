@@ -1,13 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import SendOTPForm from '../features/authentication/SendOTPForm'
-import GetOTPForm from '../features/authentication/GetOTPForm'
+import AuthContainer from "../features/authentication/AuthContainer"
 
 function Auth() {
   return (
     <div className=' bg-blue-50/ w-full min-h-full flex items-center justify-center ' >
-      {/* <SendOTPForm/>   */}
-      <GetOTPForm/>
+      <AuthContainer/>
     </div>
   )
 }

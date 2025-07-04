@@ -1,14 +1,31 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import TextField from "../../ui/TextField";
 import BrandLogo from "../../ui/BrandLogo";
 import BackBtn from "../../ui/BackBtn";
+import { useMutation } from "@tanstack/react-query";
+import { getOtp } from "../../services/authService";
+import toast from "react-hot-toast";
+import Loading from "../../ui/Loading";
 
-function SendOTPForm() {
-  const [number, setNumber] = useState("");
+function SendOTPForm({ setStep , phoneNumber , onChange }) {
 
-  const sendOtpHandler = (e) => {
-    e.preventDefault()
+  const { isPending, error, data, mutateAsync } = useMutation({
+    mutationFn: getOtp,
+  });
+
+  const sendOtpHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const data = await mutateAsync({ phoneNumber });
+      // toast.success(` کد تایید برای شماره موبایل ${phoneNumber} ارسال شد! `)
+      toast.success(data.message)
+      toast.success("کد تایید ارسال شد!");
+      setStep(2);
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
+    }
   };
 
   return (
@@ -38,12 +55,17 @@ function SendOTPForm() {
               ورود | ثبت نام
             </h2>
             <TextField
-              value={number}
-              onChange={(e) => setNumber(e.target.value)}
+              value={phoneNumber}
+              onChange={onChange}
               name="phoneNumber"
-              label="شماره تماس را وارد کنید"
+              label="شماره موبایل را وارد کنید"
             />
-            <button type="submit" className="sendOTPForm__btn ">تایید و دریافت کد</button>
+            {isPending ? (
+              <Loading width="60" height="60" />
+            ) : (
+               <button type="submit" className="sendOTPForm__btn ">تایید و دریافت کد</button>
+            )}
+           
             <p className="text-[15px] mt-6 text-secondary-500  ">
               ورود شما به معنای پذیرش{" "}
               <span className="highlightText">شرایط فریلینو</span> و{" "}

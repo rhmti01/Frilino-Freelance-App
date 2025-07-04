@@ -45,32 +45,34 @@
 
   /* costum font */
   --font-vazir: "Vazirmatn";
-  --font-inter : "Inter"
+  --font-inter: "Inter";
 }
 
-
-@layer{
-  .brandLogo__text{
+@layer {
+  .brandLogo__text {
     @apply flex items-center justify-center gap-x-3 text-center font-bold font-inter tracking-widest text-5xl text-blue-600;
   }
 
-  .numberInput{
-    @apply  py-3 px-4 rounded-xl font-vazir font-medium text-secondary-600 w-full outline-none border-[1px] focus:shadow-lg focus:shadow-primary-300 border-transparent hover:border-slate-300 focus:border-indigo-500 duration-300 bg-secondary-200/75   focus:bg-white
+  .numberInput {
+    @apply py-3 px-4 rounded-xl font-vazir font-medium text-secondary-600 w-full outline-none border-[1px] focus:shadow-lg focus:shadow-primary-300 border-transparent hover:border-slate-300 focus:border-indigo-500 duration-300 bg-secondary-200/75   focus:bg-white;
   }
 
-  .sendOTPForm__btn{
-    @apply  mt-5 font-medium text-[17px] text-secondary-0 py-3.5 cursor-pointer w-full bg-blue-600 hover:bg-blue-700 duration-300 rounded-xl
+  .sendOTPForm__btn {
+    @apply mt-5 text-[17px] text-secondary-0 py-3.5 cursor-pointer w-full  font-medium  duration-300 rounded-xl bg-blue-600 hover:bg-blue-700  ;
   }
 
-  .highlightText{
-    @apply text-blue-500 hover:text-blue-600 cursor-pointer hover:underline font-medium
+  .checkOTPForm__btn {
+    @apply mt-5 text-[17px] text-secondary-0 py-3.5 cursor-pointer w-full  font-medium  duration-300 rounded-xl ;
   }
 
-  .containerImage{
-    @apply w-[450px]
+  .highlightText {
+    @apply text-blue-500 hover:text-blue-600 cursor-pointer hover:underline font-medium;
+  }
+
+  .containerImage {
+    @apply w-[450px];
   }
 }
-
 
 /* costum window scrol */
 @layer base {

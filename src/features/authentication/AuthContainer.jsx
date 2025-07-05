@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SendOTPForm from "./SendOTPForm";
 import CheckOTPForm from "./CheckOTPForm";
 import { useMutation } from "@tanstack/react-query";
@@ -13,6 +13,11 @@ function AuthContainer() {
     mutationFn: getOtp,
   });
 
+  useEffect(() => {
+    if (phoneNumber.length == 11) {
+      sendOtpHandler();
+    }
+  }, [phoneNumber]);
 
   const sendOtpHandler = async (e) => {
     if (e) e.preventDefault();
@@ -25,7 +30,6 @@ function AuthContainer() {
       toast.error(error?.response?.data?.message);
     }
   };
-
 
   const renderStep = () => {
     switch (step) {
@@ -51,7 +55,6 @@ function AuthContainer() {
         return null;
     }
   };
-  
 
   return <div>{renderStep()}</div>;
 }

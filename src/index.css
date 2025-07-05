@@ -50,19 +50,23 @@
 
 @layer {
   .brandLogo__text {
-    @apply flex items-center justify-center gap-x-3 text-center font-bold font-inter tracking-widest text-5xl text-blue-600;
+    @apply flex items-center justify-center gap-x-3 text-center font-bold font-vazir  text-4xl text-blue-600;
   }
 
   .numberInput {
-    @apply py-3 px-4 rounded-xl font-vazir font-medium text-secondary-600 w-full outline-none border-[1px] focus:shadow-lg focus:shadow-primary-300 border-transparent hover:border-slate-300 focus:border-indigo-500 duration-300 bg-secondary-200/75   focus:bg-white;
+    @apply py-3 px-4 rounded-xl font-medium text-secondary-600 w-full outline-none border-[1px] focus:shadow-md focus:shadow-primary-300 border-transparent hover:border-slate-400/60 hover:shadow-xs focus:border-indigo-400 duration-300 bg-secondary-200/75   focus:bg-white;
   }
 
   .sendOTPForm__btn {
-    @apply mt-5 text-[17px] text-secondary-0 py-3.5 cursor-pointer w-full  font-medium  duration-300 rounded-xl bg-blue-600 hover:bg-blue-700  ;
+    @apply mt-5 text-[17px] text-secondary-0 py-[13px] cursor-pointer w-full  font-normal  duration-300 rounded-xl bg-blue-600 hover:bg-blue-700;
   }
 
   .checkOTPForm__btn {
-    @apply mt-5 text-[17px] text-secondary-0 py-3.5 cursor-pointer w-full  font-medium  duration-300 rounded-xl ;
+    @apply mt-5  text-secondary-0 py-3.5 w-full  font-medium  duration-300 rounded-xl;
+  }
+
+  .completeProfile__btn {
+    @apply mt-12  text-secondary-0 py-3.5 w-full  font-medium  duration-300 rounded-xl  bg-blue-600 hover:bg-blue-700 cursor-pointer;
   }
 
   .highlightText {
@@ -71,6 +75,14 @@
 
   .containerImage {
     @apply w-[450px];
+  }
+
+  .roleContainer {
+    @apply mx-auto flex  justify-between items-center  mt-10 w-full;
+  }
+
+  .roleOption {
+    @apply px-4 py-2 rounded-xl cursor-pointer duration-300  shadow-xs font-medium;
   }
 }
 

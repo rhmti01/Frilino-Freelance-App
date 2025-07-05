@@ -1,9 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function BackBtn() {
+  const navigate = useNavigate()
+
   return (
-    <a className="cursor-pointer absolute top-1 right-2 ">
+    <a onClick={()=>navigate("/")} className="cursor-pointer absolute -top-24 -right-32 ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

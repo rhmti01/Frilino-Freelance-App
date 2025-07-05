@@ -2,18 +2,20 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-function TextField({ label ,name, value, onChange }) {
+function TextField({ label ,name, value, onChange , type , mt , font , dir , autoFocus = false , }) {
   return (
     <>
-      <label className=" mt-14 p-5 block text-right font-semilight text-secondary-700 " htmlFor={name}>{label}</label>
+      <label className={`  ${mt} p-3 block text-right font-semilight text-secondary-700   `} htmlFor={name}>{label}</label>
       <input
-        className=" numberInput "
+        className={`   numberInput ${font} ${dir}  `}  
         id={name}
         name={name}
         value={value}
         onChange={onChange}
         autoComplete="false"
-        type="tel"
+        type={type}
+        dir={dir}
+        autoFocus={autoFocus}
       />
     </>
   );

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import TextField from "../../ui/TextField";
@@ -9,16 +8,7 @@ import Loading from "../../ui/Loading";
 function SendOTPForm({ onSubmit, isSendingOtp, phoneNumber, onChange }) {
   return (
     <div className=" flex items-center justify-center  w-full h-[100vh] ">
-      <div className="flex items-center justify-center flex-row-reverse gap-x-24 relative   ">
-        {/* container poster */}
-        <div>
-          <img
-            className="containerImage"
-            src="assets/images/Container.png"
-            alt=""
-          />
-        </div>
-
+      <div className="flex items-center justify-center relative   ">
         {/* form section */}
         <div className="flex flex-col  xl:w-[420px] ">
           {/* back button */}
@@ -30,7 +20,7 @@ function SendOTPForm({ onSubmit, isSendingOtp, phoneNumber, onChange }) {
           </div>
           <form onSubmit={onSubmit}>
             {/* form input and text */}
-            <h2 className=" mt-[70px] text-center font-semibold text-[21px] text-blue-900 ">
+            <h2 className=" mt-[70px] text-center font-semibold text-[23px] text-blue-900 ">
               ورود | ثبت نام
             </h2>
             <TextField
@@ -38,15 +28,13 @@ function SendOTPForm({ onSubmit, isSendingOtp, phoneNumber, onChange }) {
               onChange={onChange}
               name="phoneNumber"
               label="شماره موبایل را وارد کنید"
+              type="tel"
+              mt="mt-14"
+              dir="ltr"
             />
-            {isSendingOtp ? (
-              <Loading width="60" height="60" />
-            ) : (
-              <button type="submit" className="sendOTPForm__btn ">
-                تایید و دریافت کد
-              </button>
-            )}
-
+            <button type="submit" className="sendOTPForm__btn ">
+              {isSendingOtp ? <Loading /> : " تایید و دریافت کد"}
+            </button>
             <p className="text-[15px] mt-6 text-secondary-500  ">
               ورود شما به معنای پذیرش{" "}
               <span className="highlightText">شرایط فریلینو</span> و{" "}

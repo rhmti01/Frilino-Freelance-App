@@ -6,7 +6,7 @@ function BackBtn() {
   const navigate = useNavigate()
 
   return (
-    <a onClick={()=>navigate("/")} className="cursor-pointer absolute -top-24 -right-32 ">
+    <a onClick={()=>navigate(-1)} className="cursor-pointer absolute -top-24 -right-32 ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

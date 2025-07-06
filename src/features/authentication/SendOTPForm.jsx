@@ -20,7 +20,7 @@ function SendOTPForm({ onSubmit, isSendingOtp, phoneNumber, onChange }) {
           </div>
           <form onSubmit={onSubmit}>
             {/* form input and text */}
-            <h2 className=" mt-[70px] text-center font-semibold text-[23px] text-blue-900 ">
+            <h2 className=" mt-[70px]  text-[23px] pageTitle ">
               ورود | ثبت نام
             </h2>
             <TextField

@@ -11,7 +11,6 @@ import Loading from "../../ui/Loading";
 import { enToFaNumber } from "../../utils/enToFaNumber";
 import { TbEditCircle } from "react-icons/tb";
 import { minuteFormat } from "../../utils/minuteFormat";
-import { CircularProgress } from "@mui/joy";
 
 function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
   const [otp, setOtp] = useState("");
@@ -44,13 +43,16 @@ function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
     try {
       const { message, user } = await mutateAsync({ phoneNumber, otp });
       toast.success(message);
-      // push user to panel based on role
-      if (user.isActive) {
-        // if (user.role === "OWNER") navigate("/owner");
-        // else if (user.role === "FREELANCER") navigate("/freelancer");
-      } else {
-        navigate("/complete-profile");
+      if (!user.isActive) return navigate("/complete-profile");
+      //  user profile is not active! ==>
+      if (user.status !== 2) {
+        navigate("/");
+        toast("پروفایل شما در انتظار برسی و تایید می باشد!", { icon: "✌🏻" });
+        return;
       }
+      //user profile is acitve! ==>
+      if (user.role === "OWNER") return navigate("/owner");
+      if (user.role === "FREELANCER") return navigate("/freelancer");
     } catch (error) {
       toast.error(error?.response?.data?.message || "خطا در اعتبارسنجی کد");
     }
@@ -82,9 +84,7 @@ function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
 
           <form onSubmit={checkOtpHandler}>
             <div className="mt-[70px] flex flex-col items-center">
-              <h1 className="text-center font-semibold text-[21px] text-blue-900">
-                اعتبارسنجی
-              </h1>
+              <h1 className="pageTitle text-[23px] ">اعتبارسنجی</h1>
               <p className="mt-8 text-secondary-400 font-normal text-[16.5px]">
                 کد ارسال شده به{" "}
                 <span className="text-secondary-700 font-medium">
@@ -100,7 +100,7 @@ function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
                 ویرایش شماره موبایل
               </p>
               <OTPInput
-              shouldAutoFocus={true}
+                shouldAutoFocus={true}
                 value={otp}
                 onChange={setOtp}
                 numInputs={6}

@@ -50,7 +50,7 @@
 
 @layer {
   .brandLogo__text {
-    @apply flex items-center justify-center gap-x-3 text-center font-bold font-vazir  text-4xl text-blue-600;
+    @apply flex items-center justify-center gap-x-3 text-center font-bold font-vazir  text-[40px] text-blue-600  ;
   }
 
   .numberInput {
@@ -62,11 +62,11 @@
   }
 
   .checkOTPForm__btn {
-    @apply mt-5  text-secondary-0 py-3.5 w-full  font-medium  duration-300 rounded-xl;
+    @apply mt-5  text-secondary-0 py-3.5 w-full  font-normal  duration-300 rounded-xl;
   }
 
   .completeProfile__btn {
-    @apply mt-12  text-secondary-0 py-3.5 w-full  font-medium  duration-300 rounded-xl  bg-blue-600 hover:bg-blue-700 cursor-pointer;
+    @apply mt-12  text-secondary-0 py-3.5 w-full  font-normal  duration-300 rounded-xl  bg-blue-600 hover:bg-blue-700 cursor-pointer;
   }
 
   .highlightText {
@@ -83,6 +83,14 @@
 
   .roleOption {
     @apply px-4 py-2 rounded-xl cursor-pointer duration-300  shadow-xs font-medium;
+  }
+
+  .pageTitle {
+    @apply text-center font-semibold text-blue-900;
+  }
+
+  .backMainPage__btn {
+    @apply px-3.5 py-2.5 font-normal text-blue-500 text-lg ring-1 ring-blue-500 rounded-xl mt-6 cursor-pointer duration-300 hover:text-secondary-0 hover:bg-blue-700;
   }
 }
 

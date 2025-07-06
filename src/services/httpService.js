@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const BASE_URL = "http://localhost:5000/api"
+
 const app = axios.create({
-    baseURL : "http://localhost:5000/api" ,
+    baseURL : BASE_URL ,
     withCredentials : true , 
 })
 
@@ -12,5 +14,32 @@ const http ={
     put : app.put ,
     patch : app.patch 
 }
+
+
+app.interceptors.request.use(
+    (res) => res ,
+    (err) => Promise.reject(err)
+)
+
+// response 401 error handling proccess
+app.interceptors.response.use(
+    (res) => res ,
+    async (err) => {
+        const originalConfig = err.config;
+        
+        if (err.response.status  === 401 && !originalConfig._retry ) {
+            originalConfig._retry = true; 
+            try {
+                const { data } = await axios.get(   `${BASE_URL}/user/refresh-token`  , {withCredentials :true} )
+                console.log(data);
+                if (data) return app(originalConfig)
+            } catch (error) {
+                return Promise.reject(err)
+            }
+        }
+        return Promise.reject(err)
+    }
+)
+
 
 export default http;

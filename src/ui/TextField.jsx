@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-function TextField({ label ,name, value, onChange , type , mt , font , dir  , }) {
+function TextField({ label ,name, value, onChange , type , mt , font , dir  , autoFocus = false }) {
   return (
     <>
       <label className={`  ${mt} p-3 block text-right font-semilight text-secondary-700   `} htmlFor={name}>{label}</label>
@@ -15,6 +15,7 @@ function TextField({ label ,name, value, onChange , type , mt , font , dir  , })
         autoComplete="false"
         type={type}
         dir={dir}
+        autoFocus={autoFocus}
       />
     </>
   );

@@ -50,7 +50,7 @@
 
 @layer {
   .brandLogo__text {
-    @apply flex items-center justify-center gap-x-3 text-center font-bold font-vazir  text-[40px] text-blue-600  ;
+    @apply flex items-center justify-center gap-x-1 text-center font-bold font-vazir  text-[40px] text-blue-600;
   }
 
   .numberInput {
@@ -58,15 +58,15 @@
   }
 
   .sendOTPForm__btn {
-    @apply mt-5 text-[17px] text-secondary-0 py-[13px] cursor-pointer w-full  font-normal  duration-300 rounded-xl bg-blue-600 hover:bg-blue-700;
+    @apply mt-5 text-[17px] text-secondary-0 py-[13px] cursor-pointer w-full  font-normal  duration-300 rounded-xl bg-blue-600 hover:bg-blue-700 shadow-md;
   }
 
   .checkOTPForm__btn {
-    @apply mt-5  text-secondary-0 py-3.5 w-full  font-normal  duration-300 rounded-xl;
+    @apply mt-5  text-secondary-0 py-3.5 w-full  font-normal  duration-300 rounded-xl shadow-md;
   }
 
   .completeProfile__btn {
-    @apply mt-12  text-secondary-0 py-3.5 w-full  font-normal  duration-300 rounded-xl  bg-blue-600 hover:bg-blue-700 cursor-pointer;
+    @apply mt-12  text-secondary-0 py-3.5 w-full  font-normal  duration-300 rounded-xl  bg-blue-600 hover:bg-blue-700 cursor-pointer shadow-md;
   }
 
   .highlightText {
@@ -92,10 +92,19 @@
   .backMainPage__btn {
     @apply px-3.5 py-2.5 font-normal text-blue-500 text-lg ring-1 ring-blue-500 rounded-xl mt-6 cursor-pointer duration-300 hover:text-secondary-0 hover:bg-blue-700;
   }
+
+  .appLayout {
+    @apply bg-white grid grid-cols-1 xl:grid-cols-[325px_1fr] grid-rows-[85px_1fr] w-full h-screen;
+  }
+
+  .divider {
+    @apply ring-1 ring-secondary-200;
+  }
 }
 
 /* costum window scrol */
 @layer base {
+
   body::-webkit-scrollbar {
     width: 8px;
     cursor: pointer;

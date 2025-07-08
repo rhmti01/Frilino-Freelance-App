@@ -7,7 +7,7 @@ const app = axios.create({
     withCredentials : true , 
 })
 
-const http ={
+export const http ={
     get : app.get ,
     post : app.post ,
     delete : app.delete , 

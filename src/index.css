@@ -45,7 +45,7 @@
 
   /* costum font */
   --font-vazir: "Vazirmatn";
-  --font-inter: "Inter";
+  --font-inter: "Inter", "Vazirmatn";
 }
 
 @layer {
@@ -54,7 +54,7 @@
   }
 
   .numberInput {
-    @apply py-3 px-4 rounded-xl font-medium text-secondary-600 w-full outline-none border-[1px] focus:shadow-md focus:shadow-primary-300 border-transparent hover:border-slate-400/60 hover:shadow-xs focus:border-indigo-400 duration-300 bg-secondary-200/75   focus:bg-white;
+    @apply py-3 px-4 rounded-xl font-normal font-inter  text-secondary-600 w-full outline-none border-[1px] focus:shadow-md focus:shadow-primary-300 border-transparent hover:border-slate-400/60 hover:shadow-xs focus:border-indigo-400 duration-300 bg-secondary-200/75   focus:bg-white;
   }
 
   .sendOTPForm__btn {
@@ -100,11 +100,26 @@
   .divider {
     @apply ring-1 ring-secondary-200;
   }
+
+    .badge {
+    @apply inline-block whitespace-nowrap rounded-xl px-2 py-0.5;
+  }
+  .badge--primary {
+    @apply bg-primary-900 text-white;
+  }
+  .badge--secondary {
+    @apply bg-secondary-200 text-secondary-600;
+  }
+  .badge--success {
+    @apply bg-green-500 text-white;
+  }
+  .badge--danger {
+    @apply bg-red-500 text-white;
+  }
 }
 
 /* costum window scrol */
 @layer base {
-
   body::-webkit-scrollbar {
     width: 8px;
     cursor: pointer;

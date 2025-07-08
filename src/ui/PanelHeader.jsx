@@ -1,5 +1,6 @@
 import React from "react";
 import useUser from "../features/authentication/useUser";
+import { getGreetingMessage } from "../utils/getGreetingMessage";
 
 function PanelHeader() {
   const {data}  = useUser()
@@ -12,7 +13,7 @@ function PanelHeader() {
         {name} {" "} 
         </p>
         <span className=" w-[2px] h-4 bg-secondary-300 mx-2 " ></span>
-        <p className=" font-semibold text-secondary-600 " >عصر بخیر</p>
+        <p className=" font-semibold text-secondary-600 " >{getGreetingMessage()}</p>
     </div>
   );
 }

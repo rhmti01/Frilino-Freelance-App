@@ -3,15 +3,15 @@
 import { CircularProgress } from "@mui/joy";
 import React from "react";
 
-function Loading({mt , mb}) {
+function Loading({mt = "" , mb = " " , size = "sm" , variant = "soft"}) {
   return (
     <div className={`  ${mt} ${mb}  flex justify-center  `}  >
       <CircularProgress
         color="primary"
         determinate={false}
-        size="sm"
+        size={size}
         value={34}
-        variant="soft"
+        variant={variant}
       />
     </div>
   );

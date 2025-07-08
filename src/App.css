@@ -1,0 +1,54 @@
+/* TABLE */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: max-content;
+  min-width: 100%;
+}
+
+.table-container {
+  overflow-x: auto;
+  direction: ltr; 
+}
+
+.table-container table {
+  direction: rtl; 
+}
+
+table td,
+table th {
+  border-bottom: 1px solid var(--color-secondary-200);
+  text-align: right;
+  white-space: nowrap;
+  padding: 1rem;
+  font-weight: 500;
+}
+
+.title-row {
+  background-color: var(--color-secondary-200);
+}
+
+table th {
+  color: var(--color-secondary-600);
+  font-size: 0.9rem;
+}
+
+table td {
+  font-size: 0.85rem;
+  color: var(--color-secondary-600);
+}
+
+
+
+/* inupt number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}

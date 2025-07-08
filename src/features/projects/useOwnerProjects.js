@@ -8,6 +8,6 @@ export function useOwnerProjects() {
     })
 
     const { projects } = data || {}
-    return { projects , data }
+    return { projects , isLoading }
 }
 

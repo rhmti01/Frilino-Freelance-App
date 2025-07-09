@@ -7,15 +7,15 @@ function Modal({ open, onClose, children, title }) {
       <div>
         <div
           onClick={onClose}
-          className=" cursor-pointer backdrop-blur-xl inset-0 fixed w-full h-screen
-         bg-secondary-800 opacity-30 z-50 "
+          className=" cursor-default backdrop-blur-xs inset-0 fixed w-full h-screen
+         bg-secondary-900/20  z-50 "
         ></div>
         <div
-          className=" fixed top-1/2  left-1/2 -translate-1/2
-         p-5 shadow-sm shadow-secondary-100 bg-secondary-0 rounded-xl duration-300 ease-out
-          transition-all  z-50 w-[350px] flex items-center flex-col  "
+          className="  fixed top-1/2  left-1/2 -translate-1/2
+         p-3 shadow-sm shadow-secondary-100 bg-secondary-0 rounded-xl duration-300 ease-out
+          transition-all  z-50 w-[calc(100vw-3rem)] md:max-w-[350px] max-h-[calc(100vh-2rem)] overflow-y-auto flex items-center flex-col  "
         >
-          <h1 className="  text-xl text-secondary-700 font-bold ">
+          <h1 className=" mt-2 text-xl text-secondary-700 font-bold ">
             {title}
           </h1>
           <div
@@ -24,7 +24,7 @@ function Modal({ open, onClose, children, title }) {
           >
             <CloseSquare variant="Broken" className=" size-8 text-red-600  " />
           </div>
-          <div className="mt-10 ">{children}</div>
+          <div className="mt-10 w-full ">{children}</div>
         </div>
       </div>
     )

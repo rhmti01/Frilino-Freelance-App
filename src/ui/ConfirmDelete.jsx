@@ -3,17 +3,17 @@ import React from "react";
 function ConfirmDelete({ resourceTitle, onClose, onConfirm, disabled }) {
   return (
     <div className=" w-full flex items-center flex-col mt-1 ">
-      <h2 className=" w-full font-normal text-base text-secondary-700 ">
+      <h2 className=" w-full text-center font-normal text-base text-secondary-700 ">
         ایا از حذف{" "}
-        <span className=" font-semibold text-secondary-800 ">{resourceTitle}</span>{" "}
+        <span className=" font-semibold text-secondary-800 text-wrap">{resourceTitle}</span>{" "}
         مطمئن هستید؟
       </h2>
-      <div className="flex justify-around items-center w-full mt-7 ">
+      <div className="flex justify-between items-center w-full mt-8 gap-x-2 ">
         <button
           onClick={onClose}
           disabled={disabled}
           className=" hover:shadow-none duration-300 shadow-sm shadow-secondary-200 
-        cursor-pointer px-8 py-2 bg-secondary-200 text-secondary-800 rounded-lg font-medium
+        cursor-pointer w-full py-2 bg-secondary-200 text-secondary-800 rounded-lg font-medium
          text-[15px]  "
         >
           لفو
@@ -22,7 +22,7 @@ function ConfirmDelete({ resourceTitle, onClose, onConfirm, disabled }) {
           onClick={onConfirm}
           disabled={disabled}
           className=" hover:shadow-none duration-300 shadow-sm shadow-red-200
-         cursor-pointer px-8 py-2 bg-red-300 text-red-900 rounded-lg font-medium text-[15px]  "
+         cursor-pointer w-full py-2 bg-red-300 text-red-900 rounded-lg font-medium text-[15px]  "
         >
           تایید
         </button>

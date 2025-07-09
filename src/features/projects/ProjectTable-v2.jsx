@@ -7,7 +7,7 @@ import ProjectTableRow from "./ProjectTableRow";
 
 function ProjectTable() {
   const { projects, isLoading } = useOwnerProjects();
-  console.log(projects, isLoading);
+  console.log(projects,isLoading);
 
   if (isLoading) {
     return (

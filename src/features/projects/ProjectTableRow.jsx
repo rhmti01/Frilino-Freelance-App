@@ -7,10 +7,12 @@ import { truncateText } from "../../utils/truncateText";
 import { numberDivider } from "../../utils/numberDivider";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
+import useRemoveProject from "./useRemoveProject";
 
 function ProjectTableRow({ project, index }) {
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+  const { isDeleting, removeProject } = useRemoveProject();
 
   return (
     <Table.Row>
@@ -26,8 +28,8 @@ function ProjectTableRow({ project, index }) {
         />
       </td>
       <td>{toFaShortDate(project.deadline)}</td>
-      <td>
-        <div className="flex items-center gap-2 flex-wrap max-w-60 ">
+      <td className=" flex items-center justify-start w-56 " >
+        <div className="flex items-center gap-2 flex-wrap   ">
           {project.tags.map((tag) => (
             <span className="badge badge--secondary " key={tag}>
               {tag}
@@ -47,9 +49,9 @@ function ProjectTableRow({ project, index }) {
           <span className=" badge badge--danger  ">بسته</span>
         )}
       </td>
-      <td className=" flex items-center ">
+      <td>
         <>
-          <button className="mx-4" onClick={() => setIsEditOpen(true)}>
+          <button className="mx-4 " onClick={() => setIsEditOpen(true)}>
             <Edit
               variant="Broken"
               className=" cursor-pointer size-6 mt-1 text-blue-600 "
@@ -78,7 +80,9 @@ function ProjectTableRow({ project, index }) {
             <ConfirmDelete
               onClose={() => setIsDeleteOpen(false)}
               resourceTitle={project.title}
-              onConfirm={() => {}}
+              onConfirm={()=>removeProject(project._id, {
+                onSuccess: () => setIsDeleteOpen(false),
+              })}
               disabled={false}
             />
           </Modal>

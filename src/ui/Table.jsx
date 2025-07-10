@@ -1,6 +1,6 @@
 function Table({ children }) {
   return (
-    <div className="table-container max-w-5xl mx-auto mt-8">
+    <div className="table-container min-w-[900px] mt-8  ">
       <table>{children}</table>
     </div>
   );

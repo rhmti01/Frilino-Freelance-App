@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* @plugin "@tailwindcss/forms"; */
+@plugin "@tailwindcss/forms";
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -54,7 +54,7 @@
   }
 
   .numberInput {
-    @apply py-3 px-4 rounded-xl font-normal font-inter  text-secondary-600 w-full outline-none border-[1px] focus:shadow-md focus:shadow-primary-300 border-transparent hover:border-slate-400/60 hover:shadow-xs focus:border-indigo-400 duration-300 bg-secondary-200/75   focus:bg-white;
+    @apply py-3 px-4 rounded-xl font-normal font-inter  text-secondary-600 w-full outline-none border-[1px] focus:shadow-sm focus:shadow-primary-300 border-transparent hover:border-slate-400/60 hover:shadow-xs focus:border-indigo-300 duration-300 bg-secondary-200/65   focus:bg-white;
   }
 
   .sendOTPForm__btn {
@@ -94,7 +94,7 @@
   }
 
   .appLayout {
-    @apply bg-white grid grid-cols-1 xl:grid-cols-[325px_1fr] grid-rows-[85px_1fr] w-full h-screen;
+    @apply  grid grid-cols-1 xl:grid-cols-[320px_1fr] 2xl:grid-cols-[360px_1fr] grid-rows-[85px_1fr] w-full h-screen ;
   }
 
   .divider {
@@ -104,18 +104,23 @@
     .badge {
     @apply inline-block whitespace-nowrap rounded-xl px-2 py-0.5;
   }
+
   .badge--primary {
     @apply bg-primary-900 text-white;
   }
+
   .badge--secondary {
     @apply bg-secondary-200 text-secondary-600;
   }
+
   .badge--success {
     @apply bg-green-500 text-white;
   }
+  
   .badge--danger {
     @apply bg-red-500 text-white;
   }
+
 }
 
 /* costum window scrol */

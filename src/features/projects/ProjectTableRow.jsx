@@ -15,8 +15,8 @@ function ProjectTableRow({ project, index }) {
   const { isDeleting, removeProject } = useRemoveProject();
 
   return (
-    <Table.Row>
-      <td>{enToFaNumber(index + 1)}</td>
+    <Table.Row  >
+      <td >{enToFaNumber(index + 1)}</td>
       <td>{truncateText(project.title, 30)}</td>
       <td>{project.category.title}</td>
       <td>
@@ -28,7 +28,7 @@ function ProjectTableRow({ project, index }) {
         />
       </td>
       <td>{toFaShortDate(project.deadline)}</td>
-      <td className=" flex items-center justify-start w-56 " >
+      <td className="  w-60 xl:w-96 h-full " >
         <div className="flex items-center gap-2 flex-wrap   ">
           {project.tags.map((tag) => (
             <span className="badge badge--secondary " key={tag}>

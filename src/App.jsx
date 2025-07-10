@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import AppLayout from "./ui/AppLayout";
 import OwnerDashboard from "./pages/OwnerDashboard";
-import Projects from "./ui/Projects";
+import Projects from "./features/projects/Projects";
 import Project from "./ui/Project";
 
 const queryClient = new QueryClient();

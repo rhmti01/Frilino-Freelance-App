@@ -12,8 +12,8 @@ function ConfirmDelete({ resourceTitle, onClose, onConfirm, disabled }) {
         <button
           onClick={onClose}
           disabled={disabled}
-          className=" hover:shadow-none duration-300 shadow-sm shadow-secondary-200 
-        cursor-pointer w-full py-2 bg-secondary-200 text-secondary-800 rounded-lg font-medium
+          className=" hover:shadow-none duration-100 shadow-sm shadow-secondary-200 
+        cursor-pointer w-full py-2 bg-gray-300 hover:bg-gray-400/75  text-secondary-800 rounded-lg font-medium
          text-[15px]  "
         >
           لفو
@@ -21,8 +21,8 @@ function ConfirmDelete({ resourceTitle, onClose, onConfirm, disabled }) {
         <button
           onClick={onConfirm}
           disabled={disabled}
-          className=" hover:shadow-none duration-300 shadow-sm shadow-red-200
-         cursor-pointer w-full py-2 bg-red-300 text-red-900 rounded-lg font-medium text-[15px]  "
+          className=" hover:shadow-none duration-100 shadow-sm shadow-red-200
+         cursor-pointer w-full py-2 bg-red-400 hover:bg-red-500 text-white rounded-lg font-medium text-[15px]  "
         >
           تایید
         </button>

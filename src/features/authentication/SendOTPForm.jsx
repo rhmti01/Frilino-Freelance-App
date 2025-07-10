@@ -5,7 +5,8 @@ import BrandLogo from "../../ui/BrandLogo";
 import BackBtn from "../../ui/BackBtn";
 import Loading from "../../ui/Loading";
 
-function SendOTPForm({ onSubmit, isSendingOtp, phoneNumber, onChange }) {
+function SendOTPForm({ onSubmit, isSendingOtp, register, errors }) {
+  
   return (
     <div className=" flex items-center justify-center  w-full h-[100vh] ">
       <div className="flex items-center justify-center relative   ">
@@ -24,13 +25,25 @@ function SendOTPForm({ onSubmit, isSendingOtp, phoneNumber, onChange }) {
               ورود | ثبت نام
             </h2>
             <TextField
-              value={phoneNumber}
-              onChange={onChange}
               name="phoneNumber"
               label="شماره موبایل را وارد کنید"
+              dir="ltr"
               type="tel"
               mt="mt-14"
-              dir="ltr"
+              register={register}
+              required
+              errors={errors}
+              validationSchema={{
+                required: "وارد کردن شماره موبایل ضروری است",
+                validate: {
+                  validFormat: (value) =>
+                    /^09\d{9}$/.test(value) ||
+                    "شماره موبایل باید با 09 شروع شود و 11 رقم باشد",
+                  notRepeated: (value) =>
+                    !/^09(\d)\1{8}$/.test(value) ||
+                    "شماره موبایل نباید شامل ارقام تکراری باشد",
+                },
+              }}
             />
             <button type="submit" className="sendOTPForm__btn ">
               {isSendingOtp ? <Loading /> : " تایید و دریافت کد"}

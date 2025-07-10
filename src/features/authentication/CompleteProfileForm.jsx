@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import TextField from "../../ui/TextField";
-import { TbUserSearch } from "react-icons/tb";
 import toast from "react-hot-toast";
-import RoleOption from "../../ui/RoleOption";
 import { useMutation } from "@tanstack/react-query";
 import { completeProfile } from "../../services/authService";
 import Loading from "../../ui/Loading";
 import BackBtn from "../../ui/BackBtn";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import RadioInputGroup from "../../ui/RadioInputGroup";
 
 function CompleteProfileForm() {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+        watch,
+  } = useForm();
   const navigate = useNavigate();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [role, setRole] = useState(null);
   const { mutateAsync, isPending: isUpdatingProfile } = useMutation({
     mutationFn: completeProfile,
   });
@@ -22,11 +25,11 @@ function CompleteProfileForm() {
     setRole(newRole);
   };
 
-  const onCompleteProfile = async (e) => {
-    e.preventDefault();
+  const onCompleteProfile = async (data) => {
+    console.log(data);
 
     try {
-      const { message, user } = await mutateAsync({ name, email, role });
+      const { message, user } = await mutateAsync(data);
       toast.success(message);
       //  user profile is not active! ==>
       if (user.status !== 2) {
@@ -47,7 +50,7 @@ function CompleteProfileForm() {
       <div className="flex flex-col items-center justify-center w-full h-[100vh] relative  ">
         {/* get {name , email , role} by form inputs */}
         <form
-          onSubmit={onCompleteProfile}
+          onSubmit={handleSubmit(onCompleteProfile)}
           className="flex flex-col xl:max-w-sm w-full relative "
         >
           {/* back button */}
@@ -55,22 +58,53 @@ function CompleteProfileForm() {
 
           <h1 className="pageTitle text-[24px]">تکمیل حساب کاربری</h1>
           <TextField
-            mt="mt-16"
             label="نام و نام خانوادگی"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            font="font-vazir"
+            name="fullName"
+            mt="mt-16"
             dir="rtl"
+            register={register}
+            errors={errors}
+            validationSchema={{
+              required: "وارد کردن نام ضروری است",
+              pattern: {
+                value: /^[آ-ی\s]{4,30}$/,
+                message: "نام باید فقط شامل حروف فارسی باشد (۲ تا ۳۰ حرف)",
+              },
+            }}
           />
           <TextField
-            mt="mt-4"
             label="ایمیل"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            font="font-inter"
+            name="email"
+            type="email"
+            register={register}
+            errors={errors}
+            mt="mt-4"
             dir="ltr"
+            validationSchema={{
+              required: "وارد کردن ایمیل ضروری است",
+              pattern: {
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                message: "فرمت ایمیل معتبر نیست",
+              },
+            }}
           />
-          <div className="roleContainer mt-6">
+          <RadioInputGroup
+            errors={errors}
+            register={register}
+            watch={watch}
+            configs={{
+              name: "role",
+              validationSchema: { required: "انتخاب نقش ضروری است" },
+              options: [
+                {
+                  value: "OWNER",
+                  label: "کارفرما",
+                },
+                { value: "FREELANCER", label: "فریلنسر" },
+              ],
+            }}
+          />
+          {/* <div className="roleContainer mt-6">
             <p className="text-secondary-700 flex items-start gap-x-2">
               <TbUserSearch size="20" />
               نقش کاربر:
@@ -89,7 +123,7 @@ function CompleteProfileForm() {
                 onChangeRole={handleRoleChange}
               />
             </div>
-          </div>
+          </div> */}
           <button
             disabled={isUpdatingProfile}
             type="submit"

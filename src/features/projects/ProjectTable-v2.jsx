@@ -35,7 +35,7 @@ function ProjectTable() {
   return (
     <Table>
       <Table.Header>
-        <th>#</th>
+        <th className=" bg-secondary-200 rounded-tr-xl" >#</th>
         <th>عنوان پروژه</th>
         <th>دسته بندی</th>
         <th>بودجه</th>
@@ -43,7 +43,7 @@ function ProjectTable() {
         <th>تگ ها</th>
         <th>فریلنسر</th>
         <th>وضعیت</th>
-        <th>عملیات</th>
+        <th className=" bg-secondary-200 rounded-tl-xl  " >عملیات</th>
       </Table.Header>
       <Table.Body>
         {projects?.map((project, index) => (

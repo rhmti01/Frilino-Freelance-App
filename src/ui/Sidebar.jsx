@@ -20,7 +20,7 @@ function Sidebar() {
         <div className=" flex flex-col items-center  pt-7 pb-3 bg-white w-85/100 mt-7  ring-1 ring-secondary-200 rounded-xl ">
           <div className="flex justify-around items-center w-full px-3 ">
             <img
-              className=" size-[52px] "
+              className=" size-[52px] rounded-full   "
               src="/assets/images/empty-profile-img.png"
               alt="user-profile"
             />

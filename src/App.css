@@ -8,8 +8,7 @@ table {
 }
 
 .table-container {
-  overflow-x: auto;
-  direction: ltr; 
+  direction: rtl; 
 }
 
 .table-container table {
@@ -19,7 +18,7 @@ table {
 table td,
 table th {
   border-bottom: 1px solid var(--color-secondary-200);
-  text-align: right;
+  text-align: center;
   white-space: nowrap;
   padding: 1rem;
   font-weight: 500;
@@ -38,6 +37,7 @@ table td {
   font-size: 0.85rem;
   color: var(--color-secondary-600);
 }
+
 
 
 

@@ -5,11 +5,13 @@ function Modal({ open, onClose, children, title }) {
   return (
     open && (
       <div>
+        {/* backdrop blur */}
         <div
           onClick={onClose}
           className=" cursor-default backdrop-blur-xs inset-0 fixed w-full h-screen
          bg-secondary-900/20  z-50 "
         ></div>
+
         <div
           className="  fixed top-1/2  left-1/2 -translate-1/2
          p-3 shadow-sm shadow-secondary-100 bg-secondary-0 rounded-xl duration-300 ease-out

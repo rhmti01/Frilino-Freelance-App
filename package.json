@@ -23,10 +23,11 @@
     "react-hook-form": "^7.60.0",
     "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
-    "react-loader-spinner": "^6.1.6",
+    "react-multi-date-picker": "^4.5.2",
     "react-npm": "^2.6.1",
     "react-otp-input": "^3.1.1",
-    "react-router-dom": "^7.6.3"
+    "react-router-dom": "^7.6.3",
+    "react-tag-input-component": "^2.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

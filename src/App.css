@@ -8,11 +8,11 @@ table {
 }
 
 .table-container {
-  direction: rtl; 
+  direction: rtl;
 }
 
 .table-container table {
-  direction: rtl; 
+  direction: rtl;
 }
 
 table td,
@@ -38,9 +38,6 @@ table td {
   color: var(--color-secondary-600);
 }
 
-
-
-
 /* inupt number */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -51,4 +48,119 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
+}
+
+.form-select {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAAABGdBTUEAALGPC/xhBQAAAQtJREFUOBG1lEEOgjAQRalbGj2OG9caOACn4ALGtfEuHACiazceR1PWOH/CNA3aMiTaBDpt/7zPdBKy7M/DCL9pGkvxxVp7KsvyJftL5rZt1865M+Ucq6pyyF3hNcI7Cuu+728QYn/JQA5yKaempxuZmQngOwEaYx55nu+1lQh8GIatMGi+01NwBcEmhxBqK4nAPZJ78K0KKFAJmR3oPp8+Iwgob0Oa6+TLoeCvRx+mTUYf/FVBGTPRwDkfLxnaSrRwcH0FWhNOmrkWYbE2XEicqgSa1J0LQ+aPCuQgZiLnwewbGuz5MGoAhcIkCQcjaTBjMgtXGURMVHC1wcQEy0J+Zlj8bKAnY1/UzDe2dbAVqfXn6wAAAABJRU5ErkJggg==");
+  background-size: 0.7rem;
+  background-position: left 1.2rem center;
+}
+
+.rti--container * {
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.rti--container {
+  /* Custom Properties */
+  --rti-bg: #ffffff;
+  --rti-border: #d1d5db; /* Tailwind slate-300 */
+  --rti-main: #3b82f6; /* Tailwind blue-500 */
+  --rti-radius: 0.5rem; /* rounded-md/lg */
+  --rti-s: 0.5rem;
+  --rti-tag: #f1f5f9; /* slate-100 */
+  --rti-tag-text: #334155; /* slate-700 */
+  --rti-tag-remove: #ef4444; /* red-500 */
+  --rti-tag-padding: 0.25rem 5rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--rti-s);
+  background-color: var(--rti-bg);
+  border: 1px solid var(--rti-border);
+  border-radius: var(--rti-radius);
+  padding: var(--rti-s);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.rti--container:focus-within {
+  border-color: var(--rti-main);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); /* soft focus ring */
+}
+
+/* Input Field */
+.rti--input {
+  flex: 1 1 120px;
+  min-width: 80px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0.4rem 0.5rem;
+  color: var(--rti-tag-text);
+}
+
+/* Tag Styling */
+.rti--tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  background-color: var(--rti-tag);
+  color: var(--rti-tag-text);
+  border-radius: var(--rti-radius);
+  padding: var(--rti-tag-padding);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Remove Button */
+.rti--tag button {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  padding: 0.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.rti--tag button:hover {
+  color: var(--rti-tag-remove);
+  background-color: rgba(239, 68, 68, 0.1); /* subtle hover bg */
+}
+
+.custom-input {
+  text-align: right;
+  background-color : transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.custom-input:focus {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  outline-offset: none;
+  outline: none !important;
+  outline-offset: 0 !important;
+  --tw-ring-inset: initial !important;
+  --tw-ring-offset-width: 0 !important;
+  --tw-ring-offset-color: transparent !important;
+  --tw-ring-color: transparent !important;
+  --tw-ring-offset-shadow: none !important;
+  --tw-ring-shadow: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
 }

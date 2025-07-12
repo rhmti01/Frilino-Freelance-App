@@ -9,7 +9,7 @@ function Projects() {
   return (
     <div
       className=" flex flex-col items-start mx-auto bg-secondary-100/50 
-    rounded-2xl 2xl:py-7 2xl:pl-7 xl:py-7 xl:pl-5 mt-8 overflow-x-auto w-full 
+    rounded-2xl 2xl:py-7 2xl:pl-7 xl:py-7 xl:pl-5 md:px-10 mt-8 overflow-x-auto w-full 
     max-w-7xl "
     >
       <CreateProjectForm

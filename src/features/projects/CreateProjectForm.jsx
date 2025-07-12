@@ -1,17 +1,43 @@
 import { CloseSquare } from "iconsax-reactjs";
 import React, { useState } from "react";
 import TextField from "../../ui/TextField";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import RHFSelect from "../../ui/RHFSelect";
+import TagsInput from "../../ui/TagsInput";
+import DatePickerField from "../../ui/DatePickerField";
+import useCategories from "../../hooks/useCategories";
+import useCreateProjects from "./useCreateProjects";
+import Loading from "../../ui/Loading";
 
 function CreateProjectForm({ open, onClose }) {
   const {
     register,
+    setValue,
     formState: { errors },
     handleSubmit,
+    trigger,
+    reset,
   } = useForm();
+  const [tags, setTags] = useState([]);
+  const [date, setDate] = useState(new Date());
+
+  const { categories } = useCategories();
+  const { isCreating, createProject } = useCreateProjects();
 
   const onSubmit = (data) => {
-    console.log(data);
+    const newProject = {
+      ...data,
+      deadline: new Date(date).toISOString(),
+      tags,
+    };
+    createProject(newProject, {
+      onSuccess: ()=>{
+        onClose()
+        reset()
+      }
+    });
+
+    console.log(newProject);
   };
 
   return (
@@ -41,7 +67,7 @@ function CreateProjectForm({ open, onClose }) {
           <div className="mt-5 mb-2 w-full flex flex-col ">
             <form onSubmit={handleSubmit(onSubmit)} className="px-3">
               <TextField
-                label="عنوان پروژه"
+                label="عنوان "
                 name="title"
                 register={register}
                 required
@@ -60,7 +86,7 @@ function CreateProjectForm({ open, onClose }) {
               />
               <TextField
                 mt="mt-2"
-                label="توضیحات پروژه"
+                label="توضیحات "
                 name="description"
                 register={register}
                 required
@@ -78,7 +104,7 @@ function CreateProjectForm({ open, onClose }) {
                 }}
               />{" "}
               <TextField
-                label="بودجه پروژه"
+                label="بودجه "
                 name="budget"
                 dir="ltr"
                 mt="mt-2"
@@ -94,15 +120,38 @@ function CreateProjectForm({ open, onClose }) {
                   maxLength: {
                     value: 10,
                     message: "طول بودجه نامعتبر است",
-                  }
+                  },
                 }}
+              />
+              <RHFSelect
+                label="دسته بندی"
+                name="category"
+                register={register}
+                options={categories}
+                required
+              />
+              <TagsInput
+                name="tags"
+                register={register}
+                error={errors?.tags?.message}
+                setValue={setValue}
+                trigger={trigger}
+                tags={tags}
+                setTags={setTags}
+                required
+              />
+              <DatePickerField
+                required
+                date={date}
+                setDate={setDate}
+                label="ددلاین"
               />
               <button
                 type="submit"
                 className=" py-3 w-full bg-blue-600 hover:bg-blue-700
                duration-300 cursor-pointer mt-6 text-white rounded-xl  "
               >
-                تایید
+                {isCreating ? <Loading/> :  "تایید" }
               </button>
             </form>
           </div>

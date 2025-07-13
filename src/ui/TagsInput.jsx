@@ -13,23 +13,21 @@ const TagsInput = ({
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
 
-  const addTag = (value) => {
-    const trimmed = value.trim();
-    if (trimmed && !tags.includes(trimmed)) {
-      const newTags = [...tags, trimmed];
-      setTags(newTags);
-      setValue(name, newTags); // ست کردن مقدار به فرم
-      trigger(name); // اجرای ولیدیشن
-    }
-    setInputValue("");
-  };
-
-  const removeTag = (indexToRemove) => {
-    const newTags = tags.filter((_, index) => index !== indexToRemove);
+const addTag = (value) => {
+  const trimmed = value.trim();
+  if (trimmed && !tags.includes(trimmed)) {
+    const newTags = [...tags, trimmed];
     setTags(newTags);
-    setValue(name, newTags);
-    trigger(name);
-  };
+    setValue(name, newTags, { shouldValidate: true })
+  }
+  setInputValue("");
+};
+
+const removeTag = (indexToRemove) => {
+  const newTags = tags.filter((_, index) => index !== indexToRemove);
+  setTags(newTags);
+  setValue(name, newTags, { shouldValidate: true })
+};
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" || e.key === ",") {
@@ -95,7 +93,6 @@ const TagsInput = ({
         />
       </div>
 
-      {/* نمایش ارور */}
       {error && (
         <span className=" text-error block text-sm mt-2 ">
           <Warning2 className=" size-4 inline ml-2 " variant="Broken" />
@@ -103,12 +100,11 @@ const TagsInput = ({
         </span>
       )}
 
-      {/* این اینپوت پنهان لازمه برای register */}
       <input
         type="hidden"
         {...register(name, {
           validate: (value) =>
-            value && value.length > 0 ? true : "حداقل یک تگ وارد کنید",
+            value && value.length > 0 ? true : "افزودن حداقل یک تگ الزامی است",
         })}
       />
     </div>

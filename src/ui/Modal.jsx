@@ -1,7 +1,7 @@
 import { CloseSquare } from "iconsax-reactjs";
 import React from "react";
 
-function Modal({ open, onClose, children, title }) {
+function Modal({ open, onClose, children, title  }) {
   return (
     open && (
       <div>
@@ -13,9 +13,10 @@ function Modal({ open, onClose, children, title }) {
         ></div>
 
         <div
-          className="  fixed top-1/2  left-1/2 -translate-1/2
+          className={` fixed top-1/2  left-1/2 -translate-1/2
          p-3 shadow-sm shadow-secondary-100 bg-secondary-0 rounded-xl duration-300 ease-out
-          transition-all  z-50 w-[calc(100vw-3rem)] md:max-w-[350px] max-h-[calc(100vh-2rem)] overflow-y-auto flex items-center flex-col  "
+          transition-all  z-50 w-[calc(100vw-3rem)] md:max-w-[500px] max-h-[calc(100vh-2rem)] overflow-y-auto
+          flex items-center flex-col   `}
         >
           <h1 className=" mt-2 text-xl text-secondary-700 font-bold ">
             {title}

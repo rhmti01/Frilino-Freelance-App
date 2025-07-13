@@ -8,6 +8,8 @@ import { numberDivider } from "../../utils/numberDivider";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import useRemoveProject from "./useRemoveProject";
+import CreateProjectForm from "./CreateProjectForm";
+import ToggleProject from "./ToggleProject";
 
 function ProjectTableRow({ project, index }) {
   const [isEditOpen, setIsEditOpen] = useState(false);
@@ -15,8 +17,8 @@ function ProjectTableRow({ project, index }) {
   const { isDeleting, removeProject } = useRemoveProject();
 
   return (
-    <Table.Row  >
-      <td >{enToFaNumber(index + 1)}</td>
+    <Table.Row>
+      <td>{enToFaNumber(index + 1)}</td>
       <td>{truncateText(project.title, 30)}</td>
       <td>{project.category.title}</td>
       <td>
@@ -28,7 +30,7 @@ function ProjectTableRow({ project, index }) {
         />
       </td>
       <td>{toFaShortDate(project.deadline)}</td>
-      <td className="  w-60 xl:w-96 h-full " >
+      <td className="  w-40 xl:w-40 h-full  ">
         <div className="flex items-center gap-2 flex-wrap   ">
           {project.tags.map((tag) => (
             <span className="badge badge--secondary " key={tag}>
@@ -43,30 +45,40 @@ function ProjectTableRow({ project, index }) {
         )}
       </td>
       <td>
-        {project.status === "OPEN" ? (
+        {/* {project.status === "OPEN" ? (
           <span className=" badge badge--success  ">باز</span>
         ) : (
           <span className=" badge badge--danger  ">بسته</span>
-        )}
+        )} */}
+        <ToggleProject project={project} />
       </td>
-      <td>
+      <td className=" h-full">
         <>
-          <button className="mx-4 " onClick={() => setIsEditOpen(true)}>
-            <Edit
-              variant="Broken"
-              className=" cursor-pointer size-6 mt-1 text-blue-600 "
-            />
-          </button>
           <Modal
             onClose={() => setIsEditOpen(false)}
             title={`  ویرایش ${project.title}  `}
             open={isEditOpen}
           >
-            dynamic children text - edit
+            <CreateProjectForm
+              projectToEdit={project}
+              onClose={() => setIsEditOpen(false)}
+            />
           </Modal>
+          <button
+            className="mx-2 inline-flex "
+            onClick={() => setIsEditOpen(true)}
+          >
+            <Edit
+              variant="Broken"
+              className=" cursor-pointer size-6 mt-1 text-blue-600 "
+            />
+          </button>
         </>
         <>
-          <button onClick={() => setIsDeleteOpen(true)}>
+          <button
+            className="mx-2 inline-flex "
+            onClick={() => setIsDeleteOpen(true)}
+          >
             <Trash
               variant="Broken"
               className=" cursor-pointer size-6 text-red-500 "
@@ -80,9 +92,11 @@ function ProjectTableRow({ project, index }) {
             <ConfirmDelete
               onClose={() => setIsDeleteOpen(false)}
               resourceTitle={project.title}
-              onConfirm={()=>removeProject(project._id, {
-                onSuccess: () => setIsDeleteOpen(false),
-              })}
+              onConfirm={() =>
+                removeProject(project._id, {
+                  onSuccess: () => setIsDeleteOpen(false),
+                })
+              }
               disabled={false}
             />
           </Modal>

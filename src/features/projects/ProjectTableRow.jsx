@@ -1,6 +1,6 @@
 import react, { useState } from "react";
 import Table from "../../ui/Table";
-import { Edit, Trash } from "iconsax-reactjs";
+import { Edit, Eye, Trash } from "iconsax-reactjs";
 import toFaShortDate from "../../utils/toFaShortDate";
 import { enToFaNumber } from "../../utils/enToFaNumber";
 import { truncateText } from "../../utils/truncateText";
@@ -10,11 +10,13 @@ import ConfirmDelete from "../../ui/ConfirmDelete";
 import useRemoveProject from "./useRemoveProject";
 import CreateProjectForm from "./CreateProjectForm";
 import ToggleProject from "./ToggleProject";
+import { Link } from "react-router-dom";
+import { HiEye } from "react-icons/hi";
 
 function ProjectTableRow({ project, index }) {
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
-  const { isDeleting, removeProject } = useRemoveProject();
+  const { removeProject } = useRemoveProject();
 
   return (
     <Table.Row>
@@ -45,11 +47,6 @@ function ProjectTableRow({ project, index }) {
         )}
       </td>
       <td>
-        {/* {project.status === "OPEN" ? (
-          <span className=" badge badge--success  ">باز</span>
-        ) : (
-          <span className=" badge badge--danger  ">بسته</span>
-        )} */}
         <ToggleProject project={project} />
       </td>
       <td className=" h-full">
@@ -101,6 +98,11 @@ function ProjectTableRow({ project, index }) {
             />
           </Modal>
         </>
+      </td>
+      <td className="  ">
+        <Link className=" w-full flex justify-center " to={project._id}>
+          <HiEye className=" size-6 text-secondary-600 hover:text-secondary-800 duration-100 " />
+        </Link>
       </td>
     </Table.Row>
   );

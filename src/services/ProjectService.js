@@ -29,3 +29,9 @@ export function toggleProjectStatusApi({ id, data }) {
     .patch(`/project/${id}`, data)
     .then(({ data }) => data.data);
 }
+
+export function getProjectApi(id) {
+  return http
+  .get(`/project/${id}`)
+  .then(({data})=>data.data)
+}

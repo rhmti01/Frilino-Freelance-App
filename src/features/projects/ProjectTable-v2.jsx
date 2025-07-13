@@ -42,7 +42,8 @@ function ProjectTable() {
         <th>تگ ها</th>
         <th>فریلنسر</th>
         <th>وضعیت</th>
-        <th className=" bg-secondary-200 rounded-tl-xl  " >عملیات</th>
+        <th >عملیات</th>
+        <th className=" bg-secondary-200 rounded-tl-xl  " >درخواست ها</th>
       </Table.Header>
       <Table.Body>
         {projects?.map((project, index) => (

@@ -12,7 +12,7 @@ import NotFound from "./pages/NotFound";
 import AppLayout from "./ui/AppLayout";
 import OwnerDashboard from "./pages/OwnerDashboard";
 import Projects from "./features/projects/Projects";
-import Project from "./ui/Project";
+import Project from "./pages/Project";
 
 const queryClient = new QueryClient();
 

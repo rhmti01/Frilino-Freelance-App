@@ -14,7 +14,6 @@ export default function useEditProjects() {
             })
         } ,
         onError : (error)=>{
-            toast("noldi sana?")
             toast.error(error?.response?.data?.message)
         }})
         

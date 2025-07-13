@@ -4,7 +4,7 @@ function Toggle({toggleStatus , enabled}) {
   return (
     <div
       onClick={toggleStatus}
-      className={`relative w-16 h-7.5 rounded-full cursor-pointer transition-colors duration-300 flex items-center px-2 ${
+      className={`relative w-16 h-7 font-[14px] rounded-full cursor-pointer transition-colors duration-300 flex items-center px-2 ${
         enabled ? "bg-blue-500" : "bg-gray-400"
       }`}
     >

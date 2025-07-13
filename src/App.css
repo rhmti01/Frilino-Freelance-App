@@ -29,12 +29,12 @@ table th {
 }
 
 table th {
-  color: var(--color-secondary-600);
-  font-size: 0.9rem;
+  color: var(--color-secondary-700);
+  font-size: 0.95rem;
 }
 
 table td {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--color-secondary-600);
 }
 

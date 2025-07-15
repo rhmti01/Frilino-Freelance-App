@@ -9,11 +9,12 @@ function Projects() {
 
   return (
     <div
-      className=" flex flex-col items-start mx-auto bg-secondary-100/50 
-    rounded-2xl 2xl:py-7 2xl:pl-7 xl:py-7 xl:pl-5 md:px-10 mt-8 overflow-x-auto w-full 
-    max-w-7xl "
+      className=" flex justify-center items-start mx-auto  bg-secondary-100/50
+    rounded-tr-3xl 2xl:py-7 2xl:pl-7 xl:py-7 xl:pl-5 md:px-10 mt-8 overflow-x-auto w-full 
+     "
     >
-      <Modal
+      <div className="w-full max-w-7xl ">
+              <Modal
         title="افزودن پروژه جدید"
         open={isCreateProject}
         onClose={() => setIsCreateProject(false)}
@@ -37,6 +38,7 @@ function Projects() {
       </div>
       <div className="w-full overflow-auto  ">
         <ProjectTable />
+      </div>
       </div>
     </div>
   );

@@ -4,8 +4,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* root colors */
+  /* root colors - Light */
   --background-app-rgb: #ffffff;
+
   --color-primary-900: #4a6dff;
   --color-primary-800: #5c7cff;
   --color-primary-700: #6e8aff;
@@ -29,13 +30,27 @@
   --color-secondary-50: #f9fafb;
   --color-secondary-0: #ffffff;
 
+  /* dark colors */
+--color-dark-900: rgb(10, 12, 24);
+--color-dark-800: rgb(14, 18, 37);
+--color-dark-700: rgb(24, 30, 54);
+--color-dark-600: rgb(32, 38, 70);
+--color-dark-500: rgb(51, 60, 95);
+--color-dark-400: rgb(73, 85, 123);
+--color-dark-300: rgb(113, 126, 172);
+--color-dark-200: rgb(155, 167, 205);
+--color-dark-100: rgb(194, 202, 228);
+--color-dark-50: rgb(223, 228, 247);
+--color-dark-0: rgb(255, 255, 255);
+
+  /* alert & state colors */
   --color-success: #00c073;
   --color-warning: #ff9900;
   --color-error: #ff4757;
   --color-red-500: #ef4444;
   --color-red-300: #fca5a5;
 
-  /* Break points */
+  /* breakpoints */
   --breakpoint-xg: 1080px;
   --breakpoint-xx: 970px;
   --breakpoint-ww: 630px;
@@ -43,10 +58,11 @@
   --breakpoint-rr: 375px;
   --breakpoint-ss: 290px;
 
-  /* costum font */
+  /* fonts */
   --font-vazir: "Vazirmatn";
   --font-inter: "Inter", "Vazirmatn";
 }
+
 
 @layer {
   .brandLogo__text {
@@ -54,11 +70,11 @@
   }
 
   .numberInput {
-    @apply py-3 px-4 rounded-xl font-normal font-inter  text-secondary-600 w-full outline-none border-[1px] focus:shadow-sm focus:shadow-primary-300 border-transparent hover:border-slate-400/60 hover:shadow-xs focus:border-indigo-300 duration-300 bg-secondary-200/65   focus:bg-white;
+    @apply py-3 px-4 rounded-xl font-normal font-inter  text-secondary-600 dark:text-secondary-200 w-full outline-none border-[1px] focus:shadow-sm focus:shadow-primary-300 dark:focus:shadow-primary-800 border-transparent hover:border-slate-400/60 dark:hover:border-slate-600 hover:shadow-xs focus:border-indigo-300 dark:focus:border-indigo-700 duration-300 bg-secondary-200/65 dark:bg-dark-600  focus:bg-white dark:focus:bg-dark-600 ;
   }
 
   .sendOTPForm__btn {
-    @apply mt-5 text-[17px] text-secondary-0 py-[13px] cursor-pointer w-full  font-normal  duration-300 rounded-xl bg-blue-600 hover:bg-blue-700 shadow-md;
+    @apply mt-5 text-[17px] text-secondary-0  py-[13px] cursor-pointer w-full  font-normal  duration-300 rounded-xl dark:bg-blue-700 dark:hover:bg-blue-800 bg-blue-600  hover:bg-blue-700 shadow-md;
   }
 
   .checkOTPForm__btn {
@@ -66,7 +82,7 @@
   }
 
   .completeProfile__btn {
-    @apply mt-12  text-secondary-0 py-3.5 w-full  font-normal  duration-300 rounded-xl  bg-blue-600 hover:bg-blue-700 cursor-pointer shadow-md;
+    @apply mt-12  text-secondary-0 dark:text-secondary-200 py-3.5 w-full  font-normal  duration-300 rounded-xl  bg-blue-600 hover:bg-blue-700 cursor-pointer shadow-md;
   }
 
   .highlightText {
@@ -86,7 +102,7 @@
   }
 
   .pageTitle {
-    @apply text-center font-semibold text-blue-900;
+    @apply text-center font-semibold text-blue-900 dark:text-blue-700 ;
   }
 
   .backMainPage__btn {

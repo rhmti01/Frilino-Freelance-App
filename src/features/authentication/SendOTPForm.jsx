@@ -8,8 +8,8 @@ import Loading from "../../ui/Loading";
 function SendOTPForm({ onSubmit, isSendingOtp, register, errors }) {
   
   return (
-    <div className=" flex items-center justify-center  w-full h-[100vh] ">
-      <div className="flex items-center justify-center relative   ">
+    <div className=" flex items-center justify-center  w-full h-[100vh] bg-secondary-0 dark:bg-dark-900 ">
+      <div className="flex items-center justify-center relative  ">
         {/* form section */}
         <div className="flex flex-col  xl:w-[420px] ">
           {/* back button */}

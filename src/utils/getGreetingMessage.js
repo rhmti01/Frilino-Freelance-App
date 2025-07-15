@@ -1,4 +1,4 @@
-export function getGreetingMessage(date = new Date()) {
+export default function getGreetingMessage(date = new Date()) {
   const hour = date.getHours();
 
   if (hour >= 5 && hour < 12) {

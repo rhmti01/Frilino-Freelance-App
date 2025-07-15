@@ -20,10 +20,10 @@ function TextField({
   return (
     <>
       <label
-        className={`  ${mt} p-3 block text-right font-semilight text-secondary-700   `}
+        className={`  ${mt} block p-3  text-right font-semilight text-secondary-700 dark:text-dark-200  `}
         htmlFor={name}
       >
-        {label} {required && <span className=" text-error ">*</span>}
+        {label} {required && <span className=" text-error">*</span>}
       </label>
       <input
         {...register(name, validationSchema)}

@@ -10,15 +10,15 @@ import ChangeProposalStatus from "./ChangeProposalStatus";
 const statusStyle = [
   {
     label: "رد شده",
-    className: " bg-red-600 ",
+    className: " bg-red-500 ",
   },
   {
     label: "در انتظار تایید",
-    className: " bg-gray-600 ",
+    className: " bg-yellow-500 ",
   },
   {
     label: "تایید شده",
-    className: " bg-green-600 ",
+    className: " bg-green-500 ",
   },
 ];
 
@@ -33,7 +33,14 @@ function ProposalTableRow({ proposal, index }) {
       <td>{proposal.user.name}</td>
       <td>{truncateText(proposal.description, 30)}</td>
       <td>{enToFaNumber(proposal.duration)} روز</td>
-      <td>{enToFaNumber(numberDivider(proposal.price))}</td>
+      <td>
+        <span>{enToFaNumber(numberDivider(proposal.price))}</span>
+        <img
+          className=" inline mx-1 "
+          src="/assets/images/tooman.png"
+          alt="تومان"
+        />
+      </td>
       <td>{toFaShortDate(proposal.createdAt)}</td>
       <td>
         <span
@@ -42,15 +49,15 @@ function ProposalTableRow({ proposal, index }) {
           {statusStyle[status].label}
         </span>
       </td>
-      <td className=" flex justify-center ">
+      <td className=" w-full">
         <svg
-        onClick={()=>setOpen(true)}
+          onClick={() => setOpen(true)}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2.5}
           stroke="currentColor"
-          className="size-5 cursor-pointer stroke-gray-500 "
+          className="size-5 cursor-pointer stroke-gray-600 mx-auto "
         >
           <path
             strokeLinecap="round"

@@ -8,7 +8,6 @@ export default function useCreateProjects() {
     const { isPending:isCreating , mutate : createProject} = useMutation({
         mutationFn :createProjectApi ,
         onSuccess:(data)=>{
-            console.log(data)
             toast.success(data.message)
             queryClient.invalidateQueries({
                 queryKey : ["owner-projects"]

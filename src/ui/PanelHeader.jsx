@@ -1,19 +1,19 @@
 import React from "react";
 import useUser from "../features/authentication/useUser";
-import { getGreetingMessage } from "../utils/getGreetingMessage";
+import UserGreeting from "./userGreeting";
+import HeaderMenu from "./HeaderMenu";
 
 function PanelHeader() {
-  const {data}  = useUser()
-  const { name } = data || {};
+  const { isLoading } = useUser();
 
   return (
-    <div className=" bg-white flex items-center justify-start ">
-      <p className=" pr-4 text-xl font-semibold text-secondary-600 " >
-        سلام {" "}
-        {name} {" "} 
-        </p>
-        <span className=" w-[2px] h-4 bg-secondary-300 mx-2 " ></span>
-        <p className=" font-semibold text-secondary-600 " >{getGreetingMessage()}</p>
+    <div
+      className={`  ${
+        isLoading ? "  blur-sm bg-white/10" : "bg-secondary-0 dark:bg-gray-900 "
+      } flex items-center justify-between w-full pr-3 pl-9  `}
+    >
+      <UserGreeting />
+      <HeaderMenu/>
     </div>
   );
 }

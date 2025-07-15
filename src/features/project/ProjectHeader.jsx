@@ -6,7 +6,7 @@ function ProjectHeader({ project }) {
     <div className=" relative w-full flex justify-start pr-36  py-4 ">
       <BackBtn top="mt-0" right="right-8" />
       <h3 className="  font-medium text-secondary-600 text-lg ">
-        درخواست های دریافت شده برای  {" "}
+        پیشنهاد های دریافت شده برای  {" "}
         <span className=" font-semibold shadow-2xl text-secondary-800 ">
           {project.title}
         </span>

@@ -101,7 +101,11 @@ function ProjectTableRow({ project, index }) {
       </td>
       <td className="  ">
         <Link className=" w-full flex justify-center " to={project._id}>
-          <HiEye className=" size-6 text-secondary-600 hover:text-secondary-800 duration-100 " />
+          <HiEye
+            className=" size-6 text-secondary-600
+           hover:text-secondary-800 dark:text-secondary-500
+            dark:hover:text-secondary-600 duration-100 "
+          />
         </Link>
       </td>
     </Table.Row>

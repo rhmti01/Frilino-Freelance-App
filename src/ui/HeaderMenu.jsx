@@ -19,7 +19,8 @@ function HeaderMenu() {
           className=" hover:bg-secondary-100 duration-200
        ring-1 rounded-2xl ring-secondary-200 text-secondary-700
         cursor-pointer p-2  shadow-sm shadow-secondary-300
-        dark:text-secondary-300 "
+        dark:text-secondary-300 dark:shadow-secondary-600
+        dark:bg-dark-800 dark:hover:bg-dark-900 dark:ring-dark-700  "
         >
           <User className=" size-6 " variant="Broken" />
         </NavLink>

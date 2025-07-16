@@ -40,19 +40,19 @@ const removeTag = (indexToRemove) => {
 
   return (
     <div className="mt-3">
-      <h1 className="p-3 block text-right font-semilight text-secondary-700">
+      <h1 className="p-3 block text-right font-semilight text-secondary-700 dark:text-dark-200 ">
         تگ‌های پروژه {required && <span className=" text-red-500 ">*</span>}
       </h1>
 
       <div
         onClick={() => inputRef.current?.focus()}
-        className="flex flex-wrap items-center gap-2 px-4 py-2 rounded-xl bg-secondary-200/65 cursor-text w-full"
+        className="flex flex-wrap items-center gap-2 px-4 py-2 rounded-xl bg-secondary-200/65 dark:bg-dark-800 cursor-text w-full"
         dir="rtl"
       >
         {tags.map((tag, index) => (
           <span
             key={index}
-            className="bg-primary-100 text-primary-800 px-2 py-1 rounded-2xl flex items-center gap-1 text-[14px]"
+            className="bg-primary-100 dark:bg-dark-700 text-primary-800 dark:text-dark-100 px-2 py-1 rounded-2xl flex items-center gap-1 text-[14px]"
           >
             {tag}
             <button
@@ -85,7 +85,7 @@ const removeTag = (indexToRemove) => {
         <input
           ref={inputRef}
           type="text"
-          className="flex-1 min-w-[80px] bg-transparent outline-none border-none text-secondary-600 font-inter rounded-xl"
+          className="flex-1 min-w-[80px] bg-transparent outline-none border-none text-secondary-600 dark:text-dark-200 font-inter rounded-xl"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}

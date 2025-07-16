@@ -9,7 +9,7 @@ function PanelHeader() {
   return (
     <div
       className={`  ${
-        isLoading ? "  blur-sm bg-white/10" : "bg-secondary-0 dark:bg-gray-900 "
+        isLoading ? "  blur-sm bg-white/10" : "bg-secondary-0 dark:bg-dark-900 "
       } flex items-center justify-between w-full pr-3 pl-9  `}
     >
       <UserGreeting />

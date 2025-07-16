@@ -11,7 +11,7 @@ function ProjectTable() {
   if (isLoading) {
     return (
       <div className="  flex items-center justify-center w-full h-full">
-        <Loading size="md" variant="plain" />
+        <Loading size="md" variant="plain" mt="mt-60" />
       </div>
     );
   }
@@ -19,11 +19,11 @@ function ProjectTable() {
   if (!projects?.length) {
     return (
       <div className="  flex items-center justify-center w-full h-full flex-col ">
-        <p className=" text-[22px] font-semibold text-secondary-800 ">
+        <p className=" mt-20 text-[22px] font-semibold text-secondary-800 dark:text-secondary-300 ">
           لیست پروژه های شما خالی می باشد!
         </p>
         <img
-          className=" size-[400px] mt-20 "
+          className=" size-[380px] mt-16 "
           src="/assets/images/Empty.png"
           alt="empty projects"
         />
@@ -34,7 +34,7 @@ function ProjectTable() {
   return (
     <Table>
       <Table.Header>
-        <th className=" bg-secondary-200 rounded-tr-xl" >#</th>
+        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tr-xl" >#</th>
         <th>عنوان پروژه</th>
         <th>دسته بندی</th>
         <th>بودجه</th>
@@ -43,7 +43,7 @@ function ProjectTable() {
         <th>فریلنسر</th>
         <th>وضعیت</th>
         <th >عملیات</th>
-        <th className=" bg-secondary-200 rounded-tl-xl  " >درخواست ها</th>
+        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tl-xl  " >درخواست ها</th>
       </Table.Header>
       <Table.Body>
         {projects?.map((project, index) => (

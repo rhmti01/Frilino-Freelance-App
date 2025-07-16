@@ -44,7 +44,7 @@ function ProposalTableRow({ proposal, index }) {
       <td>{toFaShortDate(proposal.createdAt)}</td>
       <td>
         <span
-          className={`  badge text-white ${statusStyle[status].className}  `}
+          className={`  badge text-secondary-50  ${statusStyle[status].className}  `}
         >
           {statusStyle[status].label}
         </span>
@@ -57,7 +57,7 @@ function ProposalTableRow({ proposal, index }) {
           viewBox="0 0 24 24"
           strokeWidth={2.5}
           stroke="currentColor"
-          className="size-5 cursor-pointer stroke-gray-600 mx-auto "
+          className="size-5 cursor-pointer stroke-gray-600 dark:stroke-gray-400 mx-auto "
         >
           <path
             strokeLinecap="round"

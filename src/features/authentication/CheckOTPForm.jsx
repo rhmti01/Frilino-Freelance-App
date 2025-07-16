@@ -87,7 +87,7 @@ function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
               <h1 className="pageTitle text-[23px] ">اعتبارسنجی</h1>
               <p className="mt-8 text-secondary-400 font-normal text-[16.5px]">
                 کد ارسال شده به{" "}
-                <span className="text-secondary-700 font-medium">
+                <span className="text-secondary-700 dark:text-secondary-300 font-medium">
                   {enToFaNumber(phoneNumber)}
                 </span>{" "}
                 را وارد کنید
@@ -106,7 +106,7 @@ function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
                 numInputs={6}
                 renderSeparator={<span></span>}
                 renderInput={(props) => <input type="number" {...props} />}
-                containerStyle="flex flex-row-reverse gap-x-[5px] justify-center items-center mt-12 w-full "
+                containerStyle="flex flex-row-reverse gap-x-[5px] justify-center items-center mt-12 w-full  "
                 inputStyle={{
                   width: "2.5rem",
                   padding: "0.7rem 0",
@@ -116,7 +116,7 @@ function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
                   fontSize: "16px",
                   fontWeight: "bold",
                   fontFamily: "font-inter",
-                  background: "#fff",
+                  // background: "#fff",
                   outlineColor: "#34d",
                 }}
               />

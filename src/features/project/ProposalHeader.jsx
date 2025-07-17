@@ -1,7 +1,7 @@
 import React from "react";
 import BackBtn from "../../ui/BackBtn";
 
-function ProjectHeader({ project }) {
+function ProposalHeader({ project }) {
   return (
     <div className=" relative w-full flex justify-start pr-36  py-4 ">
       <BackBtn top="mt-0" right="right-8" />
@@ -15,4 +15,4 @@ function ProjectHeader({ project }) {
   );
 }
 
-export default ProjectHeader;
+export default ProposalHeader;

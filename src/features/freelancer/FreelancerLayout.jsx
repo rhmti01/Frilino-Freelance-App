@@ -1,10 +1,10 @@
 import React from "react";
 import AppLayout from "../../ui/AppLayout";
 import CustomNavLink from "../../ui/CustomNavlink";
-import { Element, Home2 } from "iconsax-reactjs";
 import Sidebar from "../../ui/Sidebar";
+import { Element, Home2, Notepad2 } from "iconsax-reactjs";
 
-function OwnerLayout() {
+function FreelancerLayout() {
   return (
     <div>
       <AppLayout>
@@ -15,7 +15,11 @@ function OwnerLayout() {
           </CustomNavLink>
           <CustomNavLink to="projects">
             <Element className="size-6" variant="Broken" />
-            <span >پروژه ها</span>
+            <span>پروژه ها</span>
+          </CustomNavLink>{" "}
+          <CustomNavLink to="proposals">
+            <Notepad2 className="size-6" variant="Broken" />
+            <span>درخواست ها</span>
           </CustomNavLink>
         </Sidebar>
       </AppLayout>
@@ -23,4 +27,4 @@ function OwnerLayout() {
   );
 }
 
-export default OwnerLayout;
+export default FreelancerLayout;

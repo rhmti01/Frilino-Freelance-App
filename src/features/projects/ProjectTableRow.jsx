@@ -1,6 +1,6 @@
 import react, { useState } from "react";
 import Table from "../../ui/Table";
-import { Edit, Eye, Trash } from "iconsax-reactjs";
+import { DocumentText1, Edit, Eye, Trash } from "iconsax-reactjs";
 import toFaShortDate from "../../utils/toFaShortDate";
 import { enToFaNumber } from "../../utils/enToFaNumber";
 import { truncateText } from "../../utils/truncateText";
@@ -101,7 +101,7 @@ function ProjectTableRow({ project, index }) {
       </td>
       <td className="  ">
         <Link className=" w-full flex justify-center " to={project._id}>
-          <HiEye
+          <DocumentText1
             className=" size-6 text-secondary-600
            hover:text-secondary-800 dark:text-secondary-500
             dark:hover:text-secondary-600 duration-100 "

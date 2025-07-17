@@ -1,9 +1,8 @@
 import React from "react";
-import Stat from "./Stat";
-import { DollarCircle, I3Dcube, TableDocument } from "iconsax-reactjs";
+import { DollarCircle, I3Dcube, Notepad2 } from "iconsax-reactjs";
+import Stat from "../../ui/Stat"
 
-function Stats({ projects }) {  
-
+function Stats({ projects }) {
   const numOfProjects = projects.length;
   const numOfAcceptedProjects = projects.filter((p) => p.status === 2).length;
   const numOfProposals = projects.reduce(
@@ -27,8 +26,8 @@ function Stats({ projects }) {
       />
       <Stat
         color="yellow"
-        icon={<TableDocument className="size-14" variant="Broken" />}
-        title="درخواست ها"
+        icon={<Notepad2 className="size-14" variant="Broken" />}
+        title="پروپوزل ها"
         value={numOfProposals}
       />
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useProject } from "../features/project/useProject";
 import Loading from "../ui/Loading";
-import ProjectHeader from "../features/project/ProjectHeader";
+import ProposalHeader from "../features/project/ProposalHeader";
 import ProposalTable from "../features/project/ProposalTable";
 
 function Project() {
@@ -13,7 +13,7 @@ function Project() {
         <Loading mt="mt-14" size="md" />
       ) : (
         <div className="w-full" >
-          <ProjectHeader project={project} />
+          <ProposalHeader project={project} />
           <ProposalTable proposals={project.proposals} />
         </div>
       )}

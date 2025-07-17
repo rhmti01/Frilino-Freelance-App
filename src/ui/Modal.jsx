@@ -14,7 +14,7 @@ function Modal({ open, onClose, children, title  }) {
 
         <div
           className={` fixed top-1/2  left-1/2 -translate-1/2
-         p-3 shadow-sm shadow-secondary-100 dark:shadow-dark-800 bg-secondary-0 dark:bg-dark-900 rounded-xl duration-300 ease-out
+         p-3 shadow-sm dark:shadow-lg shadow-secondary-100 dark:shadow-dark-800 bg-secondary-0 dark:bg-dark-900 rounded-xl duration-300 ease-out
           transition-all  z-50 w-[calc(100vw-3rem)] md:max-w-[500px] max-h-[calc(100vh-2rem)] overflow-y-auto
           flex items-center flex-col   `}
         >

@@ -35,3 +35,11 @@ export function getProjectApi(id) {
   .get(`/project/${id}`)
   .then(({data})=>data.data)
 }
+
+export function getProjectsApi() {
+    return http
+      .get("/project/list").
+      then(({data})=>data.data)
+}
+
+

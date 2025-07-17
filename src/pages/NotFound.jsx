@@ -10,7 +10,7 @@ function NotFound() {
         <div className="flex flex-col justify-center items-center mb-7">
           <img
             className=" scale-[85%] "
-            src="assets/images/not-found.png"
+            src="/assets/images/not-found.png"
             alt="not-found"
           />
           <h1 className=" font-medium text-[21px] text-secondary-900 mt-3 ">

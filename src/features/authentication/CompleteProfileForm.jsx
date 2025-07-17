@@ -8,13 +8,15 @@ import BackBtn from "../../ui/BackBtn";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import RadioInputGroup from "../../ui/RadioInputGroup";
+import RoleOption from "../../ui/RoleOption";
 
 function CompleteProfileForm() {
+  const [role, setRole] = useState("");
   const {
     register,
     formState: { errors },
     handleSubmit,
-        watch,
+    watch,
   } = useForm();
   const navigate = useNavigate();
   const { mutateAsync, isPending: isUpdatingProfile } = useMutation({
@@ -26,10 +28,10 @@ function CompleteProfileForm() {
   };
 
   const onCompleteProfile = async (data) => {
-    console.log(data);
+    console.log({ ...data, role });
 
     try {
-      const { message, user } = await mutateAsync(data);
+      const { message, user } = await mutateAsync({ ...data, role });
       toast.success(message);
       //  user profile is not active! ==>
       if (user.status !== 2) {
@@ -59,7 +61,7 @@ function CompleteProfileForm() {
           <h1 className="pageTitle text-[24px]">تکمیل حساب کاربری</h1>
           <TextField
             label="نام و نام خانوادگی"
-            name="fullName"
+            name="name"
             mt="mt-16"
             dir="rtl"
             register={register}
@@ -88,7 +90,7 @@ function CompleteProfileForm() {
               },
             }}
           />
-          <RadioInputGroup
+          {/* <RadioInputGroup
             errors={errors}
             register={register}
             watch={watch}
@@ -103,10 +105,10 @@ function CompleteProfileForm() {
                 { value: "FREELANCER", label: "فریلنسر" },
               ],
             }}
-          />
-          {/* <div className="roleContainer mt-6">
+          /> */}
+          <div className="roleContainer mt-6">
             <p className="text-secondary-700 flex items-start gap-x-2">
-              <TbUserSearch size="20" />
+              {/* <TbUserSearch size="20" /> */}
               نقش کاربر:
             </p>
             <div className="flex justify-center gap-x-4 mt-2">
@@ -123,7 +125,7 @@ function CompleteProfileForm() {
                 onChangeRole={handleRoleChange}
               />
             </div>
-          </div> */}
+          </div>
           <button
             disabled={isUpdatingProfile}
             type="submit"

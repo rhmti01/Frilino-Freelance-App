@@ -102,9 +102,9 @@ function ProjectTableRow({ project, index }) {
       <td className="  ">
         <Link className=" w-full flex justify-center " to={project._id}>
           <DocumentText1
-            className=" size-6 text-secondary-600
-           hover:text-secondary-800 dark:text-secondary-500
-            dark:hover:text-secondary-600 duration-100 "
+            className=" size-6 text-indigo-600
+           hover:text-indigo-800 dark:text-indigo-400
+            dark:hover:text-indigo-500 duration-100 "
           />
         </Link>
       </td>

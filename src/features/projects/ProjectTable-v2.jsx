@@ -34,7 +34,7 @@ function ProjectTable() {
   return (
     <Table>
       <Table.Header>
-        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tr-xl" >#</th>
+        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tr-2xl" >#</th>
         <th>عنوان پروژه</th>
         <th>دسته بندی</th>
         <th>بودجه</th>
@@ -43,7 +43,7 @@ function ProjectTable() {
         <th>فریلنسر</th>
         <th>وضعیت</th>
         <th >عملیات</th>
-        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tl-xl  " >درخواست ها</th>
+        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tl-2xl  " >درخواست ها</th>
       </Table.Header>
       <Table.Body>
         {projects?.map((project, index) => (

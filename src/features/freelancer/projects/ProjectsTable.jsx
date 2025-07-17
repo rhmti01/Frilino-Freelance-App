@@ -33,7 +33,7 @@ function ProjectsTable() {
   return (
     <Table>
       <Table.Header>
-        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tr-xl">#</th>
+        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tr-2xl">#</th>
         <th>عنوان پروژه</th>
         <th>دسته بندی</th>
         <th>بودجه</th>
@@ -41,7 +41,7 @@ function ProjectsTable() {
           ددلاین
         </th>
         <th>وضعیت</th>
-        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tl-xl">
+        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tl-2xl">
           عملیات
         </th>
       </Table.Header>

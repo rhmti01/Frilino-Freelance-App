@@ -86,7 +86,7 @@ function CreateProjectForm({ projectToEdit = {}, onClose }) {
   return (
     open && (
       <div>
-        <div className="-mt-2 mb-2 w-full flex flex-col ">
+        <div className=" w-full flex flex-col ">
           <form onSubmit={handleSubmit(onSubmit)} className="px-3">
             <TextField
               label="عنوان "
@@ -124,7 +124,7 @@ function CreateProjectForm({ projectToEdit = {}, onClose }) {
                   message: "طول توضیحات بلند است",
                 },
               }}
-            />{" "}
+            />
             <TextField
               label="بودجه "
               name="budget"

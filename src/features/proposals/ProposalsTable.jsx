@@ -7,6 +7,7 @@ import ProposalRow from "./ProposalRow";
 
 function ProposalsTable() {
   const { proposals, isLoading } = useProposals();
+  console.log(proposals)
 
   if (isLoading) {
     return (
@@ -34,12 +35,12 @@ function ProposalsTable() {
   return (
     <Table>
       <Table.Header>
-        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tr-xl">#</th>
+        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tr-2xl">#</th>
         <th>توضیحات</th>
         <th>مدت تحویل</th>
         <th>تاریخ ثبت </th>
         <th>هزینه</th>
-        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tl-xl  "> وضعیت </th>
+        <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tl-2xl  "> وضعیت </th>
       </Table.Header>
       <Table.Body>
         {proposals?.map((proposal, index) => (

@@ -29,7 +29,6 @@ function ChangeProposalStatus({ id, onClose }) {
   const queryClient = useQueryClient();
 
   const onSubmit = (data) => {
-    console.log(data  , id);
     changeProposalStatus(
       {
         id: id,

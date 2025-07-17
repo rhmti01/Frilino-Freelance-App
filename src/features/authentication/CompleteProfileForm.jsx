@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import RadioInputGroup from "../../ui/RadioInputGroup";
 import RoleOption from "../../ui/RoleOption";
+import { UserSearch } from "iconsax-reactjs";
 
 function CompleteProfileForm() {
   const [role, setRole] = useState("");
@@ -107,8 +108,8 @@ function CompleteProfileForm() {
             }}
           /> */}
           <div className="roleContainer mt-6">
-            <p className="text-secondary-700 flex items-start gap-x-2">
-              {/* <TbUserSearch size="20" /> */}
+            <p className="text-secondary-700 dark:text-dark-200 flex items-start gap-x-2">
+              <UserSearch size="20" />
               نقش کاربر:
             </p>
             <div className="flex justify-center gap-x-4 mt-2">

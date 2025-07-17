@@ -1,8 +1,6 @@
 import React from "react";
 import ProjectsHeader from "../features/freelancer/projects/ProjectsHeader";
 import ProjectsTable from "../features/freelancer/projects/ProjectsTable";
-import { AddSquare } from "iconsax-reactjs";
-import ProjectTable from "../features/projects/ProjectTable-v2";
 
 function SubmittedProjects() {
   return (

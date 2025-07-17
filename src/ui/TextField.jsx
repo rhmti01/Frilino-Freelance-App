@@ -20,7 +20,7 @@ function TextField({
   return (
     <>
       <label
-        className={`  ${mt} block p-3  text-right font-semilight text-secondary-700 dark:text-dark-200  `}
+        className={`  ${mt} block p-3  text-right font-medium text-[15px] text-secondary-700 dark:text-dark-200  `}
         htmlFor={name}
       >
         {label} {required && <span className=" text-error">*</span>}
@@ -35,7 +35,7 @@ function TextField({
         autoFocus={autoFocus}
       />
       {errors && errors[name] && (
-        <span className=" text-error block text-sm mt-2 ">
+        <span className=" text-right text-error block text-sm mt-2 ">
           <Warning2 className=" size-4 inline ml-2 " variant="Broken" />
           {errors[name]?.message}
         </span>

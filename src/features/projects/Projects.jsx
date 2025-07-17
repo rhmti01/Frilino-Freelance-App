@@ -30,8 +30,9 @@ function Projects() {
               setIsCreateProject(true);
             }}
             className=" hover:bg-blue-700 text-white font-semibold shadow-md
-             shadow-blue-100 cursor-pointer px-4 py-3.5 bg-blue-600 dark:bg-blue-600 rounded-xl
-              flex items-center gap-x-3 text-[15px] dark:shadow-dark-700 "
+             shadow-blue-100 cursor-pointer px-4 py-3.5 bg-blue-600 dark:hover:bg-blue-800 
+              rounded-xl  flex items-center gap-x-3 text-[15px] dark:shadow-dark-700
+              dark:bg-blue-700 "
           >
             افزودن پروژه جدید
             <AddSquare

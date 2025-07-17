@@ -6,7 +6,7 @@ import persian_fa from "react-date-object/locales/persian_fa";
 function DatePickerField({ label, date, setDate, required, register, errors }) {
   return (
     <div className=" mt-2 ">
-      <span className=" p-3 block text-right font-semilight text-secondary-700 ">
+      <span className=" p-3 block text-right font-semilight text-secondary-700 dark:text-dark-200 ">
         {label} {required && <span className=" text-red-500 ">*</span>}
       </span>
       <DatePicker

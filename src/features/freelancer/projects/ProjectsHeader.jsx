@@ -6,7 +6,7 @@ function ProjectsHeader() {
       <h1 className=" font-bold text-secondary-800 dark:text-secondary-100 text-[21px] ">
         لیست پروژه ها
       </h1>
-      <div>فیلتر</div>
+      <div className=" font-bold text-secondary-800 dark:text-secondary-100 text-[21px] " >فیلتر....</div>
     </div>
   );
 }

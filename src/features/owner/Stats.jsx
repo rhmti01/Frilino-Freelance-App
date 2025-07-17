@@ -27,7 +27,7 @@ function Stats({ projects }) {
       <Stat
         color="yellow"
         icon={<Notepad2 className="size-14" variant="Broken" />}
-        title="پروپوزل ها"
+        title="درخواست ها"
         value={numOfProposals}
       />
     </div>

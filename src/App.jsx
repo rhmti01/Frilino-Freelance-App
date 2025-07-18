@@ -18,7 +18,7 @@ import FreelancerDashboard from "./pages/FreelancerDashboard";
 import Proposals from "./pages/Proposals";
 import SubmittedProjects from "./pages/SubmittedProjects";
 import FreelancerLayout  from "./features/freelancer/FreelancerLayout";
-
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 const queryClient = new QueryClient();
 
@@ -26,6 +26,7 @@ function App() {
   return (
     <ThemeSwitchProvider>
       <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
         <Toaster />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -41,8 +42,8 @@ function App() {
           <Route path="/freelancer" element={ <FreelancerLayout/> } >
             <Route index element={<Navigate to="dashboard" replace={true} />} />
             <Route path="dashboard" element={<FreelancerDashboard />} />
-            <Route path="proposals" element={<Proposals />} />
             <Route path="projects" element={<SubmittedProjects />} />
+            <Route path="proposals" element={<Proposals />} />
           </Route>
         </Routes>
       </QueryClientProvider>

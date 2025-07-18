@@ -2,7 +2,7 @@ import "../index.css";
 
 function RoleOption({ selectedRoll, role, roleFa, onChangeRole }) {
   return (
-    <a
+    <button
       className={`cursor-pointer px-4 py-2 rounded-lg ${
         role === selectedRoll
           ? "dark:bg-dark-800 dark:ring-dark-700 bg-primary-100 text-blue-600 ring-1 ring-primary-100 shadow-2xl shadow-blue-100 dark:shadow-dark-800 "
@@ -11,7 +11,7 @@ function RoleOption({ selectedRoll, role, roleFa, onChangeRole }) {
       onClick={() => onChangeRole(selectedRoll)}
     >
       {roleFa}
-    </a>
+    </button>
   );
 }
 

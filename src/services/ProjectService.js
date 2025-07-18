@@ -36,9 +36,9 @@ export function getProjectApi(id) {
   .then(({data})=>data.data)
 }
 
-export function getProjectsApi() {
+export function getProjectsApi(qs) {
     return http
-      .get("/project/list").
+      .get(`/project/list${qs}`).
       then(({data})=>data.data)
 }
 

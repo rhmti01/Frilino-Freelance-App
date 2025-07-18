@@ -12,9 +12,11 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@mui/joy": "^5.0.0-beta.52",
-    "@tanstack/react-query": "^5.81.5",
+    "@tanstack/react-query": "^5.10.0",
+    "@tanstack/react-query-devtools": "^5.10.0",
     "axios": "^1.10.0",
     "iconsax-reactjs": "^0.0.8",
+    "query-string": "^9.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.48.2",

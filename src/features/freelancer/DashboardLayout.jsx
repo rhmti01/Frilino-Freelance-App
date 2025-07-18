@@ -12,7 +12,7 @@ function DashboardLayout() {
   }
 
   return (
-    <div>
+    <div >
       <DashboardHeader />
       <Stats proposals={proposals} />
     </div>

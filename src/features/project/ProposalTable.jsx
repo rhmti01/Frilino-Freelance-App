@@ -22,14 +22,14 @@ function ProposalTable({ proposals }) {
     <div className=" w-full justify-center flex mt-14 ">
       <Table>
         <Table.Header>
-          <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tr-2xl">#</th>
+          <th className=" bg-secondary-200 dark:bg-[#0e101d]   rounded-tr-2xl">#</th>
           <th>فریلنسر</th>
           <th>توضیحات</th>
           <th>زمان پیشنهادی</th>
           <th>بودجه پیشنهادی </th>
           <th>تاریخ ثبت شده</th>
           <th>وضعیت</th>
-          <th className=" bg-secondary-200 dark:bg-[#0f121e] rounded-tl-2xl  ">تغییر وضعیت</th>
+          <th className=" bg-secondary-200 dark:bg-[#0e101d]   rounded-tl-2xl  ">تغییر وضعیت</th>
         </Table.Header>
         <Table.Body>
           {proposals?.map((proposal, index) => (

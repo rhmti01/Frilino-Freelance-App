@@ -7,6 +7,7 @@ import toFaShortDate from "../../../utils/toFaShortDate";
 import { Note, ReceiptAdd } from "iconsax-reactjs";
 import Modal from "../../../ui/Modal";
 import CreateProposal from "../../proposals/CreateProposal";
+import toast from "react-hot-toast";
 
 const projectStatus = {
   OPEN: {
@@ -20,7 +21,7 @@ const projectStatus = {
 };
 
 function ProjectTableRow({ project, index }) {
-  const { _id , title, category, budget, deadline, status } = project;
+  const { _id, title, category, budget, deadline, status } = project;
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <Table.Row>
@@ -46,7 +47,16 @@ function ProjectTableRow({ project, index }) {
       <td>
         <button>
           <ReceiptAdd
-            onClick={() => setModalOpen(true)}
+            onClick={() => {
+              if (status === "CLOSED") {
+                toast.error(
+                  "به دلیل بسته بودن پروژه، امکان ارسال پروپوزال وجود ندارد!"
+                );
+                return;
+              } else {
+                setModalOpen(true); 
+              }
+            }}
             values="Broken"
             className=" size-6  text-blue-700
              dark:text-blue-700 cursor-pointer  "
@@ -57,10 +67,11 @@ function ProjectTableRow({ project, index }) {
           open={modalOpen}
           onClose={() => setModalOpen(false)}
         >
-          <CreateProposal 
-           projectId={_id}
-           onClose={() => setModalOpen(false)}
-            />
+          <CreateProposal
+            projectId={_id}
+            status={status}
+            onClose={() => setModalOpen(false)}
+          />
         </Modal>
       </td>
     </Table.Row>

@@ -1,8 +1,8 @@
 import React from "react";
-import ProposalTable from "../features/proposals/ProposalsTable";
-import { AddSquare } from "iconsax-reactjs";
+import UsersTable from "../features/admin/users/UsersTable";
+import { useUsers } from "../features/admin/useUsers";
 
-function Proposals() {
+function Users() {
   return (
     <div className=" bg-secondary-100/70 dark:bg-dark-800/20 rounded-2xl p-7 ">
       <div
@@ -13,11 +13,11 @@ function Proposals() {
         <div className="w-full max-w-6xl ">
           <div className="flex w-full justify-between items-center  ">
             <h1 className=" font-bold text-secondary-800 dark:text-secondary-100 text-[21px] ">
-              لیست پروپوزال ها
+              لیست کاربران
             </h1>
           </div>
           <div className="w-full overflow-auto ">
-            <ProposalTable />
+            <UsersTable />
           </div>
         </div>
       </div>
@@ -25,4 +25,4 @@ function Proposals() {
   );
 }
 
-export default Proposals;
+export default Users;

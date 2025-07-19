@@ -4,11 +4,11 @@ import { enToFaNumber } from "../utils/enToFaNumber";
 const statColor = {
   blue: " bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-500 ",
   green: "  bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-500  ",
-  yellow:
-    " bg-indigo-50 dark:bg-indigo-700 text-indigo-500 dark:text-indigo-300 ",
+  indigo:" bg-indigo-50 dark:bg-indigo-700 text-indigo-500 dark:text-indigo-300 ",
+  orange: "  bg-amber-50 dark:bg-amber-600 text-amber-500 dark:text-amber-100  ",
 };
 
-function stat({ value, title, color, icon, tooman = false }) {
+function stat({ value, title, color, icon }) {
   return (
     <div className="xl:min-w-56 rounded-2xl bg- ">
       <div

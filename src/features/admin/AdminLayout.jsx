@@ -1,10 +1,10 @@
 import React from "react";
 import AppLayout from "../../ui/AppLayout";
-import CustomNavLink from "../../ui/CustomNavlink";
 import Sidebar from "../../ui/Sidebar";
-import { Element4, Home2, Notepad2 } from "iconsax-reactjs";
+import CustomNavLink from "../../ui/CustomNavlink";
+import { Element4, Home2, Notepad2, Profile2User } from "iconsax-reactjs";
 
-function FreelancerLayout() {
+function AdminLayout() {
   return (
     <div>
       <AppLayout>
@@ -12,6 +12,10 @@ function FreelancerLayout() {
           <CustomNavLink to="dashboard">
             <Home2 className="size-6" variant="Broken" />
             <span>داشبورد</span>
+          </CustomNavLink>
+          <CustomNavLink to="users">
+            <Profile2User className="size-6" variant="Broken" />
+            <span>کاربران</span>
           </CustomNavLink>
           <CustomNavLink to="projects">
             <Element4 className="size-6" variant="Broken" />
@@ -27,4 +31,4 @@ function FreelancerLayout() {
   );
 }
 
-export default FreelancerLayout;
+export default AdminLayout;

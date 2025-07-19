@@ -15,7 +15,6 @@ function CreateProposal({ onClose, projectId }) {
   const { isCreating, createProposal } = useCreateProposal();
 
   const onSubmit = (data) => {
-    console.log(data);
     createProposal(
       { ...data, projectId },
       {
@@ -28,7 +27,6 @@ function CreateProposal({ onClose, projectId }) {
         }
       }
     );
-    console.log(2)
   };
 
   return (

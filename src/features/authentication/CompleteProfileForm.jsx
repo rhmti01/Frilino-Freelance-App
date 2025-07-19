@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TextField from "../../ui/TextField";
 import toast from "react-hot-toast";
 import { useMutation } from "@tanstack/react-query";
@@ -10,19 +10,29 @@ import { useForm } from "react-hook-form";
 import RadioInputGroup from "../../ui/RadioInputGroup";
 import RoleOption from "../../ui/RoleOption";
 import { UserSearch } from "iconsax-reactjs";
+import useUser from "./useUser";
 
 function CompleteProfileForm() {
   const [role, setRole] = useState("");
+  const { data: user } = useUser();
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
     handleSubmit,
     watch,
   } = useForm();
-  const navigate = useNavigate();
   const { mutateAsync, isPending: isUpdatingProfile } = useMutation({
     mutationFn: completeProfile,
   });
+
+  console.log(user);
+
+  useEffect(() => {
+    if (user) {
+      navigate("/", { replace: true });
+    }
+  }, [user, navigate]);
 
   const handleRoleChange = (newRole) => {
     setRole(newRole);

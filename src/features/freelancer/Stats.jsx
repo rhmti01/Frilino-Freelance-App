@@ -18,7 +18,7 @@ function Stats({ proposals }) {
         value={numOfProposals}
       />
       <Stat
-        color="yellow"
+        color="indigo"
         icon={<Verify className="size-14" variant="Broken" />}
         title="درخواست های تایید شده"
         value={acceptedProposals.length}

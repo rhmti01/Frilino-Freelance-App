@@ -1,7 +1,5 @@
 import http from "./httpService";
 
-
-
 export function getOtp(data) {
     return http.post("/user/get-otp" , data).then(({data})=>data.data)
 }
@@ -20,4 +18,12 @@ export function getUser() {
 
 export function logoutApi() {
     return http.post("/user/logout").then(({data})=>data.data.user)
+}
+
+export function getUsersApi() {
+    return http.get("admin/user/list").then(({data})=>data.data.users)
+}
+
+export function changeUserStatusApi({userId,data}) {
+    return http.patch(`/admin/user/verify/${userId}` , data).then(({data})=>data.data)
 }

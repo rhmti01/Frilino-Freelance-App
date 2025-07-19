@@ -6,7 +6,7 @@ function ProposalTable({ proposals }) {
   if (!proposals.length) {
     return (
       <div className=" mt-20 w-full flex items-center flex-col  ">
-        <p className=" text-gray-800 dark:text-secondary-300 font-normal  text-[18px] ">
+        <p className="  text-[22px] font-semibold text-secondary-800 dark:text-secondary-300 ">
           هنوز برای این پروژه درخواستی ثبت نشده است!
         </p>
         <img

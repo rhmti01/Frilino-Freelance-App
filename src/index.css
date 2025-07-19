@@ -155,7 +155,7 @@
   }
 
   table td {
-    @apply text-secondary-600 dark:text-secondary-300 bg-secondary-0 dark:bg-[#0b0e16] ;
+    @apply text-secondary-600 dark:text-secondary-300 bg-secondary-0 dark:bg-[#0b0e16] text-center ;
   }
 }
 

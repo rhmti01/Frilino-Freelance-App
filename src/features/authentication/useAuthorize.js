@@ -7,6 +7,8 @@ export function useAuthorize() {
 
     const isAuthenticated = Boolean(user)
 
+    const isVerified = user && Number(user.status) === 2;
+
     const rolePathMap = {
         OWNER : 'owner' ,
         FREELANCER : 'freelancer' ,
@@ -20,5 +22,5 @@ export function useAuthorize() {
             user.role === role && pathname.toLowerCase().includes(path)
         );
 
-    return { user , isLoading , isAuthenticated , isAuthorized }
+    return { user , isLoading , isAuthenticated , isAuthorized , isVerified }
 }

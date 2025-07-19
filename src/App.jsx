@@ -17,29 +17,47 @@ import { ThemeSwitchProvider } from "./context/ThemeSwitchContext";
 import FreelancerDashboard from "./pages/FreelancerDashboard";
 import Proposals from "./pages/Proposals";
 import SubmittedProjects from "./pages/SubmittedProjects";
-import FreelancerLayout  from "./features/freelancer/FreelancerLayout";
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import FreelancerLayout from "./features/freelancer/FreelancerLayout";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import ProtectedRoute from "./ui/ProtectedRoute";
+import NotAccess from "./pages/NotAccess";
 
 const queryClient = new QueryClient();
 
 function App() {
+
   return (
     <ThemeSwitchProvider>
       <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} />
+        {/* <ReactQueryDevtools initialIsOpen={false} />   */}
         <Toaster />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="not-access" element={<NotAccess />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/complete-profile" element={<CompleteProfile />} />
-          <Route path="owner" element={<OwnerLayout />}>
+          <Route
+            path="owner"
+            element={
+              <ProtectedRoute>
+                <OwnerLayout />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Navigate to="dashboard" replace={true} />} />
             <Route path="dashboard" element={<OwnerDashboard />} />
             <Route path="projects" element={<Projects />} />
             <Route path="projects/:id" element={<Project />} />
           </Route>
-          <Route path="/freelancer" element={ <FreelancerLayout/> } >
+          <Route
+            path="/freelancer"
+            element={
+              <ProtectedRoute>
+                <FreelancerLayout />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Navigate to="dashboard" replace={true} />} />
             <Route path="dashboard" element={<FreelancerDashboard />} />
             <Route path="projects" element={<SubmittedProjects />} />

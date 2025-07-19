@@ -48,7 +48,7 @@ function CreateProposal({ onClose, projectId }) {
               message: "طول توضیحات کوتاه است",
             },
             maxLength: {
-              value: 30,
+              value: 40,
               message: "طول توضیحات بلند است",
             },
           }}

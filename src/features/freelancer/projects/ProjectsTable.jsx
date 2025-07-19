@@ -26,7 +26,7 @@ function ProjectsTable() {
           </p>
         ) : (
           <p className=" mt-20 text-[22px] font-semibold text-secondary-800 dark:text-secondary-300 ">
-            لیست پروژه های شما خالی می باشد!
+            لیست پروژه های خالی می باشد!
           </p>
         )}
         <img

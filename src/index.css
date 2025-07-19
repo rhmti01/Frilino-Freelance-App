@@ -110,7 +110,7 @@
   }
 
   .backMainPage__btn {
-    @apply px-3.5 py-2.5 font-normal text-blue-500 text-lg ring-1 ring-blue-500 rounded-xl mt-6 cursor-pointer duration-300 hover:text-secondary-0 hover:bg-blue-700;
+    @apply px-4 py-2.5 font-normal text-blue-500 text-[18px] ring-1 ring-blue-500 rounded-xl mt-6 cursor-pointer duration-300 hover:text-secondary-0 hover:bg-blue-700;
   }
 
   .appLayout {

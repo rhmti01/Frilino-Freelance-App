@@ -2,8 +2,7 @@ import React from "react";
 import useUser from "../features/authentication/useUser";
 import BrandLogo from "./BrandLogo";
 import { enToFaNumber } from "../utils/enToFaNumber";
-import { Edit, Home2, LogoutCurve, TableDocument } from "iconsax-reactjs";
-import { NavLink } from "react-router-dom";
+import { Edit} from "iconsax-reactjs";
 import useProfileImage from "../hooks/useProfileImage";
 
 export default function Sidebar({ children }) {

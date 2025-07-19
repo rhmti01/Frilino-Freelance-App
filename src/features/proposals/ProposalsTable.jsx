@@ -19,7 +19,7 @@ function ProposalsTable() {
     return (
       <div className="  flex items-center justify-center w-full h-full flex-col ">
         <p className=" mt-20 text-[22px] font-semibold text-secondary-800 dark:text-secondary-300 ">
-          لیست پروژه های شما خالی می باشد!
+          لیست پروژه های خالی می باشد!
         </p>
         <img
           className=" size-[380px] mt-16 "

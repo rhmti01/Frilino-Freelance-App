@@ -12,14 +12,14 @@ import { useNavigate } from "react-router-dom";
 function AuthContainer() {
   const [step, setStep] = useState(1);
   const navigate = useNavigate();
-  const { data:user } = useUser();
-  console.log(user);
+  const { data: user } = useUser();
 
   useEffect(() => {
-    if (user) {
-      navigate("/", { replace: true });
+    if (!user) {
+      navigate("/auth", { replace: true });
     }
-  }, [user , navigate]);
+  }, [user, navigate]);
+
 
   const {
     register,

@@ -7,15 +7,14 @@ import Loading from "../../ui/Loading";
 import BackBtn from "../../ui/BackBtn";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import RadioInputGroup from "../../ui/RadioInputGroup";
 import RoleOption from "../../ui/RoleOption";
 import { UserSearch } from "iconsax-reactjs";
 import useUser from "./useUser";
 
 function CompleteProfileForm() {
   const [role, setRole] = useState("");
-  const { data: user } = useUser();
   const navigate = useNavigate();
+  const {data:user} = useUser()
   const {
     register,
     formState: { errors },
@@ -26,11 +25,10 @@ function CompleteProfileForm() {
     mutationFn: completeProfile,
   });
 
-  console.log(user);
-
   useEffect(() => {
-    if (user) {
+    if (user?.email) {
       navigate("/", { replace: true });
+      toast.error("کاربر گرامی , حساب کاربری شما قبلا تکمیل شده است!");
     }
   }, [user, navigate]);
 
@@ -101,22 +99,6 @@ function CompleteProfileForm() {
               },
             }}
           />
-          {/* <RadioInputGroup
-            errors={errors}
-            register={register}
-            watch={watch}
-            configs={{
-              name: "role",
-              validationSchema: { required: "انتخاب نقش ضروری است" },
-              options: [
-                {
-                  value: "OWNER",
-                  label: "کارفرما",
-                },
-                { value: "FREELANCER", label: "فریلنسر" },
-              ],
-            }}
-          /> */}
           <div className="roleContainer mt-6">
             <p className="text-secondary-700 dark:text-dark-200 flex items-start gap-x-2">
               <UserSearch size="20" />

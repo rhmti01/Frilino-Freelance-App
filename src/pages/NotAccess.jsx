@@ -7,7 +7,6 @@ function NotAccess() {
   const navigate = useNavigate();
   const { data: user } = useUser();
   const name = user?.name.split(" ").at(0);
-  console.log(name);
 
   return (
     <div className=" bg-secondary-0 dark:bg-dark-900  mx-auto max-w-7xl flex flex-col w-full ">
@@ -21,7 +20,7 @@ function NotAccess() {
           <h1 className=" text-center font-medium text-[19px] text-secondary-700 dark:text-secondary-400 mt-3 ">
             <span className=" text-secondary-900 dark:text-secondary-200 ">
               {" "}
-              {name} عزیز ,
+              {name || "کاربر"} عزیز ,
             </span>
             <br />
             دسترسی شما به این صفحه محدود شده است!

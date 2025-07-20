@@ -1,12 +1,18 @@
 import React from "react";
-import BrandLogo from "../ui/BrandLogo";
+import useUser from "../features/authentication/useUser";
+import HomeHeader from "../ui/HomeHeader";
+import HomeBody from "../ui/HomeBody";
 
 function Home() {
+  const { data: user } = useUser();
+
   return (
-    <div className="mx-auto max-w-7xl flex flex-col w-full ">
-      <div className=" flex items-center justify-center  w-full h-[100vh]  ">
-        <BrandLogo scale="scale-150" />
-      </div>
+    <div
+      className="relative  h-screen  w-full justify-start flex-col
+      items-center bg-secondary-100  dark:bg-dark-800/40  "
+    >
+      <HomeHeader user={user} />
+      <HomeBody />
     </div>
   );
 }

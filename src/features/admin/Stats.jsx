@@ -8,7 +8,7 @@ function Stats({ users, projects, proposals }) {
       <Stat
         color="orange"
         icon={<Profile2User className="size-14" variant="Broken" />}
-        title="تعداد کاربران"
+        title="کاربران"
         value={users.length}
       />
       <Stat

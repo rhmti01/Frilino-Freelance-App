@@ -8,8 +8,8 @@ function ThemeSwitch() {
       onClick={toggleTheme}
       className="p-2 ring-1 ring-secondary-300 rounded-2xl shadow-sm
        shadow-secondary-300 hover:bg-secondary-100 duration-200
-        cursor-pointer dark:text-secondary-300 dark:shadow-secondary-600
-        dark:bg-dark-800 dark:hover:bg-dark-900 dark:ring-dark-700  "
+        cursor-pointer dark:text-secondary-300 dark:shadow-dark-600
+        dark:bg-dark-800 dark:hover:bg-dark-900 dark:ring-dark-700 hover:shadow-md "
     >
       <svg
         className={` ${theme === "dark" ? "block" : "hidden"} dark:stroke-secondary-300 size-6.5 cursor-pointer `}

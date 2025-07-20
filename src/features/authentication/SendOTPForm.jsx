@@ -1,12 +1,24 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TextField from "../../ui/TextField";
 import BrandLogo from "../../ui/BrandLogo";
 import BackBtn from "../../ui/BackBtn";
 import Loading from "../../ui/Loading";
+import { useNavigate } from "react-router-dom";
+import useUser from "./useUser";
+import toast from "react-hot-toast";
 
 function SendOTPForm({ onSubmit, isSendingOtp, register, errors }) {
-  
+  const navigate = useNavigate()
+  const {data:user } = useUser()
+   
+  useEffect(() => {
+    if (user) {
+      navigate("/", { replace: true });
+      toast.error("برای ورود با حساب دیگر، ابتدا از حساب فعلی خود خارج شوید.")
+    }
+  }, [user, navigate]);
+
   return (
     <div className=" flex items-center justify-center  w-full h-[100vh] bg-secondary-0 dark:bg-dark-900 ">
       <div className="flex items-center justify-center relative  ">

@@ -2,9 +2,11 @@ import React from "react";
 import userLogout from "./useLogout";
 import Loading from "../../ui/Loading";
 import { LogoutCurve } from "iconsax-reactjs";
+import { useNavigate } from "react-router-dom";
 
 function Logout() {
   const { logout, isPending } = userLogout();
+  const navigate = useNavigate()
 
   return isPending ? (
     <Loading />

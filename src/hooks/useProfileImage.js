@@ -28,10 +28,17 @@ export default function useProfileImage(defaultImage = "/assets/images/empty-pro
     reader.readAsDataURL(file);
   };
 
+  const removeProfileImage= ()=>{
+    const defaultImage = "/assets/images/empty-profile-img.png"
+    setProfileImage(defaultImage)
+    localStorage.setItem("profileImage",defaultImage );
+  }
+
   return {
     profileImage,
     fileInputRef,
     triggerFileSelect,
     handleFileChange,
+    removeProfileImage
   };
 }

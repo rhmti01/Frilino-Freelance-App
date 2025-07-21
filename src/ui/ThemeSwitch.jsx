@@ -6,13 +6,13 @@ function ThemeSwitch() {
   return (
     <div
       onClick={toggleTheme}
-      className="p-2 ring-1 ring-secondary-300 rounded-2xl shadow-sm
+      className="p-2 hover:ring-1 ring-secondary-200 rounded-2xl shadow-sm
        shadow-secondary-300 hover:bg-secondary-100 duration-200
         cursor-pointer dark:text-secondary-300 dark:shadow-dark-600
-        dark:bg-dark-800 dark:hover:bg-dark-900 dark:ring-dark-700 hover:shadow-md "
+        dark:bg-dark-800 dark:hover:bg-dark-900 dark:ring-dark-600 hover:shadow-md "
     >
       <svg
-        className={` ${theme === "dark" ? "block" : "hidden"} dark:stroke-secondary-300 size-6.5 cursor-pointer `}
+        className={` ${theme === "dark" ? "block" : "hidden"} dark:stroke-secondary-200 size-6.5 cursor-pointer `}
         id="light"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

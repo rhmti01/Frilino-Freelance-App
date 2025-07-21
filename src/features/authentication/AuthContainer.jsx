@@ -34,7 +34,6 @@ function AuthContainer() {
   const sendOtpHandler = async (data) => {
     try {
       const { message } = await mutateAsync(data);
-      // console.log(message);
       toast.success("کد تایید ارسال شد");
       setStep(2);
     } catch (error) {

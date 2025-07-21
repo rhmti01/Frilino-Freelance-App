@@ -6,7 +6,6 @@ import Loading from "../../../ui/Loading";
 
 function UsersTable() {
   const { users, isLoading } = useUsers();
-  console.log(users);
 
   if (isLoading) {
     return (

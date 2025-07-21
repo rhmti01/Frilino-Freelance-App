@@ -2,12 +2,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function BackBtn({ top = "-top-24", right = "-right-32" }) {
+function BackBtn({ top = "-top-24", right = "-right-32" , to}) {
   const navigate = useNavigate();
 
   return (
     <a
-      onClick={() => navigate(-1, { replace: true })}
+      onClick={() => navigate( to || -1, { replace: true })}
       className={`  ${top} ${right}  cursor-pointer absolute   `}
     >
       <svg

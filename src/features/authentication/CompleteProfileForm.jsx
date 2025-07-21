@@ -19,7 +19,6 @@ function CompleteProfileForm() {
     register,
     formState: { errors },
     handleSubmit,
-    watch,
   } = useForm();
   const { mutateAsync, isPending: isUpdatingProfile } = useMutation({
     mutationFn: completeProfile,
@@ -29,16 +28,15 @@ function CompleteProfileForm() {
     if (user?.email) {
       navigate("/", { replace: true });
       toast.error("کاربر گرامی , حساب کاربری شما قبلا تکمیل شده است!");
-    }
+    } 
   }, [user, navigate]);
+  
 
-  const handleRoleChange = (newRole) => {
+    const handleRoleChange = (newRole) => {
     setRole(newRole);
   };
 
   const onCompleteProfile = async (data) => {
-    console.log({ ...data, role });
-
     try {
       const { message, user } = await mutateAsync({ ...data, role });
       toast.success(message);
@@ -64,8 +62,6 @@ function CompleteProfileForm() {
           onSubmit={handleSubmit(onCompleteProfile)}
           className="flex flex-col xl:max-w-sm w-full relative "
         >
-          {/* back button */}
-          <BackBtn />
 
           <h1 className="pageTitle text-[24px]">تکمیل حساب کاربری</h1>
           <TextField

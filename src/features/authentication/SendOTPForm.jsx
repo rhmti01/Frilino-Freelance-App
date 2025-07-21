@@ -25,7 +25,7 @@ function SendOTPForm({ onSubmit, isSendingOtp, register, errors }) {
         {/* form section */}
         <div className="flex flex-col  xl:w-[420px] ">
           {/* back button */}
-          <BackBtn />
+          <BackBtn to={"/"} />
 
           {/* brand logo */}
           <div className="w-full">

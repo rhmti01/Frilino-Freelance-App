@@ -1,22 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useAuthorize } from "../features/authentication/useAuthorize";
-import { replace, useNavigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import Loading from "./Loading";
 import toast from "react-hot-toast";
 
 function ProtectedRoute({ children }) {
-  const navigate = useNavigate();
-  const { isLoading, isAuthenticated, isAuthorized  , isVerified } = useAuthorize();
-  console.log(isAuthenticated, isAuthorized);
-
-  useEffect(() => {
-    if (!isAuthenticated && !isLoading) navigate("/auth");
-    if (!isVerified && !isLoading){
-      toast.error("کاربر عزیز , پروفایل شما هنوز تایید نشده است")
-      navigate("/")
-    }
-    if (!isAuthorized && !isLoading) navigate("/not-access", { replace: true });
-  }, [isAuthenticated, isAuthorized]);
+  const { isLoading, isAuthenticated, isAuthorized, isVerified } = useAuthorize();
+  const location = useLocation();
 
   if (isLoading) {
     return (
@@ -26,7 +16,20 @@ function ProtectedRoute({ children }) {
     );
   }
 
-  if (isAuthenticated && isAuthorized) return children;
+  if (!isAuthenticated) {
+    return <Navigate to="/auth" state={{ from: location }} replace />;
+  }
+
+  if (!isVerified) {
+    toast.error("کاربر عزیز، پروفایل شما هنوز تایید نشده است");
+    return <Navigate to="/" replace />;
+  }
+
+  if (!isAuthorized) {
+    return <Navigate to="/not-access" replace />;
+  }
+
+  return children;
 }
 
 export default ProtectedRoute;

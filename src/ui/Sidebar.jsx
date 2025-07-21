@@ -2,7 +2,7 @@ import React from "react";
 import useUser from "../features/authentication/useUser";
 import BrandLogo from "./BrandLogo";
 import { enToFaNumber } from "../utils/enToFaNumber";
-import { Edit} from "iconsax-reactjs";
+import { Camera, Edit, Trash } from "iconsax-reactjs";
 import useProfileImage from "../hooks/useProfileImage";
 
 export default function Sidebar({ children }) {
@@ -33,14 +33,16 @@ export default function Sidebar({ children }) {
           >
             {/* عکس پروفایل */}
             <div
-              onClick={triggerFileSelect}
-              className="size-[52px] rounded-full overflow-hidden cursor-pointer bg-gray-100 dark:bg-dark-800 shrink-0"
+              className=" relative size-[52px] rounded-xl overflow-hidden 
+            cursor-auto bg-secondary-0 dark:bg-dark-900 shrink-0"
             >
               <img
                 src={profileImage}
                 alt="user-profile"
-                className="w-full h-full object-cover ring-0 border-0 "
+                className="w-full h-full object-cover border-0 rounded-3xl  
+                bg-secondary-0 dark:bg-dark-900"
               />
+              <span className="z-50 absolute bottom-0.5 right-0.5 size-3 bg-green-400 rounded-full cursor-pointer "></span>
             </div>
 
             <input
@@ -60,7 +62,8 @@ export default function Sidebar({ children }) {
               </p>
             </div>
 
-            <Edit
+            <Camera
+              onClick={triggerFileSelect}
               variant="Broken"
               className="size-6 cursor-pointer text-blue-500"
             />

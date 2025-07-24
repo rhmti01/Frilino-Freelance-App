@@ -163,7 +163,7 @@
   }
 
   .login_btn {
-    @apply font-medium text-base flex items-center justify-center gap-x-2 bg-blue-600  text-secondary-0 rounded-xl cursor-pointer hover:bg-blue-700 py-2.5 px-5 hover:shadow-md duration-300 dark:bg-blue-700 dark:hover:bg-blue-800;
+    @apply font-medium text-[15px] flex items-center justify-center gap-x-2 bg-blue-600  text-secondary-0 rounded-xl cursor-pointer hover:bg-blue-700 py-2.5 px-5 hover:shadow-md duration-300 dark:bg-blue-700 dark:hover:bg-blue-800;
   }
 
   .dashboard_btn {

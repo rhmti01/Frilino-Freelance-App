@@ -1,7 +1,7 @@
 import React from "react";
 import BrandLogo from "../ui/BrandLogo";
 import ThemeSwitch from "../ui/ThemeSwitch";
-import { LoginCurve, User } from "iconsax-reactjs";
+import { Login, LoginCurve, User } from "iconsax-reactjs";
 import { useNavigate } from "react-router-dom";
 import useProfileImage from "../hooks/useProfileImage";
 import Logout from "../features/authentication/Logout";
@@ -65,7 +65,7 @@ function HomeHeader({ user }) {
             </div>
           ) : (
             <button onClick={() => navigate("/auth")} className=" login_btn ">
-              <LoginCurve />
+              <Login />
               <span className=" inline-flex ">ورود / ثبت نام</span>
             </button>
           )}

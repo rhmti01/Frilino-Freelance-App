@@ -107,18 +107,16 @@ function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
                 numInputs={6}
                 renderSeparator={<span></span>}
                 renderInput={(props) => <input type="number" {...props} />}
-                containerStyle="flex flex-row-reverse gap-x-[5px] justify-center items-center mt-12 w-full  "
+                containerStyle=" text-[#374151] dark:text-dark-0 flex flex-row-reverse gap-x-[5px] justify-center items-center mt-12 w-full  "
                 inputStyle={{
                   width: "2.5rem",
                   padding: "0.7rem 0",
                   border: "1px solid #cbd0d6",
                   borderRadius: "0.9rem",
-                  color: "#374151",
                   fontSize: "16px",
                   fontWeight: "bold",
                   fontFamily: "font-inter",
-                  // background: "#fff",
-                  outlineColor: "#34d",
+                  background : "transparent" ,
                 }}
               />
               <button

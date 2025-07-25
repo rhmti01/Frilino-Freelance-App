@@ -10,6 +10,7 @@ import useCreateProjects from "./useCreateProjects";
 import Loading from "../../ui/Loading";
 import useEditProjects from "./useEditProject";
 import toast from "react-hot-toast";
+import { Button } from "@heroui/button";
 
 function CreateProjectForm({ projectToEdit = {}, onClose }) {
   const { _id: editId } = projectToEdit;
@@ -168,13 +169,14 @@ function CreateProjectForm({ projectToEdit = {}, onClose }) {
               setDate={setDate}
               label="ددلاین"
             />
-            <button
+            <Button
+            size="lg"
               type="submit"
               className=" text-base py-3.5 w-full bg-blue-600 hover:bg-blue-700
                duration-300 cursor-pointer mt-6 text-white rounded-xl  "
             >
               {isCreating || isEditing ? <Loading /> : "تایید"}
-            </button>
+            </Button>
           </form>
         </div>
       </div>

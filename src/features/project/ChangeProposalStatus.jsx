@@ -6,6 +6,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import Loading from "../../ui/Loading";
 import toast from "react-hot-toast";
+import { Button } from "@heroui/button";
 
 const options = [
   {
@@ -59,13 +60,14 @@ function ChangeProposalStatus({ id, onClose }) {
           options={options}
         />
         <div className="mt-7">
-          <button
+          <Button
+          size="lg"
             type="submit"
             className="text-base py-3 w-full bg-blue-600 hover:bg-blue-700
                duration-300 cursor-pointer  text-white rounded-xl "
           >
             {isUpdating ? <Loading /> : "تایید"}
-          </button>
+          </Button>
         </div>
       </form>
     </div>

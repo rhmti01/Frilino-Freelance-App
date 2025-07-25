@@ -45,6 +45,7 @@ function ProjectsTable() {
           #
         </th>
         <th>عنوان پروژه</th>
+        <th>توضیحات پروژه</th>
         <th>دسته بندی</th>
         <th>بودجه</th>
         <th>ددلاین</th>

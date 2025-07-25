@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import Table from "../../../ui/Table";
 import { enToFaNumber } from "../../../utils/enToFaNumber";
 import { Code, SecurityUser, User, Verify } from "iconsax-reactjs";
-import Modal from "../../../ui/Modal";
-import { useChangeUserStatus } from "./useChangeUserStatus";
 import ChangeUserStatus from "./ChangeUserStatus";
+import CustomModal from "../../../ui/CustomModal";
 
 function UsersTableRow({ user, index }) {
   const { name, email, phoneNumber, status, role } = user;
   const [modalOpen , setModalOpen] = useState(false)
-  const { isChanging , changeUserStatus} = useChangeUserStatus()
 
   return (
     <Table.Row>
@@ -17,19 +15,19 @@ function UsersTableRow({ user, index }) {
       <td>{name}</td>
       <td>{enToFaNumber(phoneNumber)}</td>
       <td>{email}</td>
-      <td className=" flex justify-center   ">
+      <td className="   ">
         {role === "FREELANCER" ? (
-          <span className=" flex items-center gap-x-2  ">
+          <span className=" w-fit mx-auto flex items-center gap-x-2  ">
             <Code className="size-5 mb-0.5 " />
             فریلنسر
           </span>
         ) : role === "OWNER" ? (
-          <span className=" flex items-center gap-x-2  ">
+          <span className=" w-fit mx-auto flex items-center gap-x-2  ">
             <User className="size-5 mb-0.5 " />
             کارفرما
           </span>
         ) : (
-          <span className=" flex items-center gap-x-2  ">
+          <span className=" w-fit mx-auto flex items-center gap-x-2  ">
             <SecurityUser className="size-5 mb-0.5 " />
             ادمین
           </span>
@@ -53,7 +51,7 @@ function UsersTableRow({ user, index }) {
              dark:text-blue-700 cursor-pointer  "
           />
         </button>
-        <Modal
+        <CustomModal
           title={` تغییر وضعیت کاربر `}
           open={modalOpen}
           onClose={() => setModalOpen(false)}
@@ -62,7 +60,7 @@ function UsersTableRow({ user, index }) {
             userId={user._id}
             onClose={()=>setModalOpen(false)}
           />
-        </Modal>
+        </CustomModal>
       </td>
     </Table.Row>
   );

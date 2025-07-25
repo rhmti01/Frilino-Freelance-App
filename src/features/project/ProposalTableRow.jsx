@@ -4,8 +4,8 @@ import { enToFaNumber } from "../../utils/enToFaNumber";
 import { numberDivider } from "../../utils/numberDivider";
 import { truncateText } from "../../utils/truncateText";
 import toFaShortDate from "../../utils/toFaShortDate";
-import Modal from "../../ui/Modal";
 import ChangeProposalStatus from "./ChangeProposalStatus";
+import CustomModal from "../../ui/CustomModal";
 
 const statusStyle = [
   {
@@ -64,7 +64,7 @@ function ProposalTableRow({ proposal, index }) {
             d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
           />
         </svg>
-        <Modal
+        <CustomModal
           title="تغییر وضعیت درخواست"
           open={open}
           onClose={() => setOpen(false)}
@@ -73,7 +73,7 @@ function ProposalTableRow({ proposal, index }) {
             id={proposal._id}
             onClose={() => setOpen(false)}
           />
-        </Modal>
+        </CustomModal>
       </td>
     </Table.Row>
   );

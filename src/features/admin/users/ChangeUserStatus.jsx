@@ -1,19 +1,19 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useQueryClient } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
 import Loading from "../../../ui/Loading";
 import toast from "react-hot-toast";
 import { useChangeUserStatus } from "./useChangeUserStatus";
 import RHFSelect from "../../../ui/RHFSelect";
+import { Button } from "@heroui/button";
 
 const options = [
   {
-    label: "رد شده",
+    label: "در انتظار تایید",
     value: 0,
   },
   {
-    label: "در انتظار تایید",
+    label: "رد شده",
     value: 1,
   },
   {
@@ -23,7 +23,6 @@ const options = [
 ];
 
 function ChangeUserStatus({ userId, onClose }) {
-  const { id: projectId } = useParams();
   const { register, handleSubmit } = useForm();
   const { isChanging, changeUserStatus } = useChangeUserStatus();
   const queryClient = useQueryClient();
@@ -56,13 +55,14 @@ function ChangeUserStatus({ userId, onClose }) {
           options={options}
         />
         <div className="mt-7">
-          <button
+          <Button
+            size="lg"
             type="submit"
             className="text-base py-3 w-full bg-blue-600 hover:bg-blue-700
                duration-300 cursor-pointer  text-white rounded-xl "
           >
             {isChanging ? <Loading /> : "تایید"}
-          </button>
+          </Button>
         </div>
       </form>
     </div>

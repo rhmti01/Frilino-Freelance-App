@@ -7,6 +7,7 @@ import Loading from "../../ui/Loading";
 import { useNavigate } from "react-router-dom";
 import useUser from "./useUser";
 import toast from "react-hot-toast";
+import { Button } from "@heroui/button";
 
 function SendOTPForm({ onSubmit, isSendingOtp, register, errors }) {
   const navigate = useNavigate()
@@ -57,9 +58,9 @@ function SendOTPForm({ onSubmit, isSendingOtp, register, errors }) {
                 },
               }}
             />
-            <button type="submit" className="sendOTPForm__btn ">
+            <Button type="submit" size="lg" className="sendOTPForm__btn ">
               {isSendingOtp ? <Loading /> : " تایید و دریافت کد"}
-            </button>
+            </Button>
             <p className="text-[15px] mt-6 text-secondary-500  ">
               ورود شما به معنای پذیرش{" "}
               <span className="highlightText">شرایط فریلینو</span> و{" "}

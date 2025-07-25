@@ -4,6 +4,7 @@ import TextField from "../../ui/TextField";
 import Loading from "../../ui/Loading";
 import useCreateProposal from "./useCreateProsals";
 import toast from "react-hot-toast";
+import { Button } from "@heroui/button";
 
 function CreateProposal({ onClose, projectId }) {
   const {
@@ -31,7 +32,7 @@ function CreateProposal({ onClose, projectId }) {
 
   return (
     <div className=" w-full flex flex-col ">
-      <form onSubmit={handleSubmit(onSubmit)} className="px-3">
+      <form onSubmit={handleSubmit(onSubmit)} className="px-1">
         <TextField
           mt="mt-2"
           label="توضیحات "
@@ -73,7 +74,7 @@ function CreateProposal({ onClose, projectId }) {
           }}
         />
         <TextField
-          label="مدت پیشنهادی"
+          label="مدت پیشنهادی (روز)"
           name="duration"
           dir="ltr"
           mt="mt-2"
@@ -89,14 +90,15 @@ function CreateProposal({ onClose, projectId }) {
             },
           }}
         />
-        <button
+        <Button
+        size="lg"
           type="submit"
           className=" block text-base py-3.5 w-full bg-blue-600 hover:bg-blue-700
                duration-300 cursor-pointer mt-6 text-white rounded-xl  "
         >
           {/* {isCreating || isEditing ? <Loading /> : "تایید"} */}
           {isCreating ? <Loading /> : "تایید"}
-        </button>
+        </Button>
       </form>
     </div>
   );

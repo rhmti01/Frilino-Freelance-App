@@ -36,6 +36,7 @@ function ProjectTable() {
       <Table.Header>
         <th className=" bg-secondary-200 dark:bg-[#0e101d]   rounded-tr-2xl" >#</th>
         <th>عنوان پروژه</th>
+        <th>توضیحات پروژه</th>
         <th>دسته بندی</th>
         <th>بودجه</th>
         <th>ددلاین</th>

@@ -1,6 +1,6 @@
 import react, { useState } from "react";
 import Table from "../../ui/Table";
-import { DocumentText1, Edit, Eye, Trash } from "iconsax-reactjs";
+import { DocumentText1, Edit, Trash } from "iconsax-reactjs";
 import toFaShortDate from "../../utils/toFaShortDate";
 import { enToFaNumber } from "../../utils/enToFaNumber";
 import { truncateText } from "../../utils/truncateText";
@@ -11,7 +11,7 @@ import useRemoveProject from "./useRemoveProject";
 import CreateProjectForm from "./CreateProjectForm";
 import ToggleProject from "./ToggleProject";
 import { Link } from "react-router-dom";
-import { HiEye } from "react-icons/hi";
+import CustomModal from "../../ui/CustomModal";
 
 function ProjectTableRow({ project, index }) {
   const [isEditOpen, setIsEditOpen] = useState(false);
@@ -22,6 +22,7 @@ function ProjectTableRow({ project, index }) {
     <Table.Row>
       <td>{enToFaNumber(index + 1)}</td>
       <td>{truncateText(project.title, 30)}</td>
+      <td>{truncateText(project.description, 30)}</td>
       <td>{project.category.title}</td>
       <td>
         <span>{enToFaNumber(numberDivider(project.budget))}</span>
@@ -51,7 +52,7 @@ function ProjectTableRow({ project, index }) {
       </td>
       <td className=" h-full">
         <>
-          <Modal
+          <CustomModal
             onClose={() => setIsEditOpen(false)}
             title={`  ویرایش ${project.title}  `}
             open={isEditOpen}
@@ -60,7 +61,7 @@ function ProjectTableRow({ project, index }) {
               projectToEdit={project}
               onClose={() => setIsEditOpen(false)}
             />
-          </Modal>
+          </CustomModal>
           <button
             className="mx-2 inline-flex "
             onClick={() => setIsEditOpen(true)}
@@ -81,7 +82,7 @@ function ProjectTableRow({ project, index }) {
               className=" cursor-pointer size-6 text-red-500 "
             />
           </button>
-          <Modal
+          <CustomModal
             onClose={() => setIsDeleteOpen(false)}
             title={`  حذف ${project.title}  `}
             open={isDeleteOpen}
@@ -96,7 +97,7 @@ function ProjectTableRow({ project, index }) {
               }
               disabled={false}
             />
-          </Modal>
+          </CustomModal>
         </>
       </td>
       <td className="  ">

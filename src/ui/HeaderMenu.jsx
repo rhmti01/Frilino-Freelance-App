@@ -1,7 +1,7 @@
 import React from "react";
 import { User } from "iconsax-reactjs";
 import { NavLink } from "react-router-dom";
-import ThemeSwitch from "../ui/ThemeSwitch";
+import ThemeSwitch from "./ThemeSwitch";
 import Logout from "../features/authentication/Logout";
 
 function HeaderMenu() {

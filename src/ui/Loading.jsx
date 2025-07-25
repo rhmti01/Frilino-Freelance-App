@@ -1,9 +1,7 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import { CircularProgress } from "@mui/joy";
 import React from "react";
+import { CircularProgress } from "@mui/joy";
 
-function Loading({mt = "" , mb = " " , size = "sm" , variant = "soft"}) {
+function Loading({mt = "" , mb = " " , size = "sm" , variant = "soft" , }) {
   return (
     <div className={`  ${mt} ${mb}  flex justify-center  `}  >
       <CircularProgress

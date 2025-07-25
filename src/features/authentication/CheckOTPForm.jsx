@@ -11,6 +11,8 @@ import Loading from "../../ui/Loading";
 import { enToFaNumber } from "../../utils/enToFaNumber";
 import { TbEditCircle } from "react-icons/tb";
 import { minuteFormat } from "../../utils/minuteFormat";
+import { Button } from "@heroui/button";
+import { InputOtp } from "@heroui/react";
 
 function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
   const [otp, setOtp] = useState("");
@@ -119,9 +121,10 @@ function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
                   background : "transparent" ,
                 }}
               />
-              <button
+              <Button
+                size="lg"
                 type="button"
-                onClick={() => {
+                onPress={() => {
                   if (isOtpComplete) {
                     checkOtpHandler();
                   } else if (time === 0) {
@@ -134,7 +137,7 @@ function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
                 className={`checkOTPForm__btn  ${buttonClass()}`}
               >
                 {isPending ? <Loading /> : buttonText()}
-              </button>
+              </Button>
             </div>
           </form>
         </div>

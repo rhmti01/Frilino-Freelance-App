@@ -20,7 +20,7 @@ function TextField({
   return (
     <>
       <label
-        className={`  ${mt} block p-3  text-right font-medium text-[15px] text-secondary-700 dark:text-dark-200  `}
+        className={`  ${mt} block p-2.5  text-right font-medium text-[15px] text-secondary-700 dark:text-dark-200  `}
         htmlFor={name}
       >
         {label} {required && <span className=" text-error">*</span>}

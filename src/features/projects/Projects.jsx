@@ -3,6 +3,8 @@ import ProjectTable from "./ProjectTable-v2";
 import { AddSquare } from "iconsax-reactjs";
 import CreateProjectForm from "./CreateProjectForm";
 import Modal from "../../ui/Modal";
+import { Button } from "@heroui/button";
+import CustomModal from "../../ui/CustomModal";
 
 function Projects() {
   const [isCreateProject, setIsCreateProject] = useState(false);
@@ -14,19 +16,20 @@ function Projects() {
      "
     >
       <div className="w-full max-w-7xl ">
-        <Modal
+        <CustomModal
           title="افزودن پروژه جدید"
           open={isCreateProject}
           onClose={() => setIsCreateProject(false)}
         >
           <CreateProjectForm onClose={() => setIsCreateProject(false)} />
-        </Modal>
+        </CustomModal>
         <div className="flex w-full justify-between items-center  ">
           <h1 className=" font-bold text-secondary-800 dark:text-secondary-100 text-[21px] ">
             پروژه های شما
           </h1>
-          <button
-            onClick={() => {
+          <Button
+          size="lg"
+            onPress={() => {
               setIsCreateProject(true);
             }}
             className=" hover:bg-blue-700 text-white font-semibold shadow-md
@@ -39,7 +42,7 @@ function Projects() {
               className=" text-white dark:text-secondary-100 size-6 "
               variant="Broken"
             />
-          </button>
+          </Button>
         </div>
         <div className="w-full overflow-auto  ">
           <ProjectTable />

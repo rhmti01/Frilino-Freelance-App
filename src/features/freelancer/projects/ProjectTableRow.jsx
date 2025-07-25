@@ -4,10 +4,11 @@ import { enToFaNumber } from "../../../utils/enToFaNumber";
 import { truncateText } from "../../../utils/truncateText";
 import { numberDivider } from "../../../utils/numberDivider";
 import toFaShortDate from "../../../utils/toFaShortDate";
-import { Note, ReceiptAdd } from "iconsax-reactjs";
+import { ReceiptAdd } from "iconsax-reactjs";
 import Modal from "../../../ui/Modal";
 import CreateProposal from "../../proposals/CreateProposal";
 import toast from "react-hot-toast";
+import CustomModal from "../../../ui/CustomModal";
 
 const projectStatus = {
   OPEN: {
@@ -21,12 +22,13 @@ const projectStatus = {
 };
 
 function ProjectTableRow({ project, index }) {
-  const { _id, title, category, budget, deadline, status } = project;
+  const { _id, title, category, budget, deadline, status , description } = project;
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <Table.Row>
       <td>{enToFaNumber(index + 1)}</td>
       <td>{truncateText(title, 30)}</td>
+      <td>{truncateText(description, 30)}</td>
       <td>{category.title}</td>
       <td>
         <span>{enToFaNumber(numberDivider(budget))}</span>
@@ -53,17 +55,16 @@ function ProjectTableRow({ project, index }) {
                   "به دلیل بسته بودن پروژه، امکان ارسال پروپوزال وجود ندارد!"
                 );
                 return;
-              } else {
-                setModalOpen(true); 
               }
+              setModalOpen(true);
             }}
             values="Broken"
-            className=" size-6  text-blue-700
-             dark:text-blue-700 cursor-pointer  "
+            className="size-6 text-blue-700 dark:text-blue-700 cursor-pointer"
           />
         </button>
-        <Modal
-          title={` درخواست انجام پروژه ${title} `}
+
+        <CustomModal
+          title={`درخواست انجام پروژه ${title}`}
           open={modalOpen}
           onClose={() => setModalOpen(false)}
         >
@@ -72,7 +73,7 @@ function ProjectTableRow({ project, index }) {
             status={status}
             onClose={() => setModalOpen(false)}
           />
-        </Modal>
+        </CustomModal>
       </td>
     </Table.Row>
   );

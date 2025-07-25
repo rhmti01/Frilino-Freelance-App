@@ -34,15 +34,15 @@ export default function Sidebar({ children }) {
             {/* عکس پروفایل */}
             <div
               className=" relative size-[52px] rounded-xl overflow-hidden 
-            cursor-auto bg-secondary-0 dark:bg-dark-900 shrink-0"
+            cursor-auto bg-secondary-0 dark:bg-dark-900 shrink-0  "
             >
               <img
                 src={profileImage}
                 alt="user-profile"
-                className="w-full h-full object-cover border-0 rounded-3xl  
-                bg-secondary-0 dark:bg-dark-900"
+                className="w-full h-full object-cover border-1 rounded-3xl  
+                bg-secondary-0 dark:bg-dark-900 border-slate-300 "
               />
-              <span className="z-50 absolute bottom-0.5 right-0.5 size-3 bg-green-400 rounded-full cursor-pointer "></span>
+              <span className="z-50 absolute bottom-0.5 right-0.5 size-3 bg-green-500 rounded-full cursor-pointer "></span>
             </div>
 
             <input

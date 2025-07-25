@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import RoleOption from "../../ui/RoleOption";
 import { UserSearch } from "iconsax-reactjs";
 import useUser from "./useUser";
+import { Button } from "@heroui/button";
 
 function CompleteProfileForm() {
   const [role, setRole] = useState("");
@@ -115,13 +116,14 @@ function CompleteProfileForm() {
               />
             </div>
           </div>
-          <button
+          <Button
+          size="lg"
             disabled={isUpdatingProfile}
             type="submit"
             className="completeProfile__btn mt-8"
           >
             {isUpdatingProfile ? <Loading /> : " بروزرسانی اطلاعات"}
-          </button>
+          </Button>
         </form>
       </div>
     </div>

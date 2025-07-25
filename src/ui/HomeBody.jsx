@@ -1,8 +1,8 @@
 import React from "react";
 import { useTheme } from "../context/ThemeSwitchContext";
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
 import useUser from "../features/authentication/useUser";
+import { Button } from "@heroui/button";
 
 function HomeBody() {
   const { theme } = useTheme();
@@ -37,14 +37,15 @@ function HomeBody() {
               alt="smile emoji"
             />
           </p>
-          <button onClick={() => onHandleCta()} className=" cta_btn">
+
+          <Button onPress={() => onHandleCta()} className=" cta_btn" size="lg">
             <img
               src="/assets/images/rocket.png"
               alt="start"
               className=" size-5 "
             />
             شروع کن !
-          </button>
+          </Button>
         </div>
         <video
           // remount video by theme changes!

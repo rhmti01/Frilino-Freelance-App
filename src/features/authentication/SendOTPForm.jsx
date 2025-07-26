@@ -30,7 +30,7 @@ function SendOTPForm({ onSubmit, isSendingOtp, register, errors }) {
 
           {/* brand logo */}
           <div className="w-full">
-            <BrandLogo />
+            <BrandLogo scale="scale-85" />
           </div>
           <form onSubmit={onSubmit}>
             {/* form input and text */}

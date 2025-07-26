@@ -7,7 +7,7 @@ function ThemeSwitch() {
   return (
     <Button
       onPress={toggleTheme}
-      className="p-2 hover:ring-1 ring-secondary-200 rounded-2xl shadow-sm
+      className=" xg:p-2 mm:p-[7px] hover:ring-1 ring-secondary-200 rounded-2xl shadow-sm
        shadow-secondary-300 hover:bg-secondary-100 duration-200
         cursor-pointer dark:text-secondary-300 dark:shadow-dark-600
         dark:bg-dark-800 dark:hover:bg-dark-900 dark:ring-dark-600 hover:shadow-md "

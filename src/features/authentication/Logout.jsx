@@ -12,9 +12,9 @@ function Logout() {
   ) : (
     <Button
       onPress={logout}
-      className=" flex justify-center items-center p-2 hover:ring-1
+      className=" flex justify-center items-center xg:p-2 mm:p-[7px] hover:ring-1
        ring-secondary-200 rounded-2xl shadow-sm
-        shadow-red-300 hover:bg-red-100 duration-200 cursor-pointer
+        shadow-secondary-300 hover:bg-red-100 duration-200 cursor-pointer
          cursor-pointerdark:text-secondary-300 dark:shadow-secondary-800
         dark:bg-dark-800 dark:hover:bg-dark-900 dark:ring-dark-600   "
     >

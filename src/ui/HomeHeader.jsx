@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BrandLogo from "../ui/BrandLogo";
 import ThemeSwitch from "../ui/ThemeSwitch";
 import { Login } from "iconsax-reactjs";
@@ -11,8 +11,12 @@ import {
   PhoneIcon,
 } from "@heroicons/react/24/outline";
 import { Button } from "@heroui/button";
+import MenuSidebar from "./MenuSidebar";
+import HomeMenuSidebar from "./HomeMenuSidebar";
+import HeaderItem from "./HeaderItem";
 
 function HomeHeader({ user, isLoading }) {
+  const [openSideBar, setOpenSideBar] = useState(false);
   const navigate = useNavigate();
   const { profileImage } = useProfileImage();
   const role = user?.role.toLowerCase();
@@ -22,49 +26,51 @@ function HomeHeader({ user, isLoading }) {
       className={`  ${
         isLoading ? "blur-sm" : " "
       }   flex justify-center  w-full  bg-secondary-0 
-    dark:bg-dark-900 shadow-2xs shadow-secondary-100
-    dark:shadow-dark-800 `}
+    dark:bg-dark-900 shadow-sm shadow-secondary-200
+    dark:shadow-dark-800 xl:px-8 xg:px-7 vv:px-6 xx:pl-7 ww:pl-6 mm:pl-5 z-50 fixed   `}
     >
       <div className="w-full flex justify-between max-w-7xl mx-auto  ">
-        <ul className=" w-full flex items-center justify-start gap-x-4 py-1.5 ">
+        <ul className=" xx:basis-[60%] mm:basis-[40%] flex items-center justify-start xl:gap-x-2 xg:gap-x-1 
+        ww:py-1.5 mm:py-1 ">
           <li>
-            <BrandLogo details={false} scale="scale-60" />
-          </li>
-          <li>
-            <Button
-              className="flex items-center justify-center hover:bg-blue-100
-               hover:text-primary-900 dark:text-secondary-300 dark:hover:bg-dark-700
-                rounded-xl px-5 py-2 cursor-pointer gap-x-2 text-secondary-500 "
+            <MenuSidebar
+              open={openSideBar}
+              changeSideBarStatus={setOpenSideBar}
             >
-              <span className=" headerMenu_item ">راهنما</span>
+              <HomeMenuSidebar onClose={()=>setOpenSideBar(false)} />
+            </MenuSidebar>
+          </li>
+          <li className=" ml-8 " >
+            <BrandLogo headerType />
+          </li>
+          <HeaderItem
+          className="hidden vv:flex "
+            title="راهنما"
+            icon={
               <ChatBubbleBottomCenterTextIcon className=" size-5 stroke-2 stroke-current/75 mb-0.5" />
-            </Button>
-          </li>
-          <li>
-            <Button
-              className="flex items-center justify-center hover:bg-blue-100
-               hover:text-primary-900 dark:text-secondary-300 dark:hover:bg-dark-700
-                rounded-xl px-5 py-2 cursor-pointer gap-x-2 text-secondary-500 "
-            >
-              <span className=" headerMenu_item ">درباره ما</span>
+            }
+          />
+          <HeaderItem
+          className="hidden vv:flex "
+            title="درباره ما"
+            icon={
               <LightBulbIcon className=" size-5 stroke-2 stroke-current/75 mb-0.5 " />
-            </Button>
-          </li>
-          <li>
-            <Button
-              className="flex items-center justify-center hover:bg-blue-100
-               hover:text-primary-900 dark:text-secondary-300 dark:hover:bg-dark-700
-                rounded-xl px-5 py-2 cursor-pointer gap-x-2 text-secondary-500 "
-            >
-              <span className=" headerMenu_item ">ارتباط با ما</span>
+            }
+          />
+          <HeaderItem
+          className="hidden vv:flex "
+            title="ارتباط با ما"
+            icon={
               <PhoneIcon className=" size-5 stroke-2 stroke-current/75 mb-0.5 " />
-            </Button>
-          </li>
+            }
+          />
         </ul>
-        <div className=" flex justify-end items-center gap-x-4 basis-2/5 ">
+        <div className=" xx:basis-[40%] mm:basis-[60%] flex justify-end
+         items-center ww:gap-x-3 mm:gap-x-4 xg:gap-x-4 w-full  ">
           <ThemeSwitch />
           {user ? (
-            <div className="flex items-center justify-center gap-x-7 ">
+            <div className="flex items-center justify-center mm:gap-x-3 
+            ww:gap-x-4 xg:gap-x-3  ">
               <Logout />
               <UserDatail
                 role={role}
@@ -75,7 +81,7 @@ function HomeHeader({ user, isLoading }) {
           ) : (
             <Button onPress={() => navigate("/auth")} className=" login_btn ">
               <Login />
-              <span className=" inline-flex ">ورود / ثبت نام</span>
+              <span className="mm:hidden ww:inline-flex ">ورود / ثبت نام</span>
             </Button>
           )}
         </div>
@@ -94,11 +100,12 @@ function UserDatail({ userName, profileImage, role }) {
       className=" userDetails_btn  "
     >
       <img
-        className=" size-8 rounded-2xl "
+        className=" mm:size-10 ww:size-8 rounded-2xl "
         src={profileImage}
         alt="user profile"
       />
-      <p className=" font-normal mr-1  ">{userName}</p>
+      <p className=" mm:hidden ww:inline font-normal mr-1  ">{userName}</p>
     </button>
   );
 }
+

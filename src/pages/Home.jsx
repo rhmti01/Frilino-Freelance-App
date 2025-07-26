@@ -8,7 +8,7 @@ function Home() {
 
   return (
     <div
-      className="relative  h-screen  w-full justify-start flex-col
+      className="relative  h-screen  w-full justify-center flex-col
       items-center bg-secondary-100  dark:bg-dark-800/40  "
     >
       <HomeHeader user={user} isLoading={isLoading} />

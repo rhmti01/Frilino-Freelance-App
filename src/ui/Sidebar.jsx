@@ -18,7 +18,7 @@ export default function Sidebar({ children }) {
         <div className="mt-2 scale-[60%]">
           <BrandLogo />
         </div>
-        <span className="block w-85/100 h-[2px] bg-secondary-200 dark:bg-dark-600 mt"></span>
+        <span className="block w-85/100 h-[2px] bg-secondary-200 dark:bg-dark-600 "></span>
 
         {/* user data section */}
         <div

@@ -27,7 +27,7 @@ function HomeHeader({ user, isLoading }) {
         isLoading ? "blur-sm" : " "
       }   flex justify-center  w-full  bg-secondary-0 
     dark:bg-dark-900 shadow-sm shadow-secondary-200
-    dark:shadow-dark-800 xl:px-8 xg:px-7 vv:px-6 xx:pl-7 ww:pl-6 mm:pl-5 z-50 fixed   `}
+    dark:shadow-dark-800 xl:px-8 xg:px-7 vv:px-6 xx:pl-7 ww:pl-6 mm:pl-3 z-50 fixed   `}
     >
       <div className="w-full flex justify-between max-w-7xl mx-auto  ">
         <ul className=" xx:basis-[60%] mm:basis-[40%] flex items-center justify-start xl:gap-x-2 xg:gap-x-1 
@@ -66,11 +66,11 @@ function HomeHeader({ user, isLoading }) {
           />
         </ul>
         <div className=" xx:basis-[40%] mm:basis-[60%] flex justify-end
-         items-center ww:gap-x-3 mm:gap-x-4 xg:gap-x-4 w-full  ">
+         items-center ww:gap-x-3 mm:gap-x-2 xg:gap-x-4 w-full  ">
           <ThemeSwitch />
           {user ? (
-            <div className="flex items-center justify-center mm:gap-x-3 
-            ww:gap-x-4 xg:gap-x-3  ">
+            <div className="flex items-center justify-center mm:gap-x-1 
+            ww:gap-x-2 xg:gap-x-3  ">
               <Logout />
               <UserDatail
                 role={role}

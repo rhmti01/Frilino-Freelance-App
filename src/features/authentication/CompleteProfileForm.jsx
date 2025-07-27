@@ -4,7 +4,6 @@ import toast from "react-hot-toast";
 import { useMutation } from "@tanstack/react-query";
 import { completeProfile } from "../../services/authService";
 import Loading from "../../ui/Loading";
-import BackBtn from "../../ui/BackBtn";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import RoleOption from "../../ui/RoleOption";
@@ -61,10 +60,10 @@ function CompleteProfileForm() {
         {/* get {name , email , role} by form inputs */}
         <form
           onSubmit={handleSubmit(onCompleteProfile)}
-          className="flex flex-col xl:max-w-sm w-full relative "
+          className="flex flex-col mm:w-[calc(100vw-3rem)] ww:w-[390px] xl:w-[420px] w-full relative "
         >
 
-          <h1 className="pageTitle text-[24px]">تکمیل حساب کاربری</h1>
+          <h1 className="pageTitle mm:text-[21px] xx:text-[22px] xl:text-[23px] ">تکمیل حساب کاربری</h1>
           <TextField
             label="نام و نام خانوادگی"
             name="name"
@@ -96,8 +95,8 @@ function CompleteProfileForm() {
               },
             }}
           />
-          <div className="roleContainer mt-6">
-            <p className="text-secondary-700 dark:text-dark-200 flex items-start gap-x-2">
+          <div className="roleContainer mt-6 mm:text-[15px] xl:text-base">
+            <p className="  text-secondary-700 dark:text-dark-200 flex items-start gap-x-2">
               <UserSearch size="20" />
               نقش کاربر:
             </p>

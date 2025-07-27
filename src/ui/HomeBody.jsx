@@ -22,7 +22,7 @@ function HomeBody() {
     <div className="w-full flex justify-center items-center xg:h-screen ">
       <div
         className=" xg:px-4 xl:px-10 2xl:px-3 pt-10 max-w-7xl w-full flex xg:flex-row mm:flex-col 
-         mm:justify-start xg:justify-between items-center xx:pt-36 ww:pt-36 mm:pt-32 xg:pt-0 bg-secondary-100  dark:bg-transparent "
+         mm:justify-start xg:justify-between items-center xx:pt-36 mm:pt-32 xg:pt-0 bg-secondary-100  dark:bg-transparent "
       >
         <div className="flex">
           <div
@@ -41,7 +41,7 @@ function HomeBody() {
             <p
               className=" xx:text-[clamp(0.7rem,2vw,1rem)] inline-flex items-center
               font-medium text-secondary-400 dark:text-dark-300 xx:mt-3
-              xg:mt-0 ww:mt-5 mm:mt-4 ww:text-base mm:text-[15px] "
+              xg:mt-0 ww:mt-5 mm:mt-2 ww:text-[15.5px] mm:text-[14px] "
             >
               <span className="mm:hidden ww:inline ">
                 وقتی پروژه داری یا دنبال کاری، فریلینو بگو، خلاص!

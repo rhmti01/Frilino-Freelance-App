@@ -52,11 +52,13 @@
   --color-red-300: #fca5a5;
 
   /* breakpoints */
+  /* --breakpoint-xl: 1280px; */
   --breakpoint-xg: 1135px;
   --breakpoint-vv: 970px;
   --breakpoint-gg: 885px;
   --breakpoint-xx: 770px;
   --breakpoint-ww: 480px;
+  --breakpoint-uu: 385px;
   --breakpoint-mm: 350px;
   --breakpoint-ss: 290px;
 
@@ -71,7 +73,7 @@
   }
 
   .numberInput {
-    @apply py-3 px-4 rounded-xl font-normal font-inter  text-secondary-600 dark:text-secondary-200 w-full outline-none border-[1px] focus:shadow-sm focus:shadow-primary-300 dark:focus:shadow-dark-800 border-transparent hover:border-slate-400/60 dark:hover:border-slate-800 hover:shadow-xs focus:border-indigo-300 dark:focus:border-indigo-700 duration-300 bg-secondary-200/65 dark:bg-dark-800  focus:bg-white dark:focus:bg-dark-800;
+    @apply  w-full py-3 px-4 rounded-xl font-normal font-inter  text-secondary-600 dark:text-secondary-200 outline-none border-[1px] focus:shadow-sm focus:shadow-primary-300 dark:focus:shadow-dark-800 border-transparent hover:border-slate-400/60 dark:hover:border-slate-800 hover:shadow-xs focus:border-indigo-300 dark:focus:border-indigo-700 duration-300 bg-secondary-200/65 dark:bg-dark-800  focus:bg-white dark:focus:bg-dark-800;
   }
 
   .filterSelect {
@@ -79,15 +81,15 @@
   }
 
   .sendOTPForm__btn {
-    @apply mt-5 text-[17px] text-secondary-0  py-[13px] cursor-pointer w-full  font-normal  duration-300 rounded-xl dark:bg-blue-700 dark:hover:bg-blue-800 bg-blue-600  hover:bg-blue-700 shadow-md;
+    @apply mm:mt-3 xx:mt-4  text-[17px] text-secondary-0  py-[13px] cursor-pointer w-full  font-normal  duration-300 rounded-xl dark:bg-blue-700 dark:hover:bg-blue-800 bg-blue-600  hover:bg-blue-700 shadow-md;
   }
 
   .checkOTPForm__btn {
-    @apply mt-5  text-secondary-0 dark:text-secondary-100 py-3.5 w-full  font-normal  duration-300 rounded-xl shadow-md;
+    @apply mm:mt-3 xx:mt-4  text-secondary-0 dark:text-secondary-100 py-3.5 w-full  font-normal  duration-300 rounded-xl shadow-md;
   }
 
   .completeProfile__btn {
-    @apply mt-12  text-secondary-0 dark:text-secondary-200 py-3.5 w-full  font-normal  duration-300 rounded-xl  bg-blue-600 hover:bg-blue-700 cursor-pointer shadow-md;
+    @apply mt-12  text-secondary-0 dark:text-secondary-200 mm:py-3 xl:py-3.5 w-full  font-normal  duration-300 rounded-xl  bg-blue-600 hover:bg-blue-700 cursor-pointer shadow-md;
   }
 
   .highlightText {
@@ -111,7 +113,7 @@
   }
 
   .backMainPage__btn {
-    @apply px-4 py-2.5 font-normal text-blue-500 text-[18px] ring-1 ring-blue-500 rounded-xl mt-6 cursor-pointer duration-300 hover:text-secondary-0 hover:bg-blue-700;
+    @apply mm:px-2 ww:px-2.5 mm:py-2 xx:px-3.5 xx:py-2.5 font-normal text-blue-500 ww:text-[15px] xx:text-[16px] ring-1 ring-blue-500 rounded-xl mt-6 cursor-pointer duration-300 hover:text-secondary-0 hover:bg-blue-700;
   }
 
   .appLayout {

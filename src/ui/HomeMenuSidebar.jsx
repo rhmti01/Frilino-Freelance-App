@@ -38,6 +38,9 @@ function HomeMenuSidebar({onClose}) {
             <PhoneIcon className=" size-5 stroke-2 stroke-current/75 mb-0.5 " />
           }
         />
+        <p className=" mt-10 text-[12px] text-secondary-500 flex items-center gap-x-1" >صفحات بالا به زودی افزوده خواهند شد! 
+          <img className=" size-3 " src="/assets/images/check.png" alt="icon" />
+        </p>
       </ul>
       <div className=" absolute bottom-8 right-0 left-0 w-full flex justify-center "  >panel or login?</div>
     </div>

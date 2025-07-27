@@ -8,15 +8,16 @@ function BackBtn({ top = "-top-24", right = "-right-32" , to}) {
   return (
     <button
       onClick={() => navigate( to || -1, { replace: true })}
-      className={`  ${top} ${right}  cursor-pointer absolute   `}
+      className={`  ${top} ${right}  cursor-pointer absolute ring-1 
+      p-1 rounded-lg ring-secondary-300 shadow-sm hover:shadow-md shadow-secondary-200   `}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        strokeWidth={2.5}
+        strokeWidth={2}
         stroke="currentColor"
-        className="size-6 stroke-secondary-700 dark:stroke-secondary-400 "
+        className="size-6 stroke-secondary-600 dark:stroke-secondary-400 "
       >
         <path
           strokeLinecap="round"

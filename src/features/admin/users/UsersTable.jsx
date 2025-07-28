@@ -18,11 +18,12 @@ function UsersTable() {
   if (!users?.length) {
     return (
       <div className="  flex items-center justify-center w-full h-full flex-col ">
-        <p className=" mt-20 text-[22px] font-semibold text-secondary-800 dark:text-secondary-300 ">
+        <p className=" mt-20 mm:text-[16px] ww:text-[17px] xx:text-[18px] xl:text-[20px]
+         font-semibold text-secondary-800 dark:text-secondary-300 ">
           لیست کاربران ثبت نامی خالی می باشد!
         </p>
         <img
-          className=" size-[350px] mt-16 "
+          className=" mm:size-[270px] ww:size-[300px] xx:size-[340px] xl:size-[350px] mt-16 "
           src="/assets/images/Empty.png"
           alt="empty projects"
         />

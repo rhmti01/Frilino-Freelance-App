@@ -10,11 +10,11 @@ import { Button } from "@heroui/button";
 const options = [
   {
     label: "در انتظار تایید",
-    value: 0,
+    value: 1,
   },
   {
     label: "رد شده",
-    value: 1,
+    value: 0,
   },
   {
     label: "تایید شده",

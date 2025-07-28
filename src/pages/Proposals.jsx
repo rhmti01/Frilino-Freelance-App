@@ -12,7 +12,8 @@ function Proposals() {
       >
         <div className="w-full max-w-6xl ">
           <div className="flex w-full justify-between items-center  ">
-            <h1 className=" font-bold text-secondary-800 dark:text-secondary-100 text-[21px] ">
+            <h1 className=" font-bold text-secondary-800 dark:text-secondary-100 
+            mm:text-[19.5px] ww:text-[20px] xl:text-[21px] mm:mr-2 xx:mr-0  ">
               لیست پروپوزال ها
             </h1>
           </div>

@@ -13,11 +13,11 @@ function NotAccess() {
       <div className=" flex items-center justify-center  w-full h-[100vh] ">
         <div className="flex flex-col justify-center items-center mb-7">
           <img
-            className=" w-[520px] "
+            className=" xl:w-[550px] xg:w-[480px] vv:w-[450px] xx:w-[420px] ww:w-[380px] mm:w-[320px] "
             src="/assets/images/not-access.png"
             alt="not-found"
           />
-          <h1 className=" text-center font-medium text-[19px] text-secondary-700 dark:text-secondary-400 mt-3 ">
+          <h1 className=" text-center font-medium ww:text-[16.5px] vv:text-[17px] xg:text-lg text-secondary-700 dark:text-secondary-400 mt-3 ">
             <span className=" text-secondary-900 dark:text-secondary-200 ">
               {" "}
               {name || "کاربر"} عزیز ,

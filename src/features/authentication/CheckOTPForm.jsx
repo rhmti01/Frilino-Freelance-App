@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import BrandLogo from "../../ui/BrandLogo";
 import OTPInput from "react-otp-input";
-import BackBtn from "../../ui/BackBtn";
 import { useMutation } from "@tanstack/react-query";
 import { checkOtp } from "../../services/authService";
 import toast from "react-hot-toast";

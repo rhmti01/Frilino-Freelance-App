@@ -1,7 +1,6 @@
 import React from "react";
 import BrandLogo from "./BrandLogo";
 import { IoClose } from "react-icons/io5";
-import { Button } from "@heroui/button";
 import {
   ChatBubbleBottomCenterTextIcon,
   LightBulbIcon,
@@ -18,7 +17,7 @@ function HomeMenuSidebar({onClose}) {
           <IoClose className=" mm:size-7 ww:size-8 text-slate-600 cursor-pointer " />
         </button>
       </div>
-      <div className="block w-full h-[2px] bg-secondary-200 dark:bg-dark-600"></div>
+      <span className="block w-full h-[2px] bg-secondary-200 dark:bg-dark-600"></span>
       <ul className=" w-full flex flex-col justify-start gap-y-5 mt-7 ">
         <HeaderItem
           title="راهنما"
@@ -39,7 +38,6 @@ function HomeMenuSidebar({onClose}) {
           }
         />
       </ul>
-      <div className=" absolute bottom-8 right-0 left-0 w-full flex justify-center "  >panel or login?</div>
     </div>
   );
 }

@@ -24,17 +24,17 @@ function SendOTPForm({ onSubmit, isSendingOtp, register, errors }) {
     <div className=" flex items-center justify-center  w-full h-[100vh] bg-secondary-0 dark:bg-dark-900 ">
       <div className="flex items-center justify-center relative  ">
         {/* form section */}
-        <div className="flex flex-col  xl:w-[420px] ">
+        <div className="relative flex flex-col  xl:w-[420px] ">
           {/* back button */}
-          <BackBtn to={"/"} />
+          <BackBtn right=" mm:right-6 ww:right-0 xx:-right-16 xl:-right-32" to={"/"} />
 
           {/* brand logo */}
           <div className="w-full">
-            <BrandLogo scale="scale-85" />
+            <BrandLogo scale=" mm:scale-[75%] xx:scale-[80%] xl:scale-[85%] " />
           </div>
-          <form onSubmit={onSubmit}>
+          <form className=" flex flex-col mm:w-[93%] uu:w-full  justify-center mx-auto " onSubmit={onSubmit}>
             {/* form input and text */}
-            <h2 className=" mt-[70px]  text-[23px] pageTitle ">
+            <h2 className=" mt-[70px] mm:text-[19.5px] xx:text-[21px] xl:text-[23px] pageTitle ">
               ورود | ثبت نام
             </h2>
             <TextField
@@ -61,10 +61,10 @@ function SendOTPForm({ onSubmit, isSendingOtp, register, errors }) {
             <Button type="submit" size="lg" className="sendOTPForm__btn ">
               {isSendingOtp ? <Loading /> : " تایید و دریافت کد"}
             </Button>
-            <p className="text-[15px] mt-6 text-secondary-500  ">
+            <p className=" mm:text-[12.5px] xl:text-[14px] mm:mt-4 xx:mt-5 xl:mt-6 text-secondary-500 text-center ">
               ورود شما به معنای پذیرش{" "}
               <span className="highlightText">شرایط فریلینو</span> و{" "}
-              <span className="highlightText">قوانین حریم خصوصی</span> است
+              <span className="highlightText">قوانین حریم خصوصی</span> است.
             </p>
           </form>
         </div>

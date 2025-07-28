@@ -1,12 +1,12 @@
-import { HiMenuAlt3 } from "react-icons/hi";
-import { IoCloseOutline } from "react-icons/io5";
 import React from "react";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
-function MenuSidebar({ open, changeSideBarStatus , children }) {
+function MenuSidebar({ open, changeSideBarStatus , children , type = "home" }) {
   return (
     <>
-      <button className="block vv:hidden my-2 mr-6">
-        <HiMenuAlt3
+      <button className={`  ${type === "panel" ? "block !xl:hidden my-2 mm:mr-4 ww:mr-6  " 
+        : "block vv:hidden my-2 mr-6"}  `} >
+        <HiOutlineMenuAlt3
           onClick={() => changeSideBarStatus(true)}
           className="text-secondary-800 size-[35px] dark:text-secondary-300"
         />
@@ -21,7 +21,7 @@ function MenuSidebar({ open, changeSideBarStatus , children }) {
 
       <div
         className={`
-          fixed top-0 right-0 h-screen w-full max-w-[300px] z-50 
+          xl:hidden fixed top-0 right-0 h-screen w-full max-w-[300px] z-50 
           bg-secondary-50 dark:bg-dark-900 shadow-lg 
           transform transition-transform duration-500 ease-in-out
           ${open ? "translate-x-0" : "translate-x-full"}

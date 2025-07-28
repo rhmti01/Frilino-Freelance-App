@@ -7,15 +7,27 @@ function UserGreeting() {
   const { name } = data || {};
 
   return (
-    <div className=" flex justify-center items-center ">
-      <p className=" text-xl font-semibold text-secondary-600 dark:text-secondary-400 ">
-        سلام {name}{" "}
+    <>
+    <div className=" mm:hidden ww:flex justify-center items-center ">
+      <p className=" ww:text-base xx:text-lg xl:text-xl font-semibold
+       text-secondary-600 dark:text-secondary-400 ">
+        سلام؛ {name}{" "}
       </p>
       <span className=" w-[2px] h-4 bg-secondary-300 mx-2 "></span>
       <p className=" font-semibold text-secondary-500  text-[15px] ">
         {getGreetingMessage()}
       </p>
+    </div>    
+    <div className=" mm:flex ww:hidden flex-col justify-center items-start ">
+      <p className=" text-[14.5px] font-semibold
+       text-secondary-600 dark:text-secondary-400 ">
+        سلام؛ {name}{" "}
+      </p>
+      <p className=" font-semibold text-secondary-500  text-[13.5px] ">
+        {getGreetingMessage()}
+      </p>
     </div>
+    </>
   );
 }
 

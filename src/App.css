@@ -24,14 +24,6 @@ table th {
   font-weight: 500;
 }
 
-table th {
-  font-size: 0.93rem;
-}
-
-table td {
-  font-size: 0.86rem;
-}
-
 /* inupt number */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

@@ -6,6 +6,7 @@ import { truncateText } from "../../utils/truncateText";
 import toFaShortDate from "../../utils/toFaShortDate";
 import ChangeProposalStatus from "./ChangeProposalStatus";
 import CustomModal from "../../ui/CustomModal";
+import { TbArrowsExchange } from "react-icons/tb";
 
 const statusStyle = [
   {

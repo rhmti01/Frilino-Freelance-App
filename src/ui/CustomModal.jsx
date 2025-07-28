@@ -49,7 +49,7 @@ function CustomModal({ open, onClose, children, title }) {
         {(onCloseFn) => (
           <>
             <ModalHeader className=" relative flex justify-between items-start text-secondary-700 dark:text-secondary-200 font-bold">
-              <h1 className="pr-3 -mt-1 text-xl text-secondary-700 dark:text-secondary-200 font-bold ">
+              <h1 className="pr-3 text-wrap mm:w-60 ww:w-full -mt-1 mm:text-[17px] ww:text-[18px] xx:text-[18.5px] xl:text-xl text-secondary-700 dark:text-secondary-200 font-bold ">
                 {title}
               </h1>
               <div

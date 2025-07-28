@@ -82,15 +82,15 @@
   }
 
   .sendOTPForm__btn {
-    @apply mm:mt-3 xx:mt-4  text-[17px] text-secondary-0  py-[13px] cursor-pointer w-full  font-normal  duration-300 rounded-xl dark:bg-blue-700 dark:hover:bg-blue-800 bg-blue-600  hover:bg-blue-700 shadow-md;
+    @apply mm:mt-3 xx:mt-4 mm:text-[15px] xx:text-[15.5px] text-secondary-0  mm:py-2.5 xx:py-[13px] cursor-pointer w-full  font-normal  duration-300 rounded-xl dark:bg-blue-700 dark:hover:bg-blue-800 bg-blue-600  hover:bg-blue-700 shadow-md;
   }
 
   .checkOTPForm__btn {
-    @apply mm:mt-3 xx:mt-4  text-secondary-0 dark:text-secondary-100 py-3.5 w-full  font-normal  duration-300 rounded-xl shadow-md;
+    @apply mm:mt-4 xx:mt-6  text-secondary-0 dark:text-secondary-100  mm:py-2.5 xx:py-[12px] mm:text-[15px] xx:text-[15.5px]  w-full  font-normal  duration-300 rounded-xl shadow-md;
   }
 
   .completeProfile__btn {
-    @apply mt-12  text-secondary-0 dark:text-secondary-200 mm:py-3 xl:py-3.5 w-full  font-normal  duration-300 rounded-xl  bg-blue-600 hover:bg-blue-700 cursor-pointer shadow-md;
+    @apply mt-12  text-secondary-0 dark:text-secondary-200 mm:text-[15px] xx:text-[15.5px] mm:py-2.5 xx:py-[13px] w-full  font-normal  duration-300 rounded-xl  bg-blue-600 hover:bg-blue-700 cursor-pointer shadow-md;
   }
 
   .highlightText {
@@ -147,7 +147,7 @@
 
   table td,
   table th {
-    @apply border-b border-[var(--color-secondary-200)] dark:border-[var(--color-secondary-800)];
+    @apply gg:p-[1rem] mm:p-[0.9rem] border-b border-[var(--color-secondary-200)] dark:border-[var(--color-secondary-800)];
   }
 
   .title-row {
@@ -159,7 +159,7 @@
   }
 
   table td {
-    @apply mm:text-[0.8rem] gg:text-[0.86rem] text-secondary-600 dark:text-secondary-300 bg-secondary-0 dark:bg-[#0b0e16] text-center;
+    @apply mm:text-[0.8rem] gg:text-[0.86rem] text-secondary-600 dark:text-secondary-300 bg-secondary-0 dark:bg-[#0c0f18] text-center;
   }
 
   .headerMenu_item {
@@ -167,7 +167,7 @@
   }
 
   .login_btn {
-    @apply font-medium ww:text-[14px] xx:text-[clamp(0.7rem,2vw,1rem)] flex items-center justify-center xg:gap-x-2 xl:gap-x-2.5 bg-blue-600  text-secondary-0 rounded-xl cursor-pointer hover:bg-blue-700 mm:p-[8px] ww:py-2.5 ww:px-3 xx:py-2.5 xx:px-3.5 xg:py-2.5 xg:px-4 hover:shadow-md duration-300 dark:bg-blue-700 dark:hover:bg-blue-800;
+    @apply font-medium ww:text-[14px] xx:text-[clamp(0.7rem,2vw,1rem)] flex items-center justify-center xg:gap-x-2 xl:gap-x-2.5 bg-blue-600  text-secondary-0 rounded-xl cursor-pointer hover:bg-blue-700 mm:p-[8px] ww:py-2.5 ww:px-3 xg:h-12 xx:h-11 ww:h-10 xx:px-3.5 xg:px-4 hover:shadow-md duration-300 dark:bg-blue-700 dark:hover:bg-blue-800;
   }
 
   .dashboard_btn {

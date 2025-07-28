@@ -19,18 +19,20 @@ function ProjectsTable() {
 
   if (!projects?.length) {
     return (
-      <div className="  flex items-center justify-center w-full h-full flex-col ">
+      <div className="  flex items-center justify-center w-full h-full flex-col mt-5 ">
         {searchParams.size ? (
-          <p className=" mm:mt-20 ww:mt-32 mm:text-[16px] ww:text-[17px] xx:text-[18px] xl:text-[20px] font-semibold text-secondary-800 dark:text-secondary-300 ">
+          <p className=" mm:mt-20 ww:mt-32 mm:text-[16px] ww:text-[16.5px] xx:text-[17px] 
+        xl:text-[19px] font-semibold text-secondary-800 dark:text-secondary-300 ">
             پروژه ای مطابق با فیلتر های شما یافت نشد!
           </p>
         ) : (
-          <p className=" mm:mt-14 ww:mt-20 mm:text-[16px] ww:text-[17px] xx:text-[18px] xl:text-[20px] font-semibold text-secondary-800 dark:text-secondary-300 ">
-            لیست پروژه های خالی می باشد!
+          <p className=" mm:mt-14 ww:mt-20 mm:text-[16px] ww:text-[16.5px] xx:text-[17px] 
+        xl:text-[19px]  font-semibold text-secondary-800 dark:text-secondary-300 ">
+            لیست پروژه ها خالی می باشد!
           </p>
         )}
         <img
-          className=" mm:size-[270px] ww:size-[300px] xx:size-[340px] xl:size-[350px] mm:mt-5 ww:mt-16  "
+          className=" mm:size-[300px] ww:size-[340px] xx:size-[360px] xl:size-[340px] mm:mt-5 ww:mt-16  "
           src="/assets/images/Empty.png"
           alt="empty projects"
         />

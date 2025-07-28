@@ -2,14 +2,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function BackBtn({ top = "-top-24", right = "-right-32" , to}) {
+function BackBtn({ top = "-top-24", right = "-right-32" , to , absolute="true"}) {
   const navigate = useNavigate();
 
   return (
     <button
       onClick={() => navigate( to || -1, { replace: true })}
-      className={`  ${top} ${right}  cursor-pointer absolute ring-1 
-      p-1 rounded-lg ring-secondary-300 shadow-sm hover:shadow-md shadow-secondary-200   `}
+      className={`  ${top} ${right}  ${absolute ? "absolute" : ""} cursor-pointer  ring-1 
+      p-1 rounded-lg ring-secondary-300 dark:ring-dark-700 shadow-sm hover:shadow-md dark:shadow-dark-700 shadow-secondary-200   `}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

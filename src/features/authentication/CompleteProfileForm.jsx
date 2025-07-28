@@ -116,7 +116,7 @@ function CompleteProfileForm() {
             </div>
           </div>
           <Button
-          size="lg"
+          size=""
             disabled={isUpdatingProfile}
             type="submit"
             className="completeProfile__btn mt-8"

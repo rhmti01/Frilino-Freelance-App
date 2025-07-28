@@ -3,9 +3,9 @@ import BackBtn from "../../ui/BackBtn";
 
 function ProposalHeader({ project }) {
   return (
-    <div className=" relative w-full flex justify-start pr-36  py-4 ">
-      <BackBtn top="mt-0" right="right-8" to="/owner/projects" />
-      <h3 className="  font-medium text-secondary-600 dark:text-secondary-300  mm:text-[19.5px] ww:text-[20px] xl:text-[21px]  ">
+    <div className=" gap-y-5 w-full flex flex-col items-start justify-start   py-4 ">
+      <BackBtn absolute={false} top="mt-0" right="right-8" to="/owner/projects" />
+      <h3 className=" mm:text-[18px] ww:text-[19px] xl:text-[20px] font-medium text-secondary-600 dark:text-secondary-300  ">
         پیشنهاد های دریافت شده برای{" "}
         <span className=" font-semibold shadow-2xl text-secondary-800 dark:text-secondary-50 ">
           {project.title}

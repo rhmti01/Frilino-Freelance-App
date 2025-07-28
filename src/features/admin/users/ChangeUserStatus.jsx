@@ -54,11 +54,11 @@ function ChangeUserStatus({ userId, onClose }) {
           required
           options={options}
         />
-        <div className="mt-7">
+        <div className="mt-4">
           <Button
             size="lg"
             type="submit"
-            className="text-base py-3 w-full bg-blue-600 hover:bg-blue-700
+            className="mm:text-[15px] xx:text-base mm:py-2 xx:py-[10px] w-full bg-blue-600 hover:bg-blue-700
                duration-300 cursor-pointer  text-white rounded-xl "
           >
             {isChanging ? <Loading /> : "تایید"}

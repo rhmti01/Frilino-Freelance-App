@@ -57,7 +57,7 @@ function ProposalTableRow({ proposal, index }) {
           viewBox="0 0 24 24"
           strokeWidth={2.5}
           stroke="currentColor"
-          className="size-5 cursor-pointer stroke-gray-600 dark:stroke-gray-400 mx-auto "
+          className=" mm:size-[18px] xx:size-5 cursor-pointer stroke-gray-600 dark:stroke-gray-400 mx-auto "
         >
           <path
             strokeLinecap="round"

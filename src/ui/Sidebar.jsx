@@ -29,8 +29,9 @@ export default function Sidebar({ children }) {
           }   relative flex flex-col items-center pt-7 pb-3  w-85/100 mt-7 ring-1
            ring-secondary-200 dark:ring-dark-600 rounded-xl      `}
         >
+
           <div
-            className={`    h-full flex justify-around items-center w-full px-3  `}
+            className={`  h-full flex justify-around items-center w-full px-3  `}
           >
             {/* profile image */}
             <div

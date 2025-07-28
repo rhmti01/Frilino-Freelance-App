@@ -40,7 +40,7 @@ function Stats({ projects }) {
             variant="Broken"
           />
         }
-        title="پروژه های محول"
+        title="پروژه های فعال"
         value={numOfAcceptedProjects}
       />
       <Stat

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 export default function useProfileImage(defaultImage = "/assets/images/empty-profile-img.png") {
+
   const [profileImage, setProfileImage] = useState(defaultImage);
   const fileInputRef = useRef(null);
 

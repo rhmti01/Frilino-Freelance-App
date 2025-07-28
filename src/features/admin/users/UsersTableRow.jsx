@@ -36,10 +36,10 @@ function UsersTableRow({ user, index }) {
       <td>
         {status == 2 ? (
           <span className=" py-1 px-2 rounded-xl bg-green-500 text-white ">تایید شده</span>
-        ) : role === "OWNER" ? (
+        ) : status == 1 ? (
           <span className=" py-1 px-2 rounded-xl bg-yellow-500 text-white ">در انتظار تایید</span>
-        ) : (
-          <span className="  ">رد شده</span>
+        ) :  (
+          <span className=" py-1 px-2 rounded-xl bg-red-500 text-white ">رد شده</span>
         )}
       </td>
       <td>

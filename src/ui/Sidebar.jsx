@@ -26,12 +26,13 @@ export default function Sidebar({ children }) {
             isLoading
               ? "bg-white/10 blur-sm"
               : "bg-secondary-0 dark:bg-dark-900/35  "
-          }   relative flex flex-col items-center pt-7 pb-3  w-85/100 mt-7 ring-1 ring-secondary-200 dark:ring-dark-600 rounded-xl      `}
+          }   relative flex flex-col items-center pt-7 pb-3  w-85/100 mt-7 ring-1
+           ring-secondary-200 dark:ring-dark-600 rounded-xl      `}
         >
           <div
             className={`    h-full flex justify-around items-center w-full px-3  `}
           >
-            {/* عکس پروفایل */}
+            {/* profile image */}
             <div
               className=" relative size-[52px] rounded-xl overflow-hidden 
             cursor-auto bg-secondary-0 dark:bg-dark-900 shrink-0  "
@@ -40,7 +41,7 @@ export default function Sidebar({ children }) {
                 src={profileImage}
                 alt="user-profile"
                 className="w-full h-full object-cover border-1 rounded-3xl  
-                bg-secondary-0 dark:bg-dark-900 border-slate-300 "
+                bg-secondary-0 dark:bg-dark-900 border-slate-300 dark:border-slate-700 "
               />
               <span className="z-50 absolute bottom-0.5 right-0.5 size-3 bg-green-500 rounded-full cursor-pointer "></span>
             </div>

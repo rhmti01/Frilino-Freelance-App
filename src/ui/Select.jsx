@@ -6,7 +6,7 @@ function Select({ options, handleChange, value }) {
       <select
         value={value}
         onChange={handleChange}
-        className=" filterSelect appearance-none pr-8 pl-2 bg-no-repeat form-select "
+        className=" filterSelect appearance-none pr-8 pl-20 bg-no-repeat form-select "
       >
         {options.map((option) => (
           <option key={option.value} value={option.value}>

@@ -6,7 +6,7 @@ import Logout from "../features/authentication/Logout";
 
 function HeaderMenu() {
   return (
-    <ul className=" flex items-center justify-center gap-x-4 ">
+    <ul className=" flex items-center justify-center mm:gap-x-3 ww:gap-x-4 ">
       <li>
         <Logout/>
       </li>

@@ -57,6 +57,7 @@
   --breakpoint-vv: 970px;
   --breakpoint-gg: 885px;
   --breakpoint-xx: 770px;
+  --breakpoint-nn: 580px;
   --breakpoint-ww: 480px;
   --breakpoint-uu: 385px;
   --breakpoint-mm: 350px;
@@ -73,11 +74,11 @@
   }
 
   .numberInput {
-    @apply  w-full py-3 px-4 rounded-xl font-normal font-inter  text-secondary-600 dark:text-secondary-200 outline-none border-[1px] focus:shadow-sm focus:shadow-primary-300 dark:focus:shadow-dark-800 border-transparent hover:border-slate-400/60 dark:hover:border-slate-800 hover:shadow-xs focus:border-indigo-300 dark:focus:border-indigo-700 duration-300 bg-secondary-200/65 dark:bg-dark-800  focus:bg-white dark:focus:bg-dark-800;
+    @apply w-full py-3 px-4 rounded-xl font-normal font-inter  text-secondary-600 dark:text-secondary-200 outline-none border-[1px] focus:shadow-sm focus:shadow-primary-300 dark:focus:shadow-dark-800 border-transparent hover:border-slate-400/60 dark:hover:border-slate-800 hover:shadow-xs focus:border-indigo-300 dark:focus:border-indigo-700 duration-300 bg-secondary-200/65 dark:bg-dark-800  focus:bg-white dark:focus:bg-dark-800;
   }
 
   .filterSelect {
-    @apply py-3 px-4 rounded-xl font-normal font-inter  text-secondary-600 dark:text-secondary-200 w-full outline-none border-[1px] shadow-sm focus:shadow-md focus:shadow-primary-300 dark:focus:shadow-dark-700 border-transparent hover:border-slate-400/60 dark:hover:border-slate-800 hover:shadow-xs focus:border-indigo-300 dark:focus:border-indigo-700 duration-300 bg-secondary-0 dark:bg-dark-800  focus:bg-white dark:focus:bg-dark-900;
+    @apply mm:py-1.5 ww:py-1.5 nn:py-2 gg:py-2 xg:py-2.5 xl:py-3 mm:px-4 ww:px-2 nn:px-3 xg:px-3.5 mm:text-[15px] ww:text-[14.5px] nn:text-[15px] xl:text-[15.5px] xl:px-4 rounded-xl font-normal font-inter  text-secondary-600 dark:text-secondary-200 w-full outline-none border-[1px] shadow-sm focus:shadow-md focus:shadow-primary-300 dark:focus:shadow-dark-700 border-transparent hover:border-slate-400/60 dark:hover:border-slate-800 hover:shadow-xs focus:border-indigo-300 dark:focus:border-indigo-700 duration-300 bg-secondary-0 dark:bg-dark-800  focus:bg-white dark:focus:bg-dark-900;
   }
 
   .sendOTPForm__btn {
@@ -121,7 +122,7 @@
   }
 
   .divider {
-    @apply block w-85/100 h-[2px] bg-secondary-200 dark:bg-dark-600 ;
+    @apply block w-85/100 h-[2px] bg-secondary-200 dark:bg-dark-600;
   }
 
   .badge {
@@ -162,7 +163,7 @@
   }
 
   .headerMenu_item {
-    @apply  ww:text-[15px] xx:text-[clamp(0.7rem,2vw,1rem)] duration-300  font-light  ;
+    @apply ww:text-[15px] xx:text-[clamp(0.7rem,2vw,1rem)] duration-300  font-light;
   }
 
   .login_btn {
@@ -170,15 +171,19 @@
   }
 
   .dashboard_btn {
-    @apply hover:bg-secondary-100 duration-200 hover:ring-1 rounded-2xl ring-secondary-300 text-secondary-700 dark:text-secondary-200 cursor-pointer xg:p-2 xx:p-[7px] hover:shadow-md shadow-sm shadow-secondary-300  dark:shadow-secondary-800 dark:bg-dark-800 dark:hover:bg-dark-900 dark:ring-dark-700;
+    @apply hover:bg-secondary-100 duration-200 hover:ring-1 rounded-2xl ring-secondary-300 text-secondary-700 dark:text-secondary-200 cursor-pointer xg:p-2 mm:p-[7px] hover:shadow-md shadow-sm shadow-secondary-300  dark:shadow-secondary-800 dark:bg-dark-800 dark:hover:bg-dark-900 dark:ring-dark-700;
   }
 
-  .userDetails_btn{
-      @apply  font-normal ww:text-[14px] xx:text-[clamp(0.5rem,2vw,1rem)]  flex items-center justify-center xl:gap-x-2  xx:gap-x-2 ww:gap-x-2 mm:bg-transparent ww:ww:bg-blue-600  text-secondary-0 rounded-xl cursor-pointer hover:ww:bg-blue-700 mm:p-[8px] ww:py-2.5 ww:px-3 xx:py-2.5 xx:px-3.5 xg:py-2.5 xg:px-4 hover:shadow-md duration-300 dark:mm:bg-transparent dark:ww:bg-blue-700/90 dark:ww:hover:bg-blue-800/90 ;
+  .userDetails_btn {
+    @apply font-normal ww:text-[14px] xx:text-[clamp(0.5rem,2vw,1rem)]  flex items-center justify-center xl:gap-x-2  xx:gap-x-2 ww:gap-x-2 mm:bg-transparent ww:ww:bg-blue-600  text-secondary-0 rounded-xl cursor-pointer hover:ww:bg-blue-700 mm:p-[8px] ww:py-2.5 ww:px-3 xx:py-2.5 xx:px-3.5 xg:py-2.5 xg:px-4 hover:shadow-md duration-300 dark:mm:bg-transparent dark:ww:bg-blue-700/90 dark:ww:hover:bg-blue-800/90;
   }
 
-  .cta_btn{
-    @apply  xx:mb-1 mm:mb-2 xg:w-auto mm:w-full ww:px-12  xg:px-14  ww:py-2.5 mm:py-2  xg:py-3  font-semibold mm:mt-6 ww:mt-8 xg:mt-3 rounded-xl text-white cursor-pointer  mm:text-[15px] xx:text-[clamp(0.7rem,2vw,1rem)] flex items-center justify-center bg-gradient-to-tl from-blue-600 to-indigo-600 gap-x-3 hover:bg-gradient-to-br hover:from-indigo-600 hover:to-indigo-600 duration-100 shadow-sm shadow-indigo-500 hover:shadow-md hover:shadow-indigo-300 dark:hover:shadow-indigo-900 
+  .cta_btn {
+    @apply xx:mb-1 mm:mb-2 xg:w-auto mm:w-full ww:px-12  xg:px-14  ww:py-2.5 mm:py-2  xg:py-3  font-semibold mm:mt-6 ww:mt-8 xg:mt-3 rounded-xl text-white cursor-pointer  mm:text-[15px] xx:text-[clamp(0.7rem,2vw,1rem)] flex items-center justify-center bg-gradient-to-tl from-blue-600 to-indigo-600 gap-x-3 hover:bg-gradient-to-br hover:from-indigo-600 hover:to-indigo-600 duration-100 shadow-sm shadow-indigo-500 hover:shadow-md hover:shadow-indigo-300 dark:hover:shadow-indigo-900;
+  }
+
+  .menuItem_text {
+    @apply mm:text-[15px] gg:text-base;
   }
 }
 

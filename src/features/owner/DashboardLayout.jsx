@@ -5,7 +5,6 @@ import { useOwnerProjects } from "../projects/useOwnerProjects";
 import Loading from "../../ui/Loading";
 import useUser from "../authentication/useUser";
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
 
 function DashboardLayout() {
   const navigate = useNavigate()

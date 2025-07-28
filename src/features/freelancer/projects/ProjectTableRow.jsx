@@ -64,7 +64,7 @@ function ProjectTableRow({ project, index }) {
         </button>
 
         <CustomModal
-          title={`درخواست انجام پروژه ${title}`}
+          title={`درخواست انجام پروژه `}
           open={modalOpen}
           onClose={() => setModalOpen(false)}
         >

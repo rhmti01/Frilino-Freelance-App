@@ -8,13 +8,15 @@ function Project() {
   const { project, isLoading } = useProject();
 
   return (
-    <div className=" w-full flex justify-center items-start mt-10  ">
+    <div className=" w-full flex justify-center items-start mt-10 mm:px-6 ww:px-14 ">
       {isLoading ? (
         <Loading mt="mt-14" size="md" />
       ) : (
-        <div className="w-full" >
+        <div className="w-full ">
           <ProposalHeader project={project} />
-          <ProposalTable proposals={project.proposals} />
+          <div className="w-full overflow-auto  ">
+            <ProposalTable proposals={project.proposals} />
+          </div>
         </div>
       )}
     </div>

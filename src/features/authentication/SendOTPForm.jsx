@@ -58,7 +58,7 @@ function SendOTPForm({ onSubmit, isSendingOtp, register, errors }) {
                 },
               }}
             />
-            <Button type="submit" size="lg" className="sendOTPForm__btn ">
+            <Button type="submit" size="" className="sendOTPForm__btn ">
               {isSendingOtp ? <Loading /> : " تایید و دریافت کد"}
             </Button>
             <p className=" mm:text-[12.5px] xl:text-[14px] mm:mt-4 xx:mt-5 xl:mt-6 text-secondary-500 text-center ">

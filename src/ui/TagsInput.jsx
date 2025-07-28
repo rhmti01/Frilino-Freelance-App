@@ -40,13 +40,13 @@ const removeTag = (indexToRemove) => {
 
   return (
     <div className="mt-3">
-      <h1 className="p-3 block text-right font-semilight text-secondary-700 dark:text-dark-200 ">
+      <h1 className="mm:text-[14px] xl:text-[15px] mm:p-2 xx:p-2.5  block text-right font-medium text-secondary-700 dark:text-dark-200 ">
         تگ‌های پروژه {required && <span className=" text-red-500 ">*</span>}
       </h1>
 
       <div
         onClick={() => inputRef.current?.focus()}
-        className="flex flex-wrap items-center gap-2 px-4 py-2 rounded-xl bg-secondary-200/65 dark:bg-dark-800 cursor-text w-full"
+        className="flex flex-wrap items-center gap-2 mm:py-[4px] xx:py-3 px-4 rounded-xl bg-secondary-200/65 dark:bg-dark-800 cursor-text w-full"
         dir="rtl"
       >
         {tags.map((tag, index) => (

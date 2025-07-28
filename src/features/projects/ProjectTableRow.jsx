@@ -34,7 +34,7 @@ function ProjectTableRow({ project, index }) {
       </td>
       <td>{toFaShortDate(project.deadline)}</td>
       <td className="  w-40 xl:w-40 h-full  ">
-        <div className="flex items-center gap-2 flex-wrap   ">
+        <div className="flex items-center gap-2 flex-wrap justify-center  ">
           {project.tags.map((tag) => (
             <span className="badge badge--secondary " key={tag}>
               {tag}
@@ -68,7 +68,7 @@ function ProjectTableRow({ project, index }) {
           >
             <Edit
               variant="Broken"
-              className=" cursor-pointer size-6 mt-1 text-blue-600 "
+              className=" cursor-pointer mm:size-[21px] xx:size-6 mt-1 text-blue-600 "
             />
           </button>
         </>
@@ -79,7 +79,7 @@ function ProjectTableRow({ project, index }) {
           >
             <Trash
               variant="Broken"
-              className=" cursor-pointer size-6 text-red-500 "
+              className=" cursor-pointer mm:size-[21px] xx:size-6 text-red-500 "
             />
           </button>
           <CustomModal
@@ -103,7 +103,7 @@ function ProjectTableRow({ project, index }) {
       <td className="  ">
         <Link className=" w-full flex justify-center " to={project._id}>
           <DocumentText1
-            className=" size-6 text-indigo-600
+            className=" mm:size-[21px] xx:size-6 text-indigo-600
            hover:text-indigo-800 dark:text-indigo-400
             dark:hover:text-indigo-500 duration-100 "
           />

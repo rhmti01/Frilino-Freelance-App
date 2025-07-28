@@ -1,4 +1,3 @@
-import { CloseSquare } from "iconsax-reactjs";
 import React, { useState } from "react";
 import TextField from "../../ui/TextField";
 import { Controller, useForm } from "react-hook-form";
@@ -45,7 +44,7 @@ function CreateProjectForm({ projectToEdit = {}, onClose }) {
   } = useForm({
     defaultValues: {
       ...editValues,
-      tags: prevTags || [], 
+      tags: prevTags || [],
     },
   });
 
@@ -170,9 +169,9 @@ function CreateProjectForm({ projectToEdit = {}, onClose }) {
               label="ددلاین"
             />
             <Button
-            size="lg"
+              size=""
               type="submit"
-              className=" text-base py-3.5 w-full bg-blue-600 hover:bg-blue-700
+              className=" mm:text-[15px] xx:text-base mm:py-[9.5px] ww:py-[11px] xx:py-3 xl:py-3.5 w-full bg-blue-600 hover:bg-blue-700
                duration-300 cursor-pointer mt-6 text-white rounded-xl  "
             >
               {isCreating || isEditing ? <Loading /> : "تایید"}

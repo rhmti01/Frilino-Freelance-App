@@ -82,12 +82,14 @@ function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
       <div className="flex items-center justify-center relative">
         {/* form section */}
         <div className="flex flex-col xl:w-[420px] -mt-6  ">
-          <BrandLogo />
+          <div className="w-full">
+            <BrandLogo scale=" mm:scale-[75%] xx:scale-[80%] xl:scale-[85%] " />
+          </div>
 
           <form onSubmit={checkOtpHandler}>
             <div className="mt-[70px] flex flex-col items-center">
-              <h1 className="pageTitle text-[23px] ">اعتبارسنجی</h1>
-              <p className="mt-8 text-secondary-400 font-normal text-[16.5px]">
+              <h1 className="pageTitle mm:text-[19.5px] xx:text-[21px] xl:text-[23px] ">اعتبارسنجی</h1>
+              <p className="mt-8 text-secondary-400 font-normal mm:text-[15px] xx:text-[15.5px] xl:text-base ">
                 کد ارسال شده به{" "}
                 <span className="text-secondary-700 dark:text-secondary-300 font-medium">
                   {enToFaNumber(phoneNumber)}
@@ -96,7 +98,7 @@ function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
               </p>
               <p
                 onClick={onBack}
-                className=" text-[16.5px] mt-3 px-1 inline-flex items-center gap-x-1 text-blue-500 cursor-pointer font-medium hover:underline"
+                className=" mm:text-[15px] xx:text-[15.5px] xl:text-base mt-3 px-1 inline-flex items-center gap-x-1 text-blue-500 cursor-pointer font-medium hover:underline"
               >
                 <TbEditCircle />
                 ویرایش شماره موبایل

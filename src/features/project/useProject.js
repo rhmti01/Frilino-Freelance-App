@@ -7,7 +7,7 @@ export function useProject() {
     const {data , isLoading} = useQuery({
         queryKey : ["project", id] ,
         queryFn : ()=> getProjectApi(id) ,
-        retry : false
+        retry : false 
     })
 
     const { project } = data || {}

@@ -5,7 +5,7 @@ function RHFSelect({ label, name, register, options, required }) {
     <div>
       <label
         htmlFor={name}
-        className=" mt-2 p-3 block text-right font-semilight text-secondary-700 dark:text-dark-200 text-base "
+        className=" mt-2 mm:text-[14px] xl:text-[15px] mm:p-2 xx:p-2.5 block text-right font-medium text-secondary-700 dark:text-dark-200 text-base "
       >
         {label} {required && <span className=" text-red-500 ">*</span>}
       </label>

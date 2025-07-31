@@ -8,6 +8,7 @@ Frilino is a dynamic marketplace designed to connect skilled freelancers with cl
 
 ### ✨ Standout Features
 
+- **OTP Authentication**: Quick and secure login/signup via SMS-based one-time passwords.
 - **Sleek Profile Builder**: Freelancers can craft stunning profiles with portfolios, certifications, and client reviews to stand out.
 - **Smart Project Matching**: Advanced algorithms and filters to pair clients with the perfect freelancer for their needs.
 - **Secure Transactions**: Integrated Stripe payments ensure safe, transparent, and hassle-free financial exchanges.

@@ -18,8 +18,8 @@ function Stats({ projects }) {
         ww:grid-cols-2 
         xx:grid-cols-2 
         xg:grid-cols-3 
-        gap-y-5 gap-x-5 
-        mt-10 w-full max-w-[1000px] ww:mx-0  "
+        gap-y-3 gap-x-5 
+        mt-10 w-full max-w-[1000px] ww:mx-0 pb-10 "
     >
       <Stat
         color="blue"

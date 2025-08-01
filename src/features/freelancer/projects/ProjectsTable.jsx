@@ -19,7 +19,7 @@ function ProjectsTable() {
 
   if (!projects?.length) {
     return (
-      <div className="  flex items-center justify-center w-full h-full flex-col mt-5 ">
+      <div className="  flex items-center justify-center w-full h-full flex-col mt-5 pb-10 ">
         {searchParams.size ? (
           <p className=" mm:mt-20 ww:mt-32 mm:text-[16px] ww:text-[16.5px] xx:text-[17px] 
         xl:text-[19px] font-semibold text-secondary-800 dark:text-secondary-300 ">

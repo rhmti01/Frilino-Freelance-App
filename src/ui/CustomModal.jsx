@@ -5,8 +5,6 @@ import {
   ModalContent,
   ModalHeader,
   ModalBody,
-  ModalFooter,
-  Button,
 } from "@heroui/react";
 
 function CustomModal({ open, onClose, children, title }) {
@@ -43,7 +41,7 @@ function CustomModal({ open, onClose, children, title }) {
     >
       <ModalContent
         className="duration-300 ease-out
-          transition-all  z-50 w-[calc(100vw-3rem)] md:max-w-[500px] max-h-[calc(100vh-2rem)]
+          transition-all  z-50 w-[calc(100vw-3rem)] md:max-w-[500px] max-h-[calc(100dvh-3rem)]
            overflow-y-auto mx-auto p-3 bg-secondary-0 dark:bg-dark-900 rounded-xl shadow-lg"
       >
         {(onCloseFn) => (

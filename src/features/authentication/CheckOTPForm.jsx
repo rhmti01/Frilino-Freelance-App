@@ -78,7 +78,7 @@ function CheckOTPForm({ onBack, phoneNumber, onResendOtp }) {
   };
 
   return (
-    <div className="flex items-center justify-center w-full h-[100vh]">
+    <div className="flex items-center justify-center w-full h-[100dvh]">
       <div className="flex items-center justify-center relative">
         {/* form section */}
         <div className="flex flex-col xl:w-[420px] -mt-6  ">

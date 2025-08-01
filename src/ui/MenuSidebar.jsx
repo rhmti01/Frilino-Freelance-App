@@ -4,7 +4,7 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 function MenuSidebar({ open, changeSideBarStatus , children , type = "home" }) {
   return (
     <>
-      <button className={`  ${type === "panel" ? "block !xl:hidden my-2 mm:mr-4 ww:mr-6  " 
+      <button className={`  ${type === "panel" ? "block xl:hidden my-2 mm:mr-4 ww:mr-6  " 
         : "block vv:hidden my-2 mr-6"}  `} >
         <HiOutlineMenuAlt3
           onClick={() => changeSideBarStatus(true)}

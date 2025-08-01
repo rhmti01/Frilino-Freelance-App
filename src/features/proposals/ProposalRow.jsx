@@ -1,14 +1,9 @@
-import react, { useState } from "react";
+import react  from "react";
 import Table from "../../ui/Table";
-import { DocumentText1, Edit, Eye, Trash } from "iconsax-reactjs";
 import toFaShortDate from "../../utils/toFaShortDate";
 import { enToFaNumber } from "../../utils/enToFaNumber";
 import { truncateText } from "../../utils/truncateText";
 import { numberDivider } from "../../utils/numberDivider";
-import Modal from "../../ui/Modal";
-import ConfirmDelete from "../../ui/ConfirmDelete";
-// import ToggleProject from "./ToggleProject";
-import { Link } from "react-router-dom";
 
 const statusStyle = [
   {

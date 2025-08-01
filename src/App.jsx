@@ -24,66 +24,78 @@ import NotAccess from "./pages/NotAccess";
 import AdminLayout from "./features/admin/AdminLayout";
 import AdminDashboard from "./pages/AdminDashboard";
 import Users from "./pages/Users";
+import { SidebarProvider } from "./context/SidebarContext";
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <ThemeSwitchProvider>
-      <QueryClientProvider client={queryClient}>
-        {/* <ReactQueryDevtools initialIsOpen={false} />   */}
-        <Toaster />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="not-access" element={<NotAccess />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/complete-profile" element={<CompleteProfile />} />
-          {/*  OWNER ROUTE */}
-          <Route
-            path="owner"
-            element={
-              <ProtectedRoute>
-                <OwnerLayout />
-              </ProtectedRoute>
-            }
-          >
-            <Route index element={<Navigate to="dashboard" replace={true} />} />
-            <Route path="dashboard" element={<OwnerDashboard />} />
-            <Route path="projects" element={<Projects />} />
-            <Route path="projects/:id" element={<Project />} />
-          </Route>
-          {/* FREELANCER ROUTE */}
-          <Route
-            path="/freelancer"
-            element={
-              <ProtectedRoute>
-                <FreelancerLayout />
-              </ProtectedRoute>
-            }
-          >
-            <Route index element={<Navigate to="dashboard" replace={true} />} />
-            <Route path="dashboard" element={<FreelancerDashboard />} />
-            <Route path="projects" element={<SubmittedProjects />} />
-            <Route path="proposals" element={<Proposals />} />
-          </Route>
+      <SidebarProvider>
+        <QueryClientProvider client={queryClient}>
+          {/* <ReactQueryDevtools initialIsOpen={false} />   */}
+          <Toaster />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="not-access" element={<NotAccess />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/complete-profile" element={<CompleteProfile />} />
+            {/*  OWNER ROUTE */}
+            <Route
+              path="owner"
+              element={
+                <ProtectedRoute>
+                  <OwnerLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route
+                index
+                element={<Navigate to="dashboard" replace={true} />}
+              />
+              <Route path="dashboard" element={<OwnerDashboard />} />
+              <Route path="projects" element={<Projects />} />
+              <Route path="projects/:id" element={<Project />} />
+            </Route>
+            {/* FREELANCER ROUTE */}
+            <Route
+              path="/freelancer"
+              element={
+                <ProtectedRoute>
+                  <FreelancerLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route
+                index
+                element={<Navigate to="dashboard" replace={true} />}
+              />
+              <Route path="dashboard" element={<FreelancerDashboard />} />
+              <Route path="projects" element={<SubmittedProjects />} />
+              <Route path="proposals" element={<Proposals />} />
+            </Route>
             {/* ADMIN ROUTE */}
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute>
-                <AdminLayout />
-              </ProtectedRoute>
-            }
-          >
-            <Route index element={<Navigate to="dashboard" replace={true} />} />
-            <Route path="dashboard" element={<AdminDashboard />} />
-            <Route path="users" element={<Users />} />
-            <Route path="projects" element={<SubmittedProjects />} />
-            <Route path="proposals" element={<Proposals />} />
-          </Route>
-        </Routes>
-      </QueryClientProvider>
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route
+                index
+                element={<Navigate to="dashboard" replace={true} />}
+              />
+              <Route path="dashboard" element={<AdminDashboard />} />
+              <Route path="users" element={<Users />} />
+              <Route path="projects" element={<SubmittedProjects />} />
+              <Route path="proposals" element={<Proposals />} />
+            </Route>
+          </Routes>
+        </QueryClientProvider>
+      </SidebarProvider>
     </ThemeSwitchProvider>
   );
 }

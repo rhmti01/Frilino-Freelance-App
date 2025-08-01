@@ -9,7 +9,7 @@ function Users() {
     rounded-tr-3xl 2xl:py-7 2xl:pl-7 xl:py-7 xl:pl-5 md:px-10 mt-8 overflow-x-auto w-full 
      "
       >
-        <div className="w-full max-w-6xl ">
+        <div className="w-full max-w-6xl pb-10 ">
           <div className="flex w-full justify-between items-center  ">
             <h1 className=" mm:mr-2 xx:mr-0 font-bold text-secondary-800
              dark:text-secondary-100 mm:text-[19.5px] ww:text-[20px] xl:text-[21px] ">

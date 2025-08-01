@@ -14,6 +14,7 @@ import { Button } from "@heroui/button";
 import MenuSidebar from "./MenuSidebar";
 import HomeMenuSidebar from "./HomeMenuSidebar";
 import HeaderItem from "./HeaderItem";
+import useUser from "../features/authentication/useUser";
 
 function HomeHeader({ user, isLoading }) {
   const [openSideBar, setOpenSideBar] = useState(false);
@@ -30,47 +31,53 @@ function HomeHeader({ user, isLoading }) {
     dark:shadow-dark-800 xl:px-8 xg:px-7 vv:px-6 xx:pl-7    `}
     >
       <div className="w-full flex justify-between max-w-7xl mx-auto  ">
-        <ul className=" xx:basis-[60%] mm:basis-[40%] flex items-center justify-start xl:gap-x-2 xg:gap-x-1 
-        ww:py-1.5 mm:py-1 ">
+        <ul
+          className=" xx:basis-[60%] mm:basis-[40%] flex items-center justify-start xl:gap-x-2 xg:gap-x-1 
+        ww:py-1.5 mm:py-1 "
+        >
           <li>
             <MenuSidebar
               open={openSideBar}
               changeSideBarStatus={setOpenSideBar}
             >
-              <HomeMenuSidebar onClose={()=>setOpenSideBar(false)} />
+              <HomeMenuSidebar onClose={() => setOpenSideBar(false)} />
             </MenuSidebar>
           </li>
-          <li className=" ml-8 " >
+          <li className=" ml-8 ">
             <BrandLogo headerType />
           </li>
           <HeaderItem
-          className="hidden vv:flex "
+            className="hidden vv:flex "
             title="راهنما"
             icon={
               <ChatBubbleBottomCenterTextIcon className=" size-5 stroke-2 stroke-current/75 mb-0.5" />
             }
           />
           <HeaderItem
-          className="hidden vv:flex "
+            className="hidden vv:flex "
             title="درباره ما"
             icon={
               <LightBulbIcon className=" size-5 stroke-2 stroke-current/75 mb-0.5 " />
             }
           />
           <HeaderItem
-          className="hidden vv:flex "
+            className="hidden vv:flex "
             title="ارتباط با ما"
             icon={
               <PhoneIcon className=" size-5 stroke-2 stroke-current/75 mb-0.5 " />
             }
           />
         </ul>
-        <div className=" xx:basis-[40%] mm:basis-[60%] flex justify-end
-         items-center ww:gap-x-3 mm:gap-x-2 xg:gap-x-4 w-full  ">
+        <div
+          className=" xx:basis-[40%] mm:basis-[60%] flex justify-end
+         items-center ww:gap-x-3 mm:gap-x-2 xg:gap-x-4 w-full  "
+        >
           <ThemeSwitch />
           {user ? (
-            <div className="flex items-center justify-center mm:gap-x-1 
-            ww:gap-x-2 xg:gap-x-3  ">
+            <div
+              className="flex items-center justify-center mm:gap-x-1 
+            ww:gap-x-2 xg:gap-x-3  "
+            >
               <Logout />
               <UserDatail
                 role={role}
@@ -94,9 +101,20 @@ export default HomeHeader;
 
 function UserDatail({ userName, profileImage, role }) {
   const navigate = useNavigate();
+  const { data: user } = useUser();
+  const { email } = user;
+
+  const navigateUser = () => {
+    if (!email) {
+      navigate(`/complete-profile`);
+    } else {
+      navigate(`/${role}/dashboard`);
+    }
+  };
+
   return (
     <button
-      onClick={() => navigate(`/${role}/dashboard`)}
+      onClick={() => navigateUser()}
       className=" userDetails_btn  "
     >
       <img
@@ -108,4 +126,3 @@ function UserDatail({ userName, profileImage, role }) {
     </button>
   );
 }
-

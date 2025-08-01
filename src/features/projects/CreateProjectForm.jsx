@@ -130,6 +130,7 @@ function CreateProjectForm({ projectToEdit = {}, onClose }) {
               name="budget"
               dir="ltr"
               mt="mt-2"
+              type="tel"
               register={register}
               required
               errors={errors}

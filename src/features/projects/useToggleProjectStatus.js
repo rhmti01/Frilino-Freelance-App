@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import {  toggleProjectStatusApi } from "../../services/ProjectService";
+import {  toggleProjectStatusApi } from "../../services/projectService";
 import toast from "react-hot-toast";
 
 export default function useToggleProjectStatus() {

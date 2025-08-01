@@ -155,7 +155,7 @@
   }
 
   table th {
-    @apply  mm:text-[0.88rem] gg:text-[0.93rem] text-secondary-700 dark:text-secondary-100;
+    @apply  mm:text-[0.88rem] gg:text-[0.93rem] text-secondary-900 dark:text-secondary-100;
   }
 
   table td {

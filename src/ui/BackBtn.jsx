@@ -17,7 +17,7 @@ function BackBtn({ top = "-top-24", right = "-right-32" , to , absolute="true"})
         viewBox="0 0 24 24"
         strokeWidth={2}
         stroke="currentColor"
-        className="size-6 stroke-secondary-600 dark:stroke-secondary-400 "
+        className=" mm:size-5 xx:size-6 stroke-secondary-600 dark:stroke-secondary-400 "
       >
         <path
           strokeLinecap="round"

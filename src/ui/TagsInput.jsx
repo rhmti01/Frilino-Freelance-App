@@ -1,5 +1,6 @@
-import { Warning2 } from "iconsax-reactjs";
+import { AddSquare, Warning2 } from "iconsax-reactjs";
 import React, { useState, useRef } from "react";
+
 const TagsInput = ({
   name,
   tags,
@@ -13,21 +14,21 @@ const TagsInput = ({
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
 
-const addTag = (value) => {
-  const trimmed = value.trim();
-  if (trimmed && !tags.includes(trimmed)) {
-    const newTags = [...tags, trimmed];
-    setTags(newTags);
-    setValue(name, newTags, { shouldValidate: true })
-  }
-  setInputValue("");
-};
+  const addTag = (value) => {
+    const trimmed = value.trim();
+    if (trimmed && !tags.includes(trimmed)) {
+      const newTags = [...tags, trimmed];
+      setTags(newTags);
+      setValue(name, newTags, { shouldValidate: true });
+    }
+    setInputValue("");
+  };
 
-const removeTag = (indexToRemove) => {
-  const newTags = tags.filter((_, index) => index !== indexToRemove);
-  setTags(newTags);
-  setValue(name, newTags, { shouldValidate: true })
-};
+  const removeTag = (indexToRemove) => {
+    const newTags = tags.filter((_, index) => index !== indexToRemove);
+    setTags(newTags);
+    setValue(name, newTags, { shouldValidate: true });
+  };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" || e.key === ",") {
@@ -40,13 +41,13 @@ const removeTag = (indexToRemove) => {
 
   return (
     <div className="mt-3">
-      <h1 className="mm:text-[14px] xl:text-[15px] mm:p-2 xx:p-2.5  block text-right font-medium text-secondary-700 dark:text-dark-200 ">
-        تگ‌های پروژه {required && <span className=" text-red-500 ">*</span>}
+      <h1 className="mm:text-[14px] xl:text-[15px] mm:p-2 xx:p-2.5 block text-right font-medium text-secondary-700 dark:text-dark-200">
+        تگ‌های پروژه {required && <span className="text-red-500">*</span>}
       </h1>
 
       <div
         onClick={() => inputRef.current?.focus()}
-        className="flex flex-wrap items-center gap-2 mm:py-[4px] xx:py-3 px-4 rounded-xl bg-secondary-200/65 dark:bg-dark-800 cursor-text w-full"
+        className="flex flex-wrap items-center mm:gap-1.5 xx:gap-2 mm:py-[5px] xx:py-2 px-4 rounded-xl bg-secondary-200/65 dark:bg-dark-800 cursor-text w-full"
         dir="rtl"
       >
         {tags.map((tag, index) => (
@@ -85,17 +86,27 @@ const removeTag = (indexToRemove) => {
         <input
           ref={inputRef}
           type="text"
-          className="flex-1 min-w-[80px] bg-transparent outline-none border-none text-secondary-600 dark:text-dark-200 font-inter rounded-xl"
+          className="flex-1 min-w-[80px] bg-transparent outline-none border-none text-secondary-600
+           dark:text-dark-200 font-inter rounded-xl xx:text-base mm:text-[15px] "
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}
           dir="rtl"
         />
+
+        <button
+          type="button"
+          onClick={() => addTag(inputValue)}
+          className="text-indigo-500 hover:text-indigo-600 px-2 py-1 rounded-full text-xl font-bold"
+          aria-label="افزودن تگ"
+        >
+          <AddSquare className=" size-6  " />
+        </button>
       </div>
 
       {error && (
-        <span className=" text-error block text-sm mt-2 ">
-          <Warning2 className=" size-4 inline ml-2 " variant="Broken" />
+        <span className="text-error block text-sm mt-2">
+          <Warning2 className="size-4 inline ml-2" variant="Broken" />
           {error}
         </span>
       )}

@@ -38,8 +38,8 @@ export function getProjectApi(id) {
 
 export function getProjectsApi(qs) {
     return http
-      .get(`/project/list${qs}`).
-      then(({data})=>data.data)
+      .get(`/project/list${qs}`)
+      .then(({data})=>data.data)
 }
 
 

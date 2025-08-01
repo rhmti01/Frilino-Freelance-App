@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { editProjectApi } from "../../services/ProjectService";
+import { editProjectApi } from "../../services/projectService";
 import toast from "react-hot-toast";
 
 export default function useEditProjects() {

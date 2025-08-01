@@ -5,7 +5,6 @@ import { truncateText } from "../../../utils/truncateText";
 import { numberDivider } from "../../../utils/numberDivider";
 import toFaShortDate from "../../../utils/toFaShortDate";
 import { ReceiptAdd } from "iconsax-reactjs";
-import Modal from "../../../ui/Modal";
 import CreateProposal from "../../proposals/CreateProposal";
 import toast from "react-hot-toast";
 import CustomModal from "../../../ui/CustomModal";

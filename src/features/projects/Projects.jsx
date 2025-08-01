@@ -11,7 +11,7 @@ function Projects() {
   return (
     <div
       className=" flex justify-center items-start mx-auto  bg-secondary-100/50 dark:bg-dark-900/75
-    rounded-tr-3xl 2xl:py-7 2xl:pl-7 xl:py-7 xl:pl-5 xx:px-10 ww:px-7 mm:px-5 mt-8 overflow-x-auto w-full 
+    rounded-tr-3xl 2xl:py-7 2xl:pl-7 xl:py-7 xl:pl-5 xx:px-10 ww:px-7 mm:px-5 mm:pt-10 xx:pt-8 overflow-x-auto w-full pb-10
      "
     >
       <div className="w-full max-w-7xl ">

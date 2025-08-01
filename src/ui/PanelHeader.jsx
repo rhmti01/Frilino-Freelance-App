@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import useUser from "../features/authentication/useUser";
-import UserGreeting from "./userGreeting";
+import UserGreeting from "./UserGreeting";
 import HeaderMenu from "./HeaderMenu";
 import MenuSidebar from "./MenuSidebar";
 import PanelMenuSidebar from "./PanelMenuSideBar";
+import { useSidebar } from "../context/SidebarContext";
 
 function PanelHeader() {
   const { isLoading } = useUser();
-  const [openSideBar, setOpenSideBar] = useState(false);
+   const { openSideBar,  setOpenSideBar  } = useSidebar();
 
   return (
     <div

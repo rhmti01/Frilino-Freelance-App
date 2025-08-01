@@ -56,7 +56,7 @@ function CompleteProfileForm() {
 
   return (
     <div className="mx-auto max-w-7xl flex flex-col w-full ">
-      <div className="flex flex-col items-center justify-center w-full h-[100vh] relative  ">
+      <div className="flex flex-col items-center justify-center w-full h-[100dvh] relative  ">
         {/* get {name , email , role} by form inputs */}
         <form
           onSubmit={handleSubmit(onCompleteProfile)}

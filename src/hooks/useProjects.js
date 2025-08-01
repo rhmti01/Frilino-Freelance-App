@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getProjectsApi } from "../services/ProjectService";
+import { getProjectsApi } from "../services/projectService";
 import { useLocation } from "react-router-dom";
 // import queryString from "query-string";
 

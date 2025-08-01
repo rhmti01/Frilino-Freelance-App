@@ -5,7 +5,6 @@ import toFaShortDate from "../../utils/toFaShortDate";
 import { enToFaNumber } from "../../utils/enToFaNumber";
 import { truncateText } from "../../utils/truncateText";
 import { numberDivider } from "../../utils/numberDivider";
-import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import useRemoveProject from "./useRemoveProject";
 import CreateProjectForm from "./CreateProjectForm";

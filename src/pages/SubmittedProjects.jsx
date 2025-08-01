@@ -11,7 +11,7 @@ function SubmittedProjects() {
         mt-8 overflow-x-auto w-full 
      "
       >
-        <div className="w-full max-w-6xl ">
+        <div className="w-full max-w-6xl pb-10 ">
           <ProjectsHeader />
           <div className="w-full overflow-auto  ">
             <ProjectsTable />

@@ -2,7 +2,7 @@ import React from "react";
 
 function DashboardHeader() {
   return (
-    <div className=" mt-10 mb-10 pr-3 ">
+    <div className=" mt-2 mb-10 pr-3 ">
       <h1
         className=" mm:text-[26px] ww:text-[27px] xx:text-[28px] xl:text-[30px] font-bold
          text-secondary-800 dark:text-dark-0 "

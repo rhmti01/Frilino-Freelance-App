@@ -4,6 +4,7 @@ import { enToFaNumber } from "../../../utils/enToFaNumber";
 import { SecurityUser, User, Verify } from "iconsax-reactjs";
 import ChangeUserStatus from "./ChangeUserStatus";
 import CustomModal from "../../../ui/CustomModal";
+import { hideNumber } from "../../../utils/hideNumber";
 
 function UsersTableRow({ user, index }) {
   const { name, email, phoneNumber, status, role } = user;
@@ -13,7 +14,7 @@ function UsersTableRow({ user, index }) {
     <Table.Row>
       <td>{enToFaNumber(index + 1)}</td>
       <td>{name}</td>
-      <td>{enToFaNumber(phoneNumber)}</td>
+      <td>{enToFaNumber(hideNumber(phoneNumber))}</td>
       <td>{email}</td>
       <td className="   ">
         {role === "FREELANCER" ? (

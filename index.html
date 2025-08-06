@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl" >
+<html lang="en" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/assets/icons/favican.png" />
@@ -11,8 +11,22 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Vazirmatn:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- crisp online chat refrence -->
+    <script type="text/javascript">
+      window.$crisp = [];
+      window.CRISP_WEBSITE_ID = "7c2f46a7-f30f-425f-bfeb-2cf09efc1518";
+      (function () {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      })();
+    </script>
   </head>
-  <body class="bg-[var(--background-app-rgb)] dark:bg-dark-900 select-none font-vazir">
+  <body
+    class="bg-[var(--background-app-rgb)] dark:bg-dark-900 select-none font-vazir"
+  >
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

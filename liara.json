@@ -1,8 +1,8 @@
 {
+  "port": 80,
+  "platform": "react",
   "app": "frilino",
-  "port": 3000,
   "build": {
     "location": "iran"
-  },
-  "disks": []
+  }
 }

@@ -26,9 +26,8 @@ function HomeHeader({ user, isLoading }) {
     <nav
       className={`  ${
         isLoading ? "blur-sm" : " "
-      }   flex justify-center  w-full  bg-secondary-0 
-    dark:bg-dark-900 ww:pl-6 mm:pl-3 z-50 fixed shadow-2xs
-    dark:shadow-dark-800 xl:px-8 xg:px-7 vv:px-6 xx:pl-7    `}
+      }   flex justify-center  w-full ww:pl-6 mm:pl-3 z-50 fixed 
+           xl:px-8 xg:px-7 vv:px-6 xx:pl-7    `}
     >
       <div className="w-full flex justify-between max-w-7xl mx-auto  ">
         <ul

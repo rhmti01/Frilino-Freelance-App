@@ -1,7 +1,7 @@
 {
-  "port": 80,
+  "port": 3000,
   "platform": "react",
-  "app": "frilino",
+  "app": "frilino-app",
   "build": {
     "location": "iran"
   }
